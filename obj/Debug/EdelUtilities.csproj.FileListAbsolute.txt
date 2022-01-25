@@ -1,0 +1,11 @@
+D:\WORK\Projects\EdelUtilities\bin\Debug\EdelUtilities.exe
+D:\WORK\Projects\EdelUtilities\bin\Debug\EdelUtilities.pdb
+D:\WORK\Projects\EdelUtilities\obj\Debug\EdelUtilities.Form1.resources
+D:\WORK\Projects\EdelUtilities\obj\Debug\EdelUtilities.Properties.Resources.resources
+D:\WORK\Projects\EdelUtilities\obj\Debug\EdelUtilities.csproj.GenerateResource.cache
+D:\WORK\Projects\EdelUtilities\obj\Debug\EdelUtilities.csproj.CoreCompileInputs.cache
+D:\WORK\Projects\EdelUtilities\obj\Debug\EdelUtilities.exe
+D:\WORK\Projects\EdelUtilities\obj\Debug\EdelUtilities.pdb
+D:\WORK\Projects\EdelUtilities\obj\Debug\EdelUtilities.csproj.AssemblyReference.cache
+D:\WORK\Projects\EdelUtilities\obj\Debug\EdelUtilities.ubpDAO_EncryptDecrypt.resources
+D:\WORK\Projects\EdelUtilities\obj\Debug\EdelUtilities.Main.resources
