@@ -55,7 +55,7 @@ namespace EdelUtilities
 
             button1.Enabled = true;
 
-            MessageBox.Show("Done!");
+            MessageBox.Show("Done!", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void button2_Click(object sender, EventArgs e)

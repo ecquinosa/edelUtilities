@@ -42,7 +42,7 @@ namespace EdelUtilities
             // 
             this.btnEncrypt.Location = new System.Drawing.Point(23, 164);
             this.btnEncrypt.Name = "btnEncrypt";
-            this.btnEncrypt.Size = new System.Drawing.Size(103, 26);
+            this.btnEncrypt.Size = new System.Drawing.Size(103, 29);
             this.btnEncrypt.TabIndex = 0;
             this.btnEncrypt.Text = "Encrypt";
             this.btnEncrypt.UseVisualStyleBackColor = true;
@@ -85,7 +85,7 @@ namespace EdelUtilities
             // 
             this.btnDecrypt.Location = new System.Drawing.Point(132, 164);
             this.btnDecrypt.Name = "btnDecrypt";
-            this.btnDecrypt.Size = new System.Drawing.Size(103, 26);
+            this.btnDecrypt.Size = new System.Drawing.Size(103, 29);
             this.btnDecrypt.TabIndex = 5;
             this.btnDecrypt.Text = "Decrypt";
             this.btnDecrypt.UseVisualStyleBackColor = true;

@@ -43,6 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddSingleDoubleQuote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddSingleDoubleQuote.Designer.cs">
+      <DependentUpon>AddSingleDoubleQuote.cs</DependentUpon>
+    </Compile>
     <Compile Include="Encoders.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -64,6 +70,9 @@
     <Compile Include="ubpDAO_EncryptDecrypt.Designer.cs">
       <DependentUpon>ubpDAO_EncryptDecrypt.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddSingleDoubleQuote.resx">
+      <DependentUpon>AddSingleDoubleQuote.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

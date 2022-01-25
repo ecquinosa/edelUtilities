@@ -27,5 +27,10 @@ namespace EdelUtilities
         {
             new Form1().ShowDialog();
         }
+
+        private void singleDoubleQuoteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new AddSingleDoubleQuote().ShowDialog();
+        }
     }
 }

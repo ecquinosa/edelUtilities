@@ -9,3 +9,4 @@ D:\WORK\Projects\EdelUtilities\obj\Debug\EdelUtilities.pdb
 D:\WORK\Projects\EdelUtilities\obj\Debug\EdelUtilities.csproj.AssemblyReference.cache
 D:\WORK\Projects\EdelUtilities\obj\Debug\EdelUtilities.ubpDAO_EncryptDecrypt.resources
 D:\WORK\Projects\EdelUtilities\obj\Debug\EdelUtilities.Main.resources
+D:\WORK\Projects\edelUtilities\obj\Debug\EdelUtilities.AddSingleDoubleQuote.resources
