@@ -8,22 +8,48 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EdelUtilities.Properties
-{
-
-
+namespace EdelUtilities.Properties {
+    
+    
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
-    {
-
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.1.0.0")]
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-
-        public static Settings Default
-        {
-            get
-            {
+        
+        public static Settings Default {
+            get {
                 return defaultInstance;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://aub.allcard.com.ph:82/ACC_MS_WEBSERVICE.asmx")]
+        public string EdelUtilities_aubWS_ACC_MS_WEBSERVICE {
+            get {
+                return ((string)(this["EdelUtilities_aubWS_ACC_MS_WEBSERVICE"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://ubp.allcard.com.ph:82/ACC_MS_WEBSERVICE.asmx")]
+        public string EdelUtilities_ubpWS_ACC_MS_WEBSERVICE {
+            get {
+                return ((string)(this["EdelUtilities_ubpWS_ACC_MS_WEBSERVICE"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://172.16.7.171:82/ACC_MS_WEBSERVICE.asmx")]
+        public string EdelUtilities_rbankSIT_WS_ACC_MS_WEBSERVICE {
+            get {
+                return ((string)(this["EdelUtilities_rbankSIT_WS_ACC_MS_WEBSERVICE"]));
             }
         }
     }

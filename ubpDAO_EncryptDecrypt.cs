@@ -101,41 +101,41 @@ namespace EdelUtilities
             }
         }
 
-        //private string ToEncrypt(string Word)
-        //{
-        //    try
-        //    {
-        //        if (Word == "") return "";
-        //        var Mask = new Encoders();
-        //        var ReWord = Mask.EnMask(Word);
-        //        if (ReWord == "") return "";
-        //        var NewWord = Mask.Encrypt(ReWord);
-        //        if (NewWord == "") return "";
-        //        return NewWord;
-        //    }
-        //    catch
-        //    {
-        //        return "";
-        //    }
-        //}
+        private string ToEncrypt(string Word)
+        {
+            try
+            {
+                if (Word == "") return "";
+                var Mask = new Encoders();
+                var ReWord = Mask.EnMask(Word);
+                if (ReWord == "") return "";
+                var NewWord = Mask.Encrypt(ReWord);
+                if (NewWord == "") return "";
+                return NewWord;
+            }
+            catch
+            {
+                return "";
+            }
+        }
 
-        //private string ToDecrypt(string Word)
-        //{
-        //    try
-        //    {
-        //        var Mask = new Encoders();              
-        //        if (Word == "") return "";                
-        //        var ReWord = Mask.Decrypt(Word);
-        //        if (ReWord == "") return "";
-        //        var OrWord = Mask.DeMask(ReWord);
-        //        if (OrWord == "") return "";
-        //        return OrWord;
-        //    }
-        //    catch
-        //    {
-        //        return "";
-        //    }
-        //}
+        private string ToDecrypt(string Word)
+        {
+            try
+            {
+                var Mask = new Encoders();
+                if (Word == "") return "";
+                var ReWord = Mask.Decrypt(Word);
+                if (ReWord == "") return "";
+                var OrWord = Mask.DeMask(ReWord);
+                if (OrWord == "") return "";
+                return OrWord;
+            }
+            catch
+            {
+                return "";
+            }
+        }
 
         private void btnEncrypt_Click(object sender, EventArgs e)
         {
@@ -147,6 +147,18 @@ namespace EdelUtilities
         {
             if (txtValue.Text == "") return;
             txtResult.Text = DAO_Decrypt(txtValue.Text,12);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (txtValue.Text == "") return;
+            txtResult.Text = ToEncrypt(txtValue.Text);
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (txtValue.Text == "") return;
+            txtResult.Text = ToDecrypt(txtValue.Text);
         }
     }
 }

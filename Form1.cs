@@ -20,22 +20,6 @@ namespace EdelUtilities
         private void button1_Click(object sender, EventArgs e)
         {
             DeleteEmptyDirectories();
-
-            //return;
-            //foreach (string file in Directory.GetFiles(textBox1.Text))
-            //{
-            //    string createDateFolder = new FileInfo(file).CreationTime.ToString("yyyy-MM-dd");
-            //    if (!Directory.Exists(string.Format(@"{0}\{1}", textBox1.Text, createDateFolder))) Directory.CreateDirectory(string.Format(@"{0}\{1}", textBox1.Text, createDateFolder));
-            //    try
-            //    {
-            //        File.Move(file, string.Format(@"{0}\{1}\{2}", textBox1.Text, createDateFolder, Path.GetFileName(file)));
-            //    }
-            //    catch
-            //    {
-            //    }
-
-            //}
-            //MessageBox.Show("Done!");
         }
 
         private void DeleteEmptyDirectories()
@@ -54,8 +38,8 @@ namespace EdelUtilities
             }
 
             button1.Enabled = true;
-
-            MessageBox.Show("Done!", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+           
+            Utilities.ShowInfoMessageBox("Done!");
         }
 
         private void button2_Click(object sender, EventArgs e)

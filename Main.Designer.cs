@@ -34,6 +34,9 @@ namespace EdelUtilities
             this.removeEmptyFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uBPDAOEncryptdecryptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.singleDoubleQuoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pagIbigAPIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.regexTesterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pagIbigDatabaseDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +56,10 @@ namespace EdelUtilities
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.removeEmptyFolderToolStripMenuItem,
             this.uBPDAOEncryptdecryptToolStripMenuItem,
-            this.singleDoubleQuoteToolStripMenuItem});
+            this.singleDoubleQuoteToolStripMenuItem,
+            this.pagIbigAPIToolStripMenuItem,
+            this.regexTesterToolStripMenuItem,
+            this.pagIbigDatabaseDataToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(58, 24);
             this.toolStripMenuItem1.Text = "Tools";
@@ -79,6 +85,27 @@ namespace EdelUtilities
             this.singleDoubleQuoteToolStripMenuItem.Text = "Single/ Double Quote";
             this.singleDoubleQuoteToolStripMenuItem.Click += new System.EventHandler(this.singleDoubleQuoteToolStripMenuItem_Click);
             // 
+            // pagIbigAPIToolStripMenuItem
+            // 
+            this.pagIbigAPIToolStripMenuItem.Name = "pagIbigAPIToolStripMenuItem";
+            this.pagIbigAPIToolStripMenuItem.Size = new System.Drawing.Size(264, 26);
+            this.pagIbigAPIToolStripMenuItem.Text = "Pag-Ibig API";
+            this.pagIbigAPIToolStripMenuItem.Click += new System.EventHandler(this.pagIbigAPIToolStripMenuItem_Click);
+            // 
+            // regexTesterToolStripMenuItem
+            // 
+            this.regexTesterToolStripMenuItem.Name = "regexTesterToolStripMenuItem";
+            this.regexTesterToolStripMenuItem.Size = new System.Drawing.Size(264, 26);
+            this.regexTesterToolStripMenuItem.Text = "Regex Tester";
+            this.regexTesterToolStripMenuItem.Click += new System.EventHandler(this.regexTesterToolStripMenuItem_Click);
+            // 
+            // pagIbigDatabaseDataToolStripMenuItem
+            // 
+            this.pagIbigDatabaseDataToolStripMenuItem.Name = "pagIbigDatabaseDataToolStripMenuItem";
+            this.pagIbigDatabaseDataToolStripMenuItem.Size = new System.Drawing.Size(264, 26);
+            this.pagIbigDatabaseDataToolStripMenuItem.Text = "Pag-Ibig Database Data";
+            this.pagIbigDatabaseDataToolStripMenuItem.Click += new System.EventHandler(this.pagIbigDatabaseDataToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -89,7 +116,8 @@ namespace EdelUtilities
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Main";
+            this.Text = "Edel Utilities";
+            this.Load += new System.EventHandler(this.Main_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -104,5 +132,8 @@ namespace EdelUtilities
         private System.Windows.Forms.ToolStripMenuItem removeEmptyFolderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem uBPDAOEncryptdecryptToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem singleDoubleQuoteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pagIbigAPIToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem regexTesterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pagIbigDatabaseDataToolStripMenuItem;
     }
 }
