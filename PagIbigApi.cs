@@ -14,13 +14,31 @@ namespace EdelUtilities
         public PagIbigApi()
         {
             InitializeComponent();
+
+            raUBP.wsUser = "ulilangkawayan";
+            raUBP.wsPass = "ragMANOK2kx";
+            raUBP.KioskID = "user";
+            raUBP.User = 0;
+
+            raAUB.wsUser = "ulilangkawayan";
+            raAUB.wsPass = "ragMANOK2kx";
+            raAUB_SIT_OLD.wsUser = "ulilangkawayan";
+            raAUB_SIT_OLD.wsPass = "ragMANOK2kx";
+            raAUB.KioskID = "user";
+            raAUB.User = 0;
+
+
+            cboBank.SelectedIndex = 0;
+            cboApi.SelectedIndex = 0;
         }
 
         private ubpWS.ACC_MS_WEBSERVICE ubpWS = new ubpWS.ACC_MS_WEBSERVICE();
         private aubWS.ACC_MS_WEBSERVICE aubWS = new aubWS.ACC_MS_WEBSERVICE();
+        private aubWS_SIT_OLD.ACC_MS_WEBSERVICE aubWS_SIT_OLD = new aubWS_SIT_OLD.ACC_MS_WEBSERVICE();
         private rbankSIT_WS.ACC_MS_WEBSERVICE rbankSIT_WS = new rbankSIT_WS.ACC_MS_WEBSERVICE();
         private ubpWS.RequestAuth raUBP = new ubpWS.RequestAuth();
         private aubWS.RequestAuth raAUB = new aubWS.RequestAuth();
+        private aubWS_SIT_OLD.RequestAuth raAUB_SIT_OLD = new aubWS_SIT_OLD.RequestAuth();
         private rbankSIT_WS.RequestAuth raSIT_RBANK = new rbankSIT_WS.RequestAuth();
 
         private void RunTemp()
@@ -50,7 +68,8 @@ namespace EdelUtilities
 
         private void button1_Click(object sender, EventArgs e)
         {
-            RunTemp();
+            //RunTemp();
+            //GetCardNo_AUB_prod();
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -157,39 +176,48 @@ namespace EdelUtilities
 
         private void GetCardNo_AUB()
         {
-            var name = new aubWS.name();
+            var name = new aubWS_SIT_OLD.name();
             name.firstName = "ROSALIE";            
             name.middleName = "HERNANE";
             name.lastName = "LORENZANA";
-            var inq = new aubWS.inquiry();
+            var inq = new aubWS_SIT_OLD.inquiry();
             inq.idNo = "121051869550";
             inq.name = name;
             inq.birthdate = "1982-08-14";
+            var getCard = new aubWS_SIT_OLD.AUBGetCardNoRequest();
+            getCard.inquiry = inq;
+            getCard.aud = "cashcard";
+            getCard.jti = Guid.NewGuid().ToString();
+
+            var response2 = aubWS_SIT_OLD.GetCardNo_AUB(raAUB_SIT_OLD, getCard);
+            System.IO.File.WriteAllText(Application.StartupPath + "\\getCard.txt", Newtonsoft.Json.JsonConvert.SerializeObject(getCard));
+            rtb.Text = Newtonsoft.Json.JsonConvert.SerializeObject(response2, Newtonsoft.Json.Formatting.Indented);
+        }
+
+        public void GetCardNo_AUB_prod(string mid, string firstName, string middleName, string lastName, string dob)
+        {
+            txtMID.Text = mid;
+            var name = new aubWS.name();
+            name.firstName = firstName;
+            name.middleName = middleName;
+            name.lastName = lastName;
+            var inq = new aubWS.inquiry();
+            inq.idNo = mid;
+            inq.name = name;
+            inq.birthdate = dob;
             var getCard = new aubWS.AUBGetCardNoRequest();
             getCard.inquiry = inq;
             getCard.aud = "cashcard";
             getCard.jti = Guid.NewGuid().ToString();
 
             var response2 = aubWS.GetCardNo_AUB(raAUB, getCard);
+            System.IO.File.WriteAllText(Application.StartupPath + "\\getCard.txt", Newtonsoft.Json.JsonConvert.SerializeObject(getCard));
             rtb.Text = Newtonsoft.Json.JsonConvert.SerializeObject(response2, Newtonsoft.Json.Formatting.Indented);
-
         }
 
         private void PagIbigApi_Load(object sender, EventArgs e)
         {   
-            raUBP.wsUser = "ulilangkawayan";
-            raUBP.wsPass = "ragMANOK2kx";
-            raUBP.KioskID = "user";
-            raUBP.User = 0;
-
-            raAUB.wsUser = "ulilangkawayan";
-            raAUB.wsPass = "ragMANOK2kx";
-            raAUB.KioskID = "user";
-            raAUB.User = 0;
-
-
-            cboBank.SelectedIndex = 0;
-            cboApi.SelectedIndex = 0;
+            
         }       
     }
 }

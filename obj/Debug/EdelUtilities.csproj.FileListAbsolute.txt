@@ -19,4 +19,6 @@ D:\WORK\Projects\edelUtilities\obj\Debug\EdelUtilities.RegexTest.resources
 D:\WORK\Projects\edelUtilities\obj\Debug\EdelUtilities.PagIbigBankDbase.resources
 D:\WORK\Projects\edelUtilities\bin\Debug\DAL.dll
 D:\WORK\Projects\edelUtilities\bin\Debug\DAL.pdb
+D:\WORK\Projects\edelUtilities\obj\Debug\EdelUtilities.FindStringInFiles.resources
+D:\WORK\Projects\edelUtilities\obj\Debug\EdelUtilities.UBP_DAO_API_Logs.resources
 D:\WORK\Projects\edelUtilities\obj\Debug\EdelUtilities.csproj.SuggestedBindingRedirects.cache

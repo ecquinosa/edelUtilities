@@ -44,7 +44,7 @@ namespace EdelUtilities
             // 
             this.btnEncrypt.Location = new System.Drawing.Point(23, 164);
             this.btnEncrypt.Name = "btnEncrypt";
-            this.btnEncrypt.Size = new System.Drawing.Size(103, 29);
+            this.btnEncrypt.Size = new System.Drawing.Size(123, 29);
             this.btnEncrypt.TabIndex = 0;
             this.btnEncrypt.Text = "DAO Encrypt";
             this.btnEncrypt.UseVisualStyleBackColor = true;
@@ -85,9 +85,9 @@ namespace EdelUtilities
             // 
             // btnDecrypt
             // 
-            this.btnDecrypt.Location = new System.Drawing.Point(132, 164);
+            this.btnDecrypt.Location = new System.Drawing.Point(152, 164);
             this.btnDecrypt.Name = "btnDecrypt";
-            this.btnDecrypt.Size = new System.Drawing.Size(103, 29);
+            this.btnDecrypt.Size = new System.Drawing.Size(123, 29);
             this.btnDecrypt.TabIndex = 5;
             this.btnDecrypt.Text = "DAO Decrypt";
             this.btnDecrypt.UseVisualStyleBackColor = true;
@@ -105,9 +105,9 @@ namespace EdelUtilities
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(132, 199);
+            this.button1.Location = new System.Drawing.Point(152, 199);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 29);
+            this.button1.Size = new System.Drawing.Size(123, 29);
             this.button1.TabIndex = 8;
             this.button1.Text = "Decrypt";
             this.button1.UseVisualStyleBackColor = true;
@@ -117,7 +117,7 @@ namespace EdelUtilities
             // 
             this.button2.Location = new System.Drawing.Point(23, 199);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(103, 29);
+            this.button2.Size = new System.Drawing.Size(123, 29);
             this.button2.TabIndex = 7;
             this.button2.Text = "Encrypt";
             this.button2.UseVisualStyleBackColor = true;

@@ -52,5 +52,15 @@ namespace EdelUtilities.Properties {
                 return ((string)(this["EdelUtilities_rbankSIT_WS_ACC_MS_WEBSERVICE"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://172.16.7.184:8444/ACC_MS_WEBSERVICE.asmx")]
+        public string EdelUtilities_aubWS_SIT_OLD_ACC_MS_WEBSERVICE {
+            get {
+                return ((string)(this["EdelUtilities_aubWS_SIT_OLD_ACC_MS_WEBSERVICE"]));
+            }
+        }
     }
 }

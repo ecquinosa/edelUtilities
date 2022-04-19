@@ -37,6 +37,9 @@ namespace EdelUtilities
             this.pagIbigAPIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.regexTesterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pagIbigDatabaseDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.findStringInFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.getMACAddressToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uBPDAOAPILogsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +62,10 @@ namespace EdelUtilities
             this.singleDoubleQuoteToolStripMenuItem,
             this.pagIbigAPIToolStripMenuItem,
             this.regexTesterToolStripMenuItem,
-            this.pagIbigDatabaseDataToolStripMenuItem});
+            this.pagIbigDatabaseDataToolStripMenuItem,
+            this.findStringInFileToolStripMenuItem,
+            this.getMACAddressToolStripMenuItem,
+            this.uBPDAOAPILogsToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(58, 24);
             this.toolStripMenuItem1.Text = "Tools";
@@ -106,6 +112,27 @@ namespace EdelUtilities
             this.pagIbigDatabaseDataToolStripMenuItem.Text = "Pag-Ibig Database Data";
             this.pagIbigDatabaseDataToolStripMenuItem.Click += new System.EventHandler(this.pagIbigDatabaseDataToolStripMenuItem_Click);
             // 
+            // findStringInFileToolStripMenuItem
+            // 
+            this.findStringInFileToolStripMenuItem.Name = "findStringInFileToolStripMenuItem";
+            this.findStringInFileToolStripMenuItem.Size = new System.Drawing.Size(264, 26);
+            this.findStringInFileToolStripMenuItem.Text = "Find string in File";
+            this.findStringInFileToolStripMenuItem.Click += new System.EventHandler(this.findStringInFileToolStripMenuItem_Click);
+            // 
+            // getMACAddressToolStripMenuItem
+            // 
+            this.getMACAddressToolStripMenuItem.Name = "getMACAddressToolStripMenuItem";
+            this.getMACAddressToolStripMenuItem.Size = new System.Drawing.Size(264, 26);
+            this.getMACAddressToolStripMenuItem.Text = "Get MAC Address";
+            this.getMACAddressToolStripMenuItem.Click += new System.EventHandler(this.getMACAddressToolStripMenuItem_Click);
+            // 
+            // uBPDAOAPILogsToolStripMenuItem
+            // 
+            this.uBPDAOAPILogsToolStripMenuItem.Name = "uBPDAOAPILogsToolStripMenuItem";
+            this.uBPDAOAPILogsToolStripMenuItem.Size = new System.Drawing.Size(264, 26);
+            this.uBPDAOAPILogsToolStripMenuItem.Text = "UBP DAO API Logs";
+            this.uBPDAOAPILogsToolStripMenuItem.Click += new System.EventHandler(this.uBPDAOAPILogsToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -135,5 +162,8 @@ namespace EdelUtilities
         private System.Windows.Forms.ToolStripMenuItem pagIbigAPIToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem regexTesterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pagIbigDatabaseDataToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem findStringInFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem getMACAddressToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem uBPDAOAPILogsToolStripMenuItem;
     }
 }

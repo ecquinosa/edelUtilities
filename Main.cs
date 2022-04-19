@@ -36,8 +36,7 @@ namespace EdelUtilities
 
         private void Main_Load(object sender, EventArgs e)
         {
-            //string mac = GetMACAddress();
-            //Utilities.ShowInfoMessageBox("My mac address is "  + mac);
+            
         }
 
         public static string GetMACAddress()
@@ -76,6 +75,22 @@ namespace EdelUtilities
         private void pagIbigDatabaseDataToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new PagIbigBankDbase().ShowDialog();
+        }
+
+        private void findStringInFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FindStringInFiles().ShowDialog();
+        }
+
+        private void getMACAddressToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string mac = GetMACAddress();
+            Utilities.ShowInfoMessageBox("My mac address is " + mac);
+        }
+
+        private void uBPDAOAPILogsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new UBP_DAO_API_Logs().ShowDialog();
         }
     }
 }

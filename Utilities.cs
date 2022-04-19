@@ -17,7 +17,7 @@ namespace EdelUtilities
 
         public static void ShowWarningMessageBox(string msg, string header = "")
         {
-            System.Windows.Forms.MessageBox.Show(msg, header ?? msgBoxHeader, System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Warning);
+            System.Windows.Forms.MessageBox.Show(msg, header ?? msgBoxHeader , System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Warning);
         }
 
         public static void ShowErrorMessageBox(string msg, string header = "")

@@ -103,5 +103,21 @@ namespace EdelUtilities
             //cboField.ValueMember = "COLUMN_NAME";
             cboField.SelectedIndex = cboField.FindStringExact("PagIBIGID");
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (dal.TableResult != null)
+            {
+                if (dal.TableResult.DefaultView.Count > 0)
+                {
+                    //121172865511,
+                    this.Enabled = false;
+                    PagIbigApi frm = new PagIbigApi();                   
+                    frm.GetCardNo_AUB_prod(dal.TableResult.Rows[0]["PAGIBIGID"].ToString(), dal.TableResult.Rows[0]["Member_FirstName"].ToString(), dal.TableResult.Rows[0]["Member_MiddleName"].ToString(), dal.TableResult.Rows[0]["Member_LastName"].ToString(), Convert.ToDateTime(dal.TableResult.Rows[0]["BirthDate"]).ToString("yyyy-MM-dd"));
+                    frm.ShowDialog();
+                    this.Enabled = true;
+                }
+            }
+        }
     }
 }
