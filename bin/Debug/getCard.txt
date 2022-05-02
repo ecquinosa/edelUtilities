@@ -1,1 +1,1 @@
-{"aud":"cashcard","exp":null,"jti":"1d041373-a534-41d9-889f-3360f47ef171","inquiry":{"idNo":"121172865511","name":{"lastName":"DURANTE","firstName":"ABDULA","middleName":"PRIVALDOS"},"birthdate":"1994-08-27"}}
+{"aud":"cashcard","exp":null,"jti":"bcc013c1-6220-4ec5-9382-1f81b25dce5d","inquiry":{"idNo":"121027512933","name":{"lastName":"","firstName":"","middleName":""},"birthdate":"2022-05-02"}}

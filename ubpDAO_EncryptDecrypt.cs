@@ -160,5 +160,13 @@ namespace EdelUtilities
             if (txtValue.Text == "") return;
             txtResult.Text = ToDecrypt(txtValue.Text);
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //string sourceFile = @"D:\WORK\Projects\PagIbig_LocalDB\bin\Debug\users2.txt";
+            ////string encrypted = ToEncrypt(System.IO.File.ReadAllText(sourceFile));
+            //string encrypted = Convert.ToBase64String(System.IO.File.ReadAllText(sourceFile));
+            //System.IO.File.WriteAllText(sourceFile.Replace("2.txt", ".txt"), encrypted);
+        }
     }
 }

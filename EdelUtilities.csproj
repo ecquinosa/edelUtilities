@@ -45,6 +45,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -79,6 +80,12 @@
     </Compile>
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GetAccountNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GetAccountNo.Designer.cs">
+      <DependentUpon>GetAccountNo.cs</DependentUpon>
     </Compile>
     <Compile Include="PagIbigApi.cs">
       <SubType>Form</SubType>
@@ -144,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GetAccountNo.resx">
+      <DependentUpon>GetAccountNo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PagIbigApi.resx">
       <DependentUpon>PagIbigApi.cs</DependentUpon>

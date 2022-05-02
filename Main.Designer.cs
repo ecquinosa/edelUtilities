@@ -40,6 +40,7 @@ namespace EdelUtilities
             this.findStringInFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.getMACAddressToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uBPDAOAPILogsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.getBankAccountNumberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,7 +66,8 @@ namespace EdelUtilities
             this.pagIbigDatabaseDataToolStripMenuItem,
             this.findStringInFileToolStripMenuItem,
             this.getMACAddressToolStripMenuItem,
-            this.uBPDAOAPILogsToolStripMenuItem});
+            this.uBPDAOAPILogsToolStripMenuItem,
+            this.getBankAccountNumberToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(58, 24);
             this.toolStripMenuItem1.Text = "Tools";
@@ -73,65 +75,72 @@ namespace EdelUtilities
             // removeEmptyFolderToolStripMenuItem
             // 
             this.removeEmptyFolderToolStripMenuItem.Name = "removeEmptyFolderToolStripMenuItem";
-            this.removeEmptyFolderToolStripMenuItem.Size = new System.Drawing.Size(264, 26);
+            this.removeEmptyFolderToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
             this.removeEmptyFolderToolStripMenuItem.Text = "Remove empty folder";
             this.removeEmptyFolderToolStripMenuItem.Click += new System.EventHandler(this.removeEmptyFolderToolStripMenuItem_Click);
             // 
             // uBPDAOEncryptdecryptToolStripMenuItem
             // 
             this.uBPDAOEncryptdecryptToolStripMenuItem.Name = "uBPDAOEncryptdecryptToolStripMenuItem";
-            this.uBPDAOEncryptdecryptToolStripMenuItem.Size = new System.Drawing.Size(264, 26);
+            this.uBPDAOEncryptdecryptToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
             this.uBPDAOEncryptdecryptToolStripMenuItem.Text = "UBP DAO encrypt/decrypt";
             this.uBPDAOEncryptdecryptToolStripMenuItem.Click += new System.EventHandler(this.uBPDAOEncryptdecryptToolStripMenuItem_Click);
             // 
             // singleDoubleQuoteToolStripMenuItem
             // 
             this.singleDoubleQuoteToolStripMenuItem.Name = "singleDoubleQuoteToolStripMenuItem";
-            this.singleDoubleQuoteToolStripMenuItem.Size = new System.Drawing.Size(264, 26);
+            this.singleDoubleQuoteToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
             this.singleDoubleQuoteToolStripMenuItem.Text = "Single/ Double Quote";
             this.singleDoubleQuoteToolStripMenuItem.Click += new System.EventHandler(this.singleDoubleQuoteToolStripMenuItem_Click);
             // 
             // pagIbigAPIToolStripMenuItem
             // 
             this.pagIbigAPIToolStripMenuItem.Name = "pagIbigAPIToolStripMenuItem";
-            this.pagIbigAPIToolStripMenuItem.Size = new System.Drawing.Size(264, 26);
+            this.pagIbigAPIToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
             this.pagIbigAPIToolStripMenuItem.Text = "Pag-Ibig API";
             this.pagIbigAPIToolStripMenuItem.Click += new System.EventHandler(this.pagIbigAPIToolStripMenuItem_Click);
             // 
             // regexTesterToolStripMenuItem
             // 
             this.regexTesterToolStripMenuItem.Name = "regexTesterToolStripMenuItem";
-            this.regexTesterToolStripMenuItem.Size = new System.Drawing.Size(264, 26);
+            this.regexTesterToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
             this.regexTesterToolStripMenuItem.Text = "Regex Tester";
             this.regexTesterToolStripMenuItem.Click += new System.EventHandler(this.regexTesterToolStripMenuItem_Click);
             // 
             // pagIbigDatabaseDataToolStripMenuItem
             // 
             this.pagIbigDatabaseDataToolStripMenuItem.Name = "pagIbigDatabaseDataToolStripMenuItem";
-            this.pagIbigDatabaseDataToolStripMenuItem.Size = new System.Drawing.Size(264, 26);
+            this.pagIbigDatabaseDataToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
             this.pagIbigDatabaseDataToolStripMenuItem.Text = "Pag-Ibig Database Data";
             this.pagIbigDatabaseDataToolStripMenuItem.Click += new System.EventHandler(this.pagIbigDatabaseDataToolStripMenuItem_Click);
             // 
             // findStringInFileToolStripMenuItem
             // 
             this.findStringInFileToolStripMenuItem.Name = "findStringInFileToolStripMenuItem";
-            this.findStringInFileToolStripMenuItem.Size = new System.Drawing.Size(264, 26);
+            this.findStringInFileToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
             this.findStringInFileToolStripMenuItem.Text = "Find string in File";
             this.findStringInFileToolStripMenuItem.Click += new System.EventHandler(this.findStringInFileToolStripMenuItem_Click);
             // 
             // getMACAddressToolStripMenuItem
             // 
             this.getMACAddressToolStripMenuItem.Name = "getMACAddressToolStripMenuItem";
-            this.getMACAddressToolStripMenuItem.Size = new System.Drawing.Size(264, 26);
+            this.getMACAddressToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
             this.getMACAddressToolStripMenuItem.Text = "Get MAC Address";
             this.getMACAddressToolStripMenuItem.Click += new System.EventHandler(this.getMACAddressToolStripMenuItem_Click);
             // 
             // uBPDAOAPILogsToolStripMenuItem
             // 
             this.uBPDAOAPILogsToolStripMenuItem.Name = "uBPDAOAPILogsToolStripMenuItem";
-            this.uBPDAOAPILogsToolStripMenuItem.Size = new System.Drawing.Size(264, 26);
+            this.uBPDAOAPILogsToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
             this.uBPDAOAPILogsToolStripMenuItem.Text = "UBP DAO API Logs";
             this.uBPDAOAPILogsToolStripMenuItem.Click += new System.EventHandler(this.uBPDAOAPILogsToolStripMenuItem_Click);
+            // 
+            // getBankAccountNumberToolStripMenuItem
+            // 
+            this.getBankAccountNumberToolStripMenuItem.Name = "getBankAccountNumberToolStripMenuItem";
+            this.getBankAccountNumberToolStripMenuItem.Size = new System.Drawing.Size(267, 26);
+            this.getBankAccountNumberToolStripMenuItem.Text = "Get Bank Account Number";
+            this.getBankAccountNumberToolStripMenuItem.Click += new System.EventHandler(this.getBankAccountNumberToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -165,5 +174,6 @@ namespace EdelUtilities
         private System.Windows.Forms.ToolStripMenuItem findStringInFileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem getMACAddressToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem uBPDAOAPILogsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem getBankAccountNumberToolStripMenuItem;
     }
 }

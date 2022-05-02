@@ -41,15 +41,18 @@ namespace EdelUtilities
             btnSubmit.Enabled = false;
             dt.Clear();
 
-            SearchDirectories(txtDirectory.Text);
+            delSearchDirectories searchDir = new delSearchDirectories(SearchDirectories);
+            searchDir.Invoke(txtDirectory.Text);            
+            //SearchDirectories(txtDirectory.Text);
 
             grid.DataSource = dt;
-
+            
             MessageBox.Show("Done!",this.Text,MessageBoxButtons.OK,MessageBoxIcon.Information);
             this.Cursor = Cursors.Default;
             btnSubmit.Enabled = true;
         }
-
+        
+        private delegate void delSearchDirectories(string dir);
         private void SearchDirectories(string dir)
         {
             //search directories

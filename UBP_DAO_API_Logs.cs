@@ -49,7 +49,7 @@ namespace EdelUtilities
 
                 requestFolder = Path.Combine(midFolderDestination, "request");
                 responseFolder = Path.Combine(midFolderDestination, "response");
-                clientFolder = Path.Combine(midFolderDestination, "client");
+                clientFolder = Path.Combine(midFolderDestination, txtMID.Text);
                 if (!Directory.Exists(requestFolder)) Directory.CreateDirectory(requestFolder);
                 if (!Directory.Exists(responseFolder)) Directory.CreateDirectory(responseFolder);
                 if (!Directory.Exists(clientFolder)) Directory.CreateDirectory(clientFolder);
@@ -58,7 +58,16 @@ namespace EdelUtilities
                 Copy(midFolderSource.Replace(@"\dao\", @"\response\"), responseFolder);
 
                 Utilities.ShowInfoMessageBox("Done!");
-            } else Utilities.ShowInfoMessageBox("Done. No record found.");
+
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo()
+                {
+                    FileName = responseFolder,
+                    UseShellExecute = true,
+                    Verb = "open"
+                });
+
+            }
+            else Utilities.ShowInfoMessageBox("Done. No record found.");
 
 
         }
@@ -89,11 +98,17 @@ namespace EdelUtilities
                 destiFileClient = fi.Name;
                 Console.WriteLine(@"Copying {0}\{1}", target.FullName, fi.Name);                
                 fi.CopyTo(Path.Combine(target.FullName, fi.Name), true);
-                if (sourceFile.Contains("update.json")) fi.CopyTo(Path.Combine(target.FullName.Replace("request", "client"), "request-" + fi.Name), true);
-                if (sourceFile.Contains("account-create.json")) fi.CopyTo(Path.Combine(target.FullName.Replace("response", "client"), "response-" + fi.Name), true);
+                if (fi.FullName.Contains(@"\dao\"))
+                {
+                    if (sourceFile.Contains("update.json")) fi.CopyTo(Path.Combine(target.FullName.Replace("request", txtMID.Text), "request-" + fi.Name), true);
+                }
+                if (fi.FullName.Contains(@"\response\"))
+                {
+                    if (sourceFile.Contains("account-create.json")) fi.CopyTo(Path.Combine(target.FullName.Replace("response", txtMID.Text), "response-" + fi.Name), true);
+                }               
             }            
 
-            if(sourceFile.Contains("response")) File.Copy(sourceFile, Path.Combine(destiFolderClient.Replace("response", "client"), "response-" + destiFileClient), true);           
+            if(sourceFile.Contains("response")) File.Copy(sourceFile, Path.Combine(destiFolderClient.Replace("response", txtMID.Text), "response-" + destiFileClient), true);           
 
             // Copy each subdirectory using recursion.
             foreach (DirectoryInfo diSourceSubDir in source.GetDirectories())

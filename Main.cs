@@ -92,5 +92,10 @@ namespace EdelUtilities
         {
             new UBP_DAO_API_Logs().ShowDialog();
         }
+
+        private void getBankAccountNumberToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new GetAccountNo().ShowDialog();
+        }
     }
 }
