@@ -17,50 +17,7 @@ namespace EdelUtilities
             InitializeComponent();
         }
 
-        private void uBPDAOEncryptdecryptToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ubpDAO_EncryptDecrypt uc = new ubpDAO_EncryptDecrypt();
-            uc.Dock = DockStyle.Fill;
-            this.Controls.Add(uc);
-        }
-
-        private void removeEmptyFolderToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new Form1().ShowDialog();
-        }
-
-        private void singleDoubleQuoteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new AddSingleDoubleQuote().ShowDialog();
-        }
-
-        private void Main_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        public static string GetMACAddress()
-        {
-            ManagementClass mc = new ManagementClass("Win32_NetworkAdapterConfiguration");
-            ManagementObjectCollection moc = mc.GetInstances();
-            string MACAddress = String.Empty;
-            foreach (ManagementObject mo in moc)
-            {
-                if (MACAddress == String.Empty)
-                {
-                    // only return MAC Address from first card
-                    if (System.Convert.ToBoolean(mo["IPEnabled"]) == true)
-                        MACAddress = mo["MacAddress"].ToString();
-                }
-                mo.Dispose();
-            }
-
-            // Dim MACAddress As String = [String].Empty
-            // Dim nics() As NetworkInterface = NetworkInterface.GetAllNetworkInterfaces()
-            // MACAddress = nics(0).GetPhysicalAddress.ToString
-            MACAddress = MACAddress.Replace(":", "");
-            return MACAddress;
-        }
+        #region Menu Events
 
         private void pagIbigAPIToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -96,6 +53,81 @@ namespace EdelUtilities
         private void getBankAccountNumberToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new GetAccountNo().ShowDialog();
+        }
+
+        private void getDirectoryFilesAndFoldersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new GetFolderFilesInDirectory().ShowDialog();
+        }
+
+        private void uBPDAOEncryptdecryptToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ubpDAO_EncryptDecrypt uc = new ubpDAO_EncryptDecrypt();
+            uc.Dock = DockStyle.Fill;
+            this.Controls.Add(uc);
+        }
+
+        private void removeEmptyFolderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Form1().ShowDialog();
+        }
+
+        private void singleDoubleQuoteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new AddSingleDoubleQuote().ShowDialog();
+        }
+
+        #endregion
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        public static string GetMACAddress()
+        {
+            ManagementClass mc = new ManagementClass("Win32_NetworkAdapterConfiguration");
+            ManagementObjectCollection moc = mc.GetInstances();
+            string MACAddress = String.Empty;
+            foreach (ManagementObject mo in moc)
+            {
+                if (MACAddress == String.Empty)
+                {
+                    // only return MAC Address from first card
+                    if (System.Convert.ToBoolean(mo["IPEnabled"]) == true)
+                        MACAddress = mo["MacAddress"].ToString();
+                }
+                mo.Dispose();
+            }
+
+            // Dim MACAddress As String = [String].Empty
+            // Dim nics() As NetworkInterface = NetworkInterface.GetAllNetworkInterfaces()
+            // MACAddress = nics(0).GetPhysicalAddress.ToString
+            MACAddress = MACAddress.Replace(":", "");
+            return MACAddress;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            StringBuilder sb = new StringBuilder();
+            int total = 0;
+            foreach (string f in System.IO.Directory.GetFiles(@"J:\My Drive\PAGIBIG\UBP\louie"))
+            {
+                int count = System.IO.File.ReadAllLines(f).Count();
+                string lineCount = count.ToString();
+                sb.Append(f + "|" + lineCount + "\r");
+                total += count;
+            }
+
+            sb.Append("total : " + total.ToString() + "\r");
+
+            string s = sb.ToString();
+            MessageBox.Show(sb.ToString());
+        }
+
+        private void consolidateMultipleToOneToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ConsolidateFileContents().ShowDialog();
         }
     }
 }

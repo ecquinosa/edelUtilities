@@ -251,10 +251,13 @@ namespace EdelUtilities
             string soapResponse = "";
             string err = "";
             string soapStr = Newtonsoft.Json.JsonConvert.SerializeObject(ubpGetAcctNo);
+           
+            string url1 = "http://10.88.87.67:8600/api/dao/oldcardnumber";
+            string url2 = "http://ubp.allcard.com.ph:8500/api/dao/oldcardnumber";
 
-            //http://10.88.87.67:8600/api/dao/oldcardnumber
-            //http://ubp.allcard.com.ph:8500/api/dao/oldcardnumber
-            bool response = ExecuteApiRequest("http://ubp.allcard.com.ph:8500/api/dao/oldcardnumber", soapStr, ref soapResponse, ref err);
+            string url = url1;
+            if (cboEnvironment.Text == "PROD") url = url2;
+            bool response = ExecuteApiRequest(url, soapStr, ref soapResponse, ref err);
             var ubpGetAcctNoResponse = Newtonsoft.Json.JsonConvert.DeserializeObject<ubpGetAcctNo.ubpGetAcctNoResponse>(soapResponse);
             if (response)
             {               

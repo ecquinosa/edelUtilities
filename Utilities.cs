@@ -24,5 +24,10 @@ namespace EdelUtilities
         {
             System.Windows.Forms.MessageBox.Show(msg, header ?? msgBoxHeader, System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
         }
+
+        public static string GetMethodName(System.Reflection.MethodBase mb)
+        {
+            return string.Format("{0}.{1}", mb.DeclaringType.FullName, mb.Name);            
+        }
     }
 }

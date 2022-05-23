@@ -39,6 +39,8 @@
             this.txtMonth = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtDay = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtDestination = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label2
@@ -52,15 +54,15 @@
             // 
             // txtMID
             // 
-            this.txtMID.Location = new System.Drawing.Point(103, 28);
+            this.txtMID.Location = new System.Drawing.Point(121, 28);
             this.txtMID.Name = "txtMID";
-            this.txtMID.Size = new System.Drawing.Size(399, 23);
+            this.txtMID.Size = new System.Drawing.Size(390, 23);
             this.txtMID.TabIndex = 7;
             this.txtMID.Text = "105000961112";
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(28, 184);
+            this.btnSubmit.Location = new System.Drawing.Point(28, 215);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(94, 34);
             this.btnSubmit.TabIndex = 6;
@@ -70,9 +72,9 @@
             // 
             // txtPath
             // 
-            this.txtPath.Location = new System.Drawing.Point(103, 140);
+            this.txtPath.Location = new System.Drawing.Point(121, 140);
             this.txtPath.Name = "txtPath";
-            this.txtPath.Size = new System.Drawing.Size(399, 23);
+            this.txtPath.Size = new System.Drawing.Size(390, 23);
             this.txtPath.TabIndex = 9;
             this.txtPath.Text = "U:\\Logs-API\\payloads\\dao\\";
             // 
@@ -96,9 +98,9 @@
             // 
             // txtYear
             // 
-            this.txtYear.Location = new System.Drawing.Point(103, 56);
+            this.txtYear.Location = new System.Drawing.Point(121, 56);
             this.txtYear.Name = "txtYear";
-            this.txtYear.Size = new System.Drawing.Size(399, 23);
+            this.txtYear.Size = new System.Drawing.Size(390, 23);
             this.txtYear.TabIndex = 11;
             // 
             // label4
@@ -112,9 +114,9 @@
             // 
             // txtMonth
             // 
-            this.txtMonth.Location = new System.Drawing.Point(103, 84);
+            this.txtMonth.Location = new System.Drawing.Point(121, 84);
             this.txtMonth.Name = "txtMonth";
-            this.txtMonth.Size = new System.Drawing.Size(399, 23);
+            this.txtMonth.Size = new System.Drawing.Size(390, 23);
             this.txtMonth.TabIndex = 13;
             // 
             // label5
@@ -128,16 +130,35 @@
             // 
             // txtDay
             // 
-            this.txtDay.Location = new System.Drawing.Point(103, 112);
+            this.txtDay.Location = new System.Drawing.Point(121, 112);
             this.txtDay.Name = "txtDay";
-            this.txtDay.Size = new System.Drawing.Size(399, 23);
+            this.txtDay.Size = new System.Drawing.Size(390, 23);
             this.txtDay.TabIndex = 15;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(25, 172);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(88, 17);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Destination";
+            // 
+            // txtDestination
+            // 
+            this.txtDestination.Location = new System.Drawing.Point(121, 169);
+            this.txtDestination.Name = "txtDestination";
+            this.txtDestination.Size = new System.Drawing.Size(390, 23);
+            this.txtDestination.TabIndex = 17;
+            this.txtDestination.Text = "J:\\My Drive\\PAGIBIG\\UBP\\ubp_dao_Data";
             // 
             // UBP_DAO_API_Logs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(535, 241);
+            this.ClientSize = new System.Drawing.Size(535, 270);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtDestination);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtDay);
             this.Controls.Add(this.label4);
@@ -171,5 +192,7 @@
         private System.Windows.Forms.TextBox txtMonth;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtDay;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtDestination;
     }
 }

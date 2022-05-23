@@ -26,6 +26,7 @@ namespace EdelUtilities
         {
             if (txtMID.Text == "") return;
             if (txtPath.Text == "") return;
+            if (txtDestination.Text == "") return;
 
             string midFolderSource = "";
             string midFolderDestination = "";
@@ -41,7 +42,8 @@ namespace EdelUtilities
 
             if (Directory.Exists(midFolderSource))
             {
-                string destinationFolder = Path.Combine(Application.StartupPath, "Data");
+                //string destinationFolder = Path.Combine(Application.StartupPath, "Data");
+                string destinationFolder = txtDestination.Text;
                 if (!Directory.Exists(destinationFolder)) Directory.CreateDirectory(destinationFolder);
 
                 midFolderDestination = Path.Combine(destinationFolder, txtMID.Text);

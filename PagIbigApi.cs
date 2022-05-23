@@ -27,6 +27,11 @@ namespace EdelUtilities
             raAUB.KioskID = "user";
             raAUB.User = 0;
 
+            raSIT_RBANK.wsUser = "ulilangkawayan";
+            raSIT_RBANK.wsPass = "ragMANOK2kx";
+            raSIT_RBANK.KioskID = "user";
+            raSIT_RBANK.User = 0;
+
 
             cboBank.SelectedIndex = 0;
             cboApi.SelectedIndex = 0;
@@ -144,9 +149,13 @@ namespace EdelUtilities
                     rtb.Text = Newtonsoft.Json.JsonConvert.SerializeObject(response2, Newtonsoft.Json.Formatting.Indented);
                     break;
                 case 2:
-                    var response3 = rbankSIT_WS.is_MID_RTN_Exist(raSIT_RBANK, GetMID());
-                    //SaveDataToTxt(response3);
-                    rtb.Text = Newtonsoft.Json.JsonConvert.SerializeObject(response3, Newtonsoft.Json.Formatting.Indented);
+                    if (cboEnvironment.Text == "SIT")
+                    {
+                        var response3 = rbankSIT_WS.is_MID_RTN_Exist(raSIT_RBANK, GetMID());
+                        rtb.Text = Newtonsoft.Json.JsonConvert.SerializeObject(response3, Newtonsoft.Json.Formatting.Indented);
+                    }
+
+                    //SaveDataToTxt(response3);                    
                     break;
             }            
            
@@ -168,8 +177,11 @@ namespace EdelUtilities
                     rtb.Text = Newtonsoft.Json.JsonConvert.SerializeObject(response2, Newtonsoft.Json.Formatting.Indented);
                     break;
                 case 2:
-                    var response3 = rbankSIT_WS.Is_Member_Active(raSIT_RBANK, GetMID());
-                    rtb.Text = Newtonsoft.Json.JsonConvert.SerializeObject(response3, Newtonsoft.Json.Formatting.Indented);
+                    if (cboEnvironment.Text == "SIT")
+                    {
+                        var response3 = rbankSIT_WS.Is_Member_Active(raSIT_RBANK, GetMID());
+                        rtb.Text = Newtonsoft.Json.JsonConvert.SerializeObject(response3, Newtonsoft.Json.Formatting.Indented);
+                    }
                     break;
             }
         }

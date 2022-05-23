@@ -23,7 +23,10 @@ namespace EdelUtilities
 
         }
 
-        private string Cipher_Key = "dc3cdfb50cf19cbab0906d03e4c22d66";
+        //dev dc3cdfb50cf19cbab0906d03e4c22d66, prod 1ae292629c4214440508cd472ff0fdd4
+        public string Cipher_Key_SIT = "dc3cdfb50cf19cbab0906d03e4c22d66";
+        public string Cipher_Key_PROD = "1ae292629c4214440508cd472ff0fdd4";
+        public string Cipher_Key = "";
 
         private string DAO_Encrypt(string plainText)
         {
@@ -140,12 +143,15 @@ namespace EdelUtilities
         private void btnEncrypt_Click(object sender, EventArgs e)
         {
             if (txtValue.Text == "") return;
-            txtResult.Text = DAO_Encrypt(txtValue.Text);
+            //txtResult.Text = DAO_Encrypt(txtValue.Text);
+            Cipher_Key = Cipher_Key_SIT;
+            txtResult.Text = DAO_Decrypt(txtValue.Text, 12);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             if (txtValue.Text == "") return;
+            Cipher_Key = Cipher_Key_PROD;
             txtResult.Text = DAO_Decrypt(txtValue.Text,12);
         }
 

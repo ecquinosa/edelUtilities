@@ -133,7 +133,6 @@
             // 
             // cboEnvironment
             // 
-            this.cboEnvironment.Enabled = false;
             this.cboEnvironment.FormattingEnabled = true;
             this.cboEnvironment.Items.AddRange(new object[] {
             "SIT",

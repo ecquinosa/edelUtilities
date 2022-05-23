@@ -47,7 +47,7 @@ namespace EdelUtilities
             this.btnEncrypt.Name = "btnEncrypt";
             this.btnEncrypt.Size = new System.Drawing.Size(123, 29);
             this.btnEncrypt.TabIndex = 0;
-            this.btnEncrypt.Text = "DAO Encrypt";
+            this.btnEncrypt.Text = "DAO Decrypt SIT";
             this.btnEncrypt.UseVisualStyleBackColor = true;
             this.btnEncrypt.Click += new System.EventHandler(this.btnEncrypt_Click);
             // 
@@ -63,7 +63,7 @@ namespace EdelUtilities
             this.lblValue.AutoSize = true;
             this.lblValue.Location = new System.Drawing.Point(26, 73);
             this.lblValue.Name = "lblValue";
-            this.lblValue.Size = new System.Drawing.Size(44, 17);
+            this.lblValue.Size = new System.Drawing.Size(42, 16);
             this.lblValue.TabIndex = 2;
             this.lblValue.Text = "Value";
             // 
@@ -72,7 +72,7 @@ namespace EdelUtilities
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(26, 101);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 17);
+            this.label1.Size = new System.Drawing.Size(45, 16);
             this.label1.TabIndex = 4;
             this.label1.Text = "Result";
             // 
@@ -88,9 +88,9 @@ namespace EdelUtilities
             // 
             this.btnDecrypt.Location = new System.Drawing.Point(152, 164);
             this.btnDecrypt.Name = "btnDecrypt";
-            this.btnDecrypt.Size = new System.Drawing.Size(123, 29);
+            this.btnDecrypt.Size = new System.Drawing.Size(137, 29);
             this.btnDecrypt.TabIndex = 5;
-            this.btnDecrypt.Text = "DAO Decrypt";
+            this.btnDecrypt.Text = "DAO Decrypt PROD";
             this.btnDecrypt.UseVisualStyleBackColor = true;
             this.btnDecrypt.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -100,7 +100,7 @@ namespace EdelUtilities
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(15, 43);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(216, 17);
+            this.label2.Size = new System.Drawing.Size(212, 16);
             this.label2.TabIndex = 6;
             this.label2.Text = "ENCRYPTION/ DECRYPTION";
             // 

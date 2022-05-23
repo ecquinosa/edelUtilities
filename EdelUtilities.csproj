@@ -75,6 +75,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConsolidateFileContents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsolidateFileContents.Designer.cs">
+      <DependentUpon>ConsolidateFileContents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GetFolderFilesInDirectory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GetFolderFilesInDirectory.Designer.cs">
+      <DependentUpon>GetFolderFilesInDirectory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +160,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsolidateFileContents.resx">
+      <DependentUpon>ConsolidateFileContents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GetFolderFilesInDirectory.resx">
+      <DependentUpon>GetFolderFilesInDirectory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
