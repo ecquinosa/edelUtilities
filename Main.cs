@@ -77,6 +77,11 @@ namespace EdelUtilities
             new AddSingleDoubleQuote().ShowDialog();
         }
 
+        private void consolidateMultipleToOneToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ConsolidateFileContents().ShowDialog();
+        }
+
         #endregion
 
         private void Main_Load(object sender, EventArgs e)
@@ -109,25 +114,31 @@ namespace EdelUtilities
 
         private void button1_Click(object sender, EventArgs e)
         {
-            StringBuilder sb = new StringBuilder();
-            int total = 0;
-            foreach (string f in System.IO.Directory.GetFiles(@"J:\My Drive\PAGIBIG\UBP\louie"))
-            {
-                int count = System.IO.File.ReadAllLines(f).Count();
-                string lineCount = count.ToString();
-                sb.Append(f + "|" + lineCount + "\r");
-                total += count;
-            }
-
-            sb.Append("total : " + total.ToString() + "\r");
-
-            string s = sb.ToString();
-            MessageBox.Show(sb.ToString());
+            textBox2.Text = "PrintForm " + RecomputeField_X_Position1(Convert.ToInt32(textBox1.Text), -122, 7).ToString() + ", Card Settings " + RecomputeField_X_Position2(Convert.ToInt32(textBox1.Text), -122, -115).ToString();
         }
 
-        private void consolidateMultipleToOneToolStripMenuItem_Click(object sender, EventArgs e)
+        private int RecomputeField_X_Position1(int x, int intDatacard, int intEvolis)
         {
-            new ConsolidateFileContents().ShowDialog();
+            int initValue = intDatacard;
+            int val1 = initValue * -1;
+            int val2 = initValue + val1;
+            int val3 = val2 + x;
+            int val4 = val3 - val3;
+            int val5 = val4 - (intEvolis - val3);
+            return val5;
         }
+
+        private int RecomputeField_X_Position2(int x, int intDatacard, int intEvolis)
+        {
+            int initValue = intDatacard;
+            int val1 = initValue * -1;
+            int val2 = initValue + val1;
+            int val3 = val2 + x;
+            int val4 = val3 - val3;
+            int val5 = val4 + (intEvolis - val3);
+            return val5;
+        }
+
+      
     }
 }
