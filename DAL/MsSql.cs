@@ -148,14 +148,35 @@ namespace DAL
             }
         }      
 
-        public bool ExecuteQuery(string strQuery)
+        public bool ExecuteQuery(string strQuery, CommandType cmdType = CommandType.Text)
         {
             try
             {
                 OpenConnection();
                 cmd = new SqlCommand(strQuery, con);
 
-                ExecuteNonQuery(CommandType.Text);
+                ExecuteNonQuery(cmdType);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                strErrorMessage = ex.Message;
+                return false;
+            }
+        }
+
+        public bool AddSFTP(string mid, DateTime sftpTransferDate, string remark)
+        {
+            try
+            {
+                OpenConnection();
+                cmd = new SqlCommand("prcAddSFTPv3", con);
+                cmd.Parameters.AddWithValue("PagIBIGID", mid);
+                cmd.Parameters.AddWithValue("SFTPTransferDate", sftpTransferDate);
+                cmd.Parameters.AddWithValue("Remark", remark);
+
+                ExecuteNonQuery(CommandType.StoredProcedure);
 
                 return true;
             }

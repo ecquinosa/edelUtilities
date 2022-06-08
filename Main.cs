@@ -114,31 +114,9 @@ namespace EdelUtilities
 
         private void button1_Click(object sender, EventArgs e)
         {
-            textBox2.Text = "PrintForm " + RecomputeField_X_Position1(Convert.ToInt32(textBox1.Text), -122, 7).ToString() + ", Card Settings " + RecomputeField_X_Position2(Convert.ToInt32(textBox1.Text), -122, -115).ToString();
+            //textBox2.Text = "PrintForm " + RecomputeField_X_Position1(Convert.ToInt32(textBox1.Text), -122, 7).ToString() + ", Card Settings " + RecomputeField_X_Position2(Convert.ToInt32(textBox1.Text), -122, -115).ToString();
+            Lab.InsertToSFTP(Application.StartupPath);
         }
-
-        private int RecomputeField_X_Position1(int x, int intDatacard, int intEvolis)
-        {
-            int initValue = intDatacard;
-            int val1 = initValue * -1;
-            int val2 = initValue + val1;
-            int val3 = val2 + x;
-            int val4 = val3 - val3;
-            int val5 = val4 - (intEvolis - val3);
-            return val5;
-        }
-
-        private int RecomputeField_X_Position2(int x, int intDatacard, int intEvolis)
-        {
-            int initValue = intDatacard;
-            int val1 = initValue * -1;
-            int val2 = initValue + val1;
-            int val3 = val2 + x;
-            int val4 = val3 - val3;
-            int val5 = val4 + (intEvolis - val3);
-            return val5;
-        }
-
       
     }
 }

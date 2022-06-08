@@ -87,6 +87,7 @@
     <Compile Include="GetFolderFilesInDirectory.Designer.cs">
       <DependentUpon>GetFolderFilesInDirectory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Lab.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
