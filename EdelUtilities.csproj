@@ -138,6 +138,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <Compile Include="Web References\aubWS_PreProd\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Compile Include="Web References\aubWS_SIT_OLD\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -149,6 +154,11 @@
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
     <Compile Include="Web References\ubpWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ubpWS_SIT\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
@@ -285,6 +295,62 @@
       <DependentUpon>Reference.map</DependentUpon>
     </None>
     <None Include="Web References\aubWS\SubmitResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\aubWS_PreProd\ACCMCRecordClassResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\aubWS_PreProd\ACC_MS_WEBSERVICE.wsdl" />
+    <None Include="Web References\aubWS_PreProd\ActiveCardInfoResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\aubWS_PreProd\AUBResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\aubWS_PreProd\Bio.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\aubWS_PreProd\CashOnHand.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\aubWS_PreProd\DCS_Upload.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\aubWS_PreProd\DepositBankAccount.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\aubWS_PreProd\DepositTransaction.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\aubWS_PreProd\LogEmployeeResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\aubWS_PreProd\LogInResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\aubWS_PreProd\LogTrace.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\aubWS_PreProd\Member.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\aubWS_PreProd\MemberDetails.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\aubWS_PreProd\PushCardInfoResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\aubWS_PreProd\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\aubWS_PreProd\RequestResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\aubWS_PreProd\SubmitResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\aubWS_PreProd\WS_Result.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
     <None Include="Web References\aubWS_SIT_OLD\ACCMCRecordClassResult.datasource">
@@ -458,6 +524,62 @@
     <None Include="Web References\ubpWS\SubmitResult.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
+    <None Include="Web References\ubpWS_SIT\ACCMCRecordClassResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ubpWS_SIT\ACC_MS_WEBSERVICE.wsdl" />
+    <None Include="Web References\ubpWS_SIT\ActiveCardInfoResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ubpWS_SIT\AUBResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ubpWS_SIT\Bio.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ubpWS_SIT\CashOnHand.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ubpWS_SIT\DCS_Upload.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ubpWS_SIT\DepositBankAccount.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ubpWS_SIT\DepositTransaction.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ubpWS_SIT\LogEmployeeResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ubpWS_SIT\LogInResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ubpWS_SIT\LogTrace.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ubpWS_SIT\Member.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ubpWS_SIT\MemberDetails.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ubpWS_SIT\PushCardInfoResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ubpWS_SIT\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ubpWS_SIT\RequestResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ubpWS_SIT\SubmitResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ubpWS_SIT\WS_Result.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
@@ -466,6 +588,28 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
+    <WebReferenceUrl Include="http://10.88.77.177:8555/">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\aubWS_PreProd\</RelPath>
+      <UpdateFromURL>http://10.88.77.177:8555/</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EdelUtilities_aubWS_PreProd_ACC_MS_WEBSERVICE</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://10.88.87.67:8444/">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ubpWS_SIT\</RelPath>
+      <UpdateFromURL>http://10.88.87.67:8444/</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EdelUtilities_ubpWS_SIT_ACC_MS_WEBSERVICE</CachedSettingsPropName>
+    </WebReferenceUrl>
     <WebReferenceUrl Include="http://172.16.7.184:8444/">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\aubWS_SIT_OLD\</RelPath>
@@ -522,6 +666,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Web References\aubWS_SIT_OLD\ACC_MS_WEBSERVICE.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\ubpWS_SIT\ACC_MS_WEBSERVICE.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\aubWS_PreProd\ACC_MS_WEBSERVICE.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

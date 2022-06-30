@@ -14,5 +14,11 @@
     <Setting Name="EdelUtilities_aubWS_SIT_OLD_ACC_MS_WEBSERVICE" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://172.16.7.184:8444/ACC_MS_WEBSERVICE.asmx</Value>
     </Setting>
+    <Setting Name="EdelUtilities_ubpWS_SIT_ACC_MS_WEBSERVICE" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.88.87.67:8444/ACC_MS_WEBSERVICE.asmx</Value>
+    </Setting>
+    <Setting Name="EdelUtilities_aubWS_PreProd_ACC_MS_WEBSERVICE" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.88.77.177:8555/ACC_MS_WEBSERVICE.asmx</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

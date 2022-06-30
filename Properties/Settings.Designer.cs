@@ -12,7 +12,7 @@ namespace EdelUtilities.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.1.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.10.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -60,6 +60,26 @@ namespace EdelUtilities.Properties {
         public string EdelUtilities_aubWS_SIT_OLD_ACC_MS_WEBSERVICE {
             get {
                 return ((string)(this["EdelUtilities_aubWS_SIT_OLD_ACC_MS_WEBSERVICE"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://10.88.87.67:8444/ACC_MS_WEBSERVICE.asmx")]
+        public string EdelUtilities_ubpWS_SIT_ACC_MS_WEBSERVICE {
+            get {
+                return ((string)(this["EdelUtilities_ubpWS_SIT_ACC_MS_WEBSERVICE"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://10.88.77.177:8555/ACC_MS_WEBSERVICE.asmx")]
+        public string EdelUtilities_aubWS_PreProd_ACC_MS_WEBSERVICE {
+            get {
+                return ((string)(this["EdelUtilities_aubWS_PreProd_ACC_MS_WEBSERVICE"]));
             }
         }
     }
