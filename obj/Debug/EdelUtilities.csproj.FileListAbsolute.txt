@@ -50,3 +50,4 @@ C:\EDEL\Projects\edelUtilities\obj\Debug\EdelUtilities.csproj.CoreCompileInputs.
 C:\EDEL\Projects\edelUtilities\obj\Debug\EdelUtilities.csproj.CopyComplete
 C:\EDEL\Projects\edelUtilities\obj\Debug\EdelUtilities.exe
 C:\EDEL\Projects\edelUtilities\obj\Debug\EdelUtilities.pdb
+C:\EDEL\Projects\edelUtilities\obj\Debug\EdelUtilities.EditDeleteMID.resources

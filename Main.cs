@@ -82,6 +82,11 @@ namespace EdelUtilities
             new ConsolidateFileContents().ShowDialog();
         }
 
+        private void editDeleteMIDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new EditDeleteMID().ShowDialog();
+        }
+
         #endregion
 
         private void Main_Load(object sender, EventArgs e)
@@ -117,6 +122,6 @@ namespace EdelUtilities
             //textBox2.Text = "PrintForm " + RecomputeField_X_Position1(Convert.ToInt32(textBox1.Text), -122, 7).ToString() + ", Card Settings " + RecomputeField_X_Position2(Convert.ToInt32(textBox1.Text), -122, -115).ToString();
             Lab.InsertToSFTP(Application.StartupPath);
         }
-      
+        
     }
 }

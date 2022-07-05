@@ -62,6 +62,12 @@
     <Compile Include="AddSingleDoubleQuote.Designer.cs">
       <DependentUpon>AddSingleDoubleQuote.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditDeleteMID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditDeleteMID.Designer.cs">
+      <DependentUpon>EditDeleteMID.cs</DependentUpon>
+    </Compile>
     <Compile Include="Encoders.cs" />
     <Compile Include="FindStringInFiles.cs">
       <SubType>Form</SubType>
@@ -165,6 +171,9 @@
     </Compile>
     <EmbeddedResource Include="AddSingleDoubleQuote.resx">
       <DependentUpon>AddSingleDoubleQuote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditDeleteMID.resx">
+      <DependentUpon>EditDeleteMID.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FindStringInFiles.resx">
       <DependentUpon>FindStringInFiles.cs</DependentUpon>
