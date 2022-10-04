@@ -114,8 +114,13 @@ namespace EdelUtilities
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //textBox2.Text = "PrintForm " + RecomputeField_X_Position1(Convert.ToInt32(textBox1.Text), -122, 7).ToString() + ", Card Settings " + RecomputeField_X_Position2(Convert.ToInt32(textBox1.Text), -122, -115).ToString();
-            Lab.InsertToSFTP(Application.StartupPath);
+
+            string appFolder = @"D:\app";
+            string yearFolder = System.IO.Path.Combine(appFolder, DateTime.Now.ToString("yyyy"));
+            string monthFolder = System.IO.Path.Combine(yearFolder, DateTime.Now.ToString("MM"));
+            string dayFolder = System.IO.Path.Combine(monthFolder, DateTime.Now.ToString("dd"));
+            if (!System.IO.Directory.Exists(dayFolder)) System.IO.Directory.CreateDirectory(dayFolder);
+            MessageBox.Show(dayFolder);
         }
       
     }

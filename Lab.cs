@@ -46,5 +46,10 @@ namespace EdelUtilities
             System.Windows.Forms.MessageBox.Show("Done!");
             //dal.AddSFTP("",DateTime.Now,"")
         }
+
+        public static string GetCode(string value)
+        {
+            return value.Substring(value.IndexOf("+") + 1).Replace(")","");
+        }
     }
 }

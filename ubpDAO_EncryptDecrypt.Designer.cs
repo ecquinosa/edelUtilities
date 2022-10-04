@@ -39,13 +39,15 @@ namespace EdelUtilities
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.btnWSDecrypt = new System.Windows.Forms.Button();
+            this.btnWSEncrypt = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEncrypt
             // 
             this.btnEncrypt.Location = new System.Drawing.Point(23, 164);
             this.btnEncrypt.Name = "btnEncrypt";
-            this.btnEncrypt.Size = new System.Drawing.Size(123, 29);
+            this.btnEncrypt.Size = new System.Drawing.Size(133, 29);
             this.btnEncrypt.TabIndex = 0;
             this.btnEncrypt.Text = "DAO Decrypt SIT";
             this.btnEncrypt.UseVisualStyleBackColor = true;
@@ -63,7 +65,7 @@ namespace EdelUtilities
             this.lblValue.AutoSize = true;
             this.lblValue.Location = new System.Drawing.Point(26, 73);
             this.lblValue.Name = "lblValue";
-            this.lblValue.Size = new System.Drawing.Size(42, 16);
+            this.lblValue.Size = new System.Drawing.Size(44, 17);
             this.lblValue.TabIndex = 2;
             this.lblValue.Text = "Value";
             // 
@@ -72,7 +74,7 @@ namespace EdelUtilities
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(26, 101);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 16);
+            this.label1.Size = new System.Drawing.Size(48, 17);
             this.label1.TabIndex = 4;
             this.label1.Text = "Result";
             // 
@@ -86,9 +88,9 @@ namespace EdelUtilities
             // 
             // btnDecrypt
             // 
-            this.btnDecrypt.Location = new System.Drawing.Point(152, 164);
+            this.btnDecrypt.Location = new System.Drawing.Point(162, 164);
             this.btnDecrypt.Name = "btnDecrypt";
-            this.btnDecrypt.Size = new System.Drawing.Size(137, 29);
+            this.btnDecrypt.Size = new System.Drawing.Size(193, 29);
             this.btnDecrypt.TabIndex = 5;
             this.btnDecrypt.Text = "DAO Decrypt PROD";
             this.btnDecrypt.UseVisualStyleBackColor = true;
@@ -100,15 +102,15 @@ namespace EdelUtilities
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(15, 43);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(212, 16);
+            this.label2.Size = new System.Drawing.Size(216, 17);
             this.label2.TabIndex = 6;
             this.label2.Text = "ENCRYPTION/ DECRYPTION";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(152, 199);
+            this.button1.Location = new System.Drawing.Point(162, 199);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(123, 29);
+            this.button1.Size = new System.Drawing.Size(144, 29);
             this.button1.TabIndex = 8;
             this.button1.Text = "Decrypt";
             this.button1.UseVisualStyleBackColor = true;
@@ -118,7 +120,7 @@ namespace EdelUtilities
             // 
             this.button2.Location = new System.Drawing.Point(23, 199);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(123, 29);
+            this.button2.Size = new System.Drawing.Size(133, 29);
             this.button2.TabIndex = 7;
             this.button2.Text = "Encrypt";
             this.button2.UseVisualStyleBackColor = true;
@@ -135,10 +137,32 @@ namespace EdelUtilities
             this.button3.Visible = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // btnWSDecrypt
+            // 
+            this.btnWSDecrypt.Location = new System.Drawing.Point(162, 234);
+            this.btnWSDecrypt.Name = "btnWSDecrypt";
+            this.btnWSDecrypt.Size = new System.Drawing.Size(144, 29);
+            this.btnWSDecrypt.TabIndex = 11;
+            this.btnWSDecrypt.Text = "WS Decrypt";
+            this.btnWSDecrypt.UseVisualStyleBackColor = true;
+            this.btnWSDecrypt.Click += new System.EventHandler(this.btnWSDecrypt_Click);
+            // 
+            // btnWSEncrypt
+            // 
+            this.btnWSEncrypt.Location = new System.Drawing.Point(23, 234);
+            this.btnWSEncrypt.Name = "btnWSEncrypt";
+            this.btnWSEncrypt.Size = new System.Drawing.Size(133, 29);
+            this.btnWSEncrypt.TabIndex = 10;
+            this.btnWSEncrypt.Text = "WS Encrypt";
+            this.btnWSEncrypt.UseVisualStyleBackColor = true;
+            this.btnWSEncrypt.Click += new System.EventHandler(this.button5_Click);
+            // 
             // ubpDAO_EncryptDecrypt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnWSDecrypt);
+            this.Controls.Add(this.btnWSEncrypt);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
@@ -150,7 +174,7 @@ namespace EdelUtilities
             this.Controls.Add(this.txtValue);
             this.Controls.Add(this.btnEncrypt);
             this.Name = "ubpDAO_EncryptDecrypt";
-            this.Size = new System.Drawing.Size(547, 258);
+            this.Size = new System.Drawing.Size(547, 307);
             this.Load += new System.EventHandler(this.ubpDAO_EncryptDecrypt_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -169,5 +193,7 @@ namespace EdelUtilities
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnWSDecrypt;
+        private System.Windows.Forms.Button btnWSEncrypt;
     }
 }

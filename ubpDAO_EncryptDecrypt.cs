@@ -140,6 +140,49 @@ namespace EdelUtilities
             }
         }
 
+        private static string encryptionKey = "ragMANOK2kx2014";
+        public static string WSEncrypt(string clearText)
+        {
+            var clearBytes = Encoding.Unicode.GetBytes(clearText);
+            using (var encryptor = System.Security.Cryptography.Aes.Create())
+            {
+                var pdb = new System.Security.Cryptography.Rfc2898DeriveBytes(encryptionKey, new byte[] { (byte)0x49, (byte)0x76, (byte)0x61, (byte)0x6E, (byte)0x20, (byte)0x4D, (byte)0x65, (byte)0x64, (byte)0x76, (byte)0x65, (byte)0x64, (byte)0x65, (byte)0x76 });
+                encryptor.Key = pdb.GetBytes(32);
+                encryptor.IV = pdb.GetBytes(16);
+                using (var ms = new MemoryStream())
+                {
+                    using (var cs = new System.Security.Cryptography.CryptoStream(ms, encryptor.CreateEncryptor(), System.Security.Cryptography.CryptoStreamMode.Write))
+                    {
+                        cs.Write(clearBytes, 0, clearBytes.Length);
+                        cs.Close();
+                    }
+                    clearText = Convert.ToBase64String(ms.ToArray());
+                }
+            }
+            return clearText;
+        }
+
+        public static string WSDecrypt(string cipherText)
+        {
+            var cipherBytes = Convert.FromBase64String(cipherText);
+            using (var decryptor = System.Security.Cryptography.Aes.Create())
+            {
+                var pdb = new System.Security.Cryptography.Rfc2898DeriveBytes(encryptionKey, new byte[] { (byte)0x49, (byte)0x76, (byte)0x61, (byte)0x6E, (byte)0x20, (byte)0x4D, (byte)0x65, (byte)0x64, (byte)0x76, (byte)0x65, (byte)0x64, (byte)0x65, (byte)0x76 });
+                decryptor.Key = pdb.GetBytes(32);
+                decryptor.IV = pdb.GetBytes(16);
+                using (var ms = new MemoryStream())
+                {
+                    using (var cs = new System.Security.Cryptography.CryptoStream(ms, decryptor.CreateDecryptor(), System.Security.Cryptography.CryptoStreamMode.Write))
+                    {
+                        cs.Write(cipherBytes, 0, cipherBytes.Length);
+                        cs.Close();
+                    }
+                    cipherText = Encoding.Unicode.GetString(ms.ToArray());
+                }
+            }
+            return cipherText;
+        }
+
         private void btnEncrypt_Click(object sender, EventArgs e)
         {
             if (txtValue.Text == "") return;
@@ -173,6 +216,18 @@ namespace EdelUtilities
             ////string encrypted = ToEncrypt(System.IO.File.ReadAllText(sourceFile));
             //string encrypted = Convert.ToBase64String(System.IO.File.ReadAllText(sourceFile));
             //System.IO.File.WriteAllText(sourceFile.Replace("2.txt", ".txt"), encrypted);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (txtValue.Text == "") return;
+            txtResult.Text = WSEncrypt(txtValue.Text);
+        }
+
+        private void btnWSDecrypt_Click(object sender, EventArgs e)
+        {
+            if (txtValue.Text == "") return;
+            txtResult.Text = WSDecrypt(txtValue.Text);
         }
     }
 }

@@ -1,1 +1,1 @@
-{"aud":"cashcard","exp":null,"jti":"f9908623-594c-4569-bd8d-a72dc023f199","inquiry":{"idNo":"104001451514","name":{"lastName":"NOORA","firstName":"NANCY","middleName":"CANAVERAL"},"birthdate":"1967-09-14"}}
+{"aud":"cashcard","exp":null,"jti":"d3e36c3e-369b-48a3-99cf-200d32c523cd","inquiry":{"idNo":"101001046442","name":{"lastName":"ROSARIO","firstName":"MARIO","middleName":"DE GUZMAN"},"birthdate":"1971-05-18"}}
