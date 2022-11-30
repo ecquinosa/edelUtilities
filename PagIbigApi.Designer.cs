@@ -45,19 +45,21 @@
             // 
             this.rtb.BackColor = System.Drawing.Color.White;
             this.rtb.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtb.Location = new System.Drawing.Point(12, 183);
+            this.rtb.Location = new System.Drawing.Point(9, 149);
+            this.rtb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rtb.Name = "rtb";
             this.rtb.ReadOnly = true;
-            this.rtb.Size = new System.Drawing.Size(654, 472);
+            this.rtb.Size = new System.Drawing.Size(492, 384);
             this.rtb.TabIndex = 0;
             this.rtb.Text = "";
             this.rtb.WordWrap = false;
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(12, 143);
+            this.btnSubmit.Location = new System.Drawing.Point(9, 116);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(94, 34);
+            this.btnSubmit.Size = new System.Drawing.Size(70, 28);
             this.btnSubmit.TabIndex = 1;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
@@ -66,17 +68,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 74);
+            this.label1.Location = new System.Drawing.Point(14, 60);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 17);
+            this.label1.Size = new System.Drawing.Size(66, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Pag-Ibig API";
             // 
             // txtMID
             // 
-            this.txtMID.Location = new System.Drawing.Point(138, 101);
+            this.txtMID.Location = new System.Drawing.Point(104, 82);
+            this.txtMID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtMID.Name = "txtMID";
-            this.txtMID.Size = new System.Drawing.Size(357, 22);
+            this.txtMID.Size = new System.Drawing.Size(269, 20);
             this.txtMID.TabIndex = 3;
             this.txtMID.Text = "121027512933";
             // 
@@ -88,17 +92,19 @@
             "GetMemberInfo",
             "GetMemberMCRecord",
             "GetCardNo_AUB"});
-            this.cboApi.Location = new System.Drawing.Point(138, 71);
+            this.cboApi.Location = new System.Drawing.Point(104, 58);
+            this.cboApi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboApi.Name = "cboApi";
-            this.cboApi.Size = new System.Drawing.Size(357, 24);
+            this.cboApi.Size = new System.Drawing.Size(269, 21);
             this.cboApi.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 104);
+            this.label2.Location = new System.Drawing.Point(14, 84);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 17);
+            this.label2.Size = new System.Drawing.Size(27, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "MID";
             // 
@@ -109,25 +115,28 @@
             "UBP",
             "AUB",
             "RBANK"});
-            this.cboBank.Location = new System.Drawing.Point(138, 41);
+            this.cboBank.Location = new System.Drawing.Point(104, 33);
+            this.cboBank.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboBank.Name = "cboBank";
-            this.cboBank.Size = new System.Drawing.Size(357, 24);
+            this.cboBank.Size = new System.Drawing.Size(269, 21);
             this.cboBank.TabIndex = 7;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 44);
+            this.label3.Location = new System.Drawing.Point(14, 36);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 17);
+            this.label3.Size = new System.Drawing.Size(32, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "Bank";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(571, 143);
+            this.button1.Location = new System.Drawing.Point(428, 116);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 34);
+            this.button1.Size = new System.Drawing.Size(70, 28);
             this.button1.TabIndex = 8;
             this.button1.Text = "Submit";
             this.button1.UseVisualStyleBackColor = true;
@@ -139,26 +148,29 @@
             this.cboEnvironment.FormattingEnabled = true;
             this.cboEnvironment.Items.AddRange(new object[] {
             "SIT",
+            "PRE-PROD",
             "PROD"});
-            this.cboEnvironment.Location = new System.Drawing.Point(138, 11);
+            this.cboEnvironment.Location = new System.Drawing.Point(104, 9);
+            this.cboEnvironment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboEnvironment.Name = "cboEnvironment";
-            this.cboEnvironment.Size = new System.Drawing.Size(357, 24);
+            this.cboEnvironment.Size = new System.Drawing.Size(269, 21);
             this.cboEnvironment.TabIndex = 10;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 14);
+            this.label4.Location = new System.Drawing.Point(14, 11);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 17);
+            this.label4.Size = new System.Drawing.Size(87, 13);
             this.label4.TabIndex = 9;
             this.label4.Text = "ENVIRONMENT";
             // 
             // PagIbigApi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(677, 667);
+            this.ClientSize = new System.Drawing.Size(508, 542);
             this.Controls.Add(this.cboEnvironment);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);
@@ -171,6 +183,7 @@
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.rtb);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "PagIbigApi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PAG-IBIG API";

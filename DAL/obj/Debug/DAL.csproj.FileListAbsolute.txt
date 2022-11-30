@@ -4,3 +4,9 @@ D:\WORK\Projects\edelUtilities\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 D:\WORK\Projects\edelUtilities\DAL\obj\Debug\DAL.dll
 D:\WORK\Projects\edelUtilities\DAL\obj\Debug\DAL.pdb
 D:\WORK\Projects\edelUtilities\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\Projects\edelUtilities_laptop\DAL\bin\Debug\DAL.dll
+D:\Projects\edelUtilities_laptop\DAL\bin\Debug\DAL.pdb
+D:\Projects\edelUtilities_laptop\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\Projects\edelUtilities_laptop\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\Projects\edelUtilities_laptop\DAL\obj\Debug\DAL.dll
+D:\Projects\edelUtilities_laptop\DAL\obj\Debug\DAL.pdb

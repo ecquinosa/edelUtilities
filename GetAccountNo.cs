@@ -23,10 +23,15 @@ namespace EdelUtilities
 
             raAUB.wsUser = "ulilangkawayan";
             raAUB.wsPass = "ragMANOK2kx";
+            raAUB_PreProd.wsUser = "ulilangkawayan";
+            raAUB_PreProd.wsPass = "ragMANOK2kx";
             raAUB_SIT_OLD.wsUser = "ulilangkawayan";
             raAUB_SIT_OLD.wsPass = "ragMANOK2kx";
             raAUB.KioskID = "user";
             raAUB.User = 0;
+
+            raUBP_SIT_OLD.wsUser = "ulilangkawayan";
+            raUBP_SIT_OLD.wsPass = "ragMANOK2kx";            
 
 
             cboBank.SelectedIndex = 0;
@@ -34,12 +39,16 @@ namespace EdelUtilities
         }
 
         private ubpWS.ACC_MS_WEBSERVICE ubpWS = new ubpWS.ACC_MS_WEBSERVICE();
+        private aubWS_PreProd.ACC_MS_WEBSERVICE aubWS_PreProd = new aubWS_PreProd.ACC_MS_WEBSERVICE();
         private aubWS.ACC_MS_WEBSERVICE aubWS = new aubWS.ACC_MS_WEBSERVICE();
         private aubWS_SIT_OLD.ACC_MS_WEBSERVICE aubWS_SIT_OLD = new aubWS_SIT_OLD.ACC_MS_WEBSERVICE();
+        private ubpWS_SIT.ACC_MS_WEBSERVICE ubpWS_SIT_OLD = new ubpWS_SIT.ACC_MS_WEBSERVICE();
         private rbankSIT_WS.ACC_MS_WEBSERVICE rbankSIT_WS = new rbankSIT_WS.ACC_MS_WEBSERVICE();
         private ubpWS.RequestAuth raUBP = new ubpWS.RequestAuth();
         private aubWS.RequestAuth raAUB = new aubWS.RequestAuth();
+        private aubWS_PreProd.RequestAuth raAUB_PreProd = new aubWS_PreProd.RequestAuth();
         private aubWS_SIT_OLD.RequestAuth raAUB_SIT_OLD = new aubWS_SIT_OLD.RequestAuth();
+        private ubpWS_SIT.RequestAuth raUBP_SIT_OLD = new ubpWS_SIT.RequestAuth();
         private rbankSIT_WS.RequestAuth raSIT_RBANK = new rbankSIT_WS.RequestAuth();
 
         private void RunTemp()
@@ -91,7 +100,20 @@ namespace EdelUtilities
                         break;
                     case "GetCardNo_AUB":
                         string err = "";
-                        if (cboBank.Text == "AUB") GetCardNo_AUB_prod(txtMID.Text, txtFirst.Text, txtMiddle.Text, txtLast.Text, txtDOB.Text);
+                        if (cboBank.Text == "AUB")
+                        {
+                            switch (cboEnvironment.Text)
+                            {
+                                case "SIT":
+                                    break;
+                                case "PRE-PROD":
+                                    GetCardNo_AUB_preprod(txtMID.Text, txtFirst.Text, txtMiddle.Text, txtLast.Text, txtDOB.Text);
+                                    break;
+                                case "PROD":
+                                    GetCardNo_AUB_prod(txtMID.Text, txtFirst.Text, txtMiddle.Text, txtLast.Text, txtDOB.Text);
+                                    break;
+                            }                            
+                        }
                         else GetCardNo_UBP_prod(txtMID.Text, ref err);
                         break;
                     default:
@@ -177,22 +199,43 @@ namespace EdelUtilities
             }
         }
 
-        private void GetCardNo_AUB()
+        //private void GetCardNo_AUB()
+        //{
+        //    var name = new aubWS_SIT_OLD.name();
+        //    name.firstName = "ROSALIE";            
+        //    name.middleName = "HERNANE";
+        //    name.lastName = "LORENZANA";
+        //    var inq = new aubWS_SIT_OLD.inquiry();
+        //    inq.idNo = "121051869550";
+        //    inq.name = name;
+        //    inq.birthdate = "1982-08-14";
+        //    var getCard = new aubWS_SIT_OLD.AUBGetCardNoRequest();
+        //    getCard.inquiry = inq;
+        //    getCard.aud = "cashcard";
+        //    getCard.jti = Guid.NewGuid().ToString();
+
+        //    var response2 = aubWS_SIT_OLD.GetCardNo_AUB(raAUB_SIT_OLD, getCard);
+        //    System.IO.File.WriteAllText(Application.StartupPath + "\\getCard.txt", Newtonsoft.Json.JsonConvert.SerializeObject(getCard));
+        //    rtb.Text = Newtonsoft.Json.JsonConvert.SerializeObject(response2, Newtonsoft.Json.Formatting.Indented);
+        //}
+
+        public void GetCardNo_AUB_preprod(string mid, string firstName, string middleName, string lastName, string dob)
         {
-            var name = new aubWS_SIT_OLD.name();
-            name.firstName = "ROSALIE";            
-            name.middleName = "HERNANE";
-            name.lastName = "LORENZANA";
-            var inq = new aubWS_SIT_OLD.inquiry();
-            inq.idNo = "121051869550";
+            txtMID.Text = mid;
+            var name = new aubWS_PreProd.name();
+            name.firstName = firstName;
+            name.middleName = middleName;
+            name.lastName = lastName;
+            var inq = new aubWS_PreProd.inquiry();
+            inq.idNo = mid;
             inq.name = name;
-            inq.birthdate = "1982-08-14";
-            var getCard = new aubWS_SIT_OLD.AUBGetCardNoRequest();
+            inq.birthdate = dob;
+            var getCard = new aubWS_PreProd.AUBGetCardNoRequest();
             getCard.inquiry = inq;
             getCard.aud = "cashcard";
             getCard.jti = Guid.NewGuid().ToString();
 
-            var response2 = aubWS_SIT_OLD.GetCardNo_AUB(raAUB_SIT_OLD, getCard);
+            var response2 = aubWS_PreProd.GetCardNo_AUB(raAUB_PreProd, getCard);
             System.IO.File.WriteAllText(Application.StartupPath + "\\getCard.txt", Newtonsoft.Json.JsonConvert.SerializeObject(getCard));
             rtb.Text = Newtonsoft.Json.JsonConvert.SerializeObject(response2, Newtonsoft.Json.Formatting.Indented);
         }

@@ -82,6 +82,11 @@ namespace EdelUtilities
             new ConsolidateFileContents().ShowDialog();
         }
 
+        private void editDeleteMIDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new EditDeleteMID().ShowDialog();
+        }
+
         #endregion
 
         private void Main_Load(object sender, EventArgs e)
@@ -122,6 +127,6 @@ namespace EdelUtilities
             if (!System.IO.Directory.Exists(dayFolder)) System.IO.Directory.CreateDirectory(dayFolder);
             MessageBox.Show(dayFolder);
         }
-      
+        
     }
 }
