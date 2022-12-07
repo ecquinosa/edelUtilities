@@ -228,6 +228,42 @@ namespace EdelUtilities
         {
             if (txtValue.Text == "") return;
             txtResult.Text = WSDecrypt(txtValue.Text);
+        }       
+
+        #region kyc encrypt/decrypt
+
+        private static string encryptionKeyKyc = "@cCP@g1bIgPH3*";
+
+        public static string EncryptDataKyc(string data)
+        {
+            AllcardEncryptDecrypt.EncryptDecrypt enc = new AllcardEncryptDecrypt.EncryptDecrypt(encryptionKeyKyc);
+            string encryptedData = enc.TripleDesEncryptText(data);
+            enc = null/* TODO Change to default(_) if this is not a reference type */;
+            return encryptedData;
         }
+
+        public static string DecryptDataKyc(string data)
+        {
+            AllcardEncryptDecrypt.EncryptDecrypt dec = new AllcardEncryptDecrypt.EncryptDecrypt(encryptionKeyKyc);
+            string decryptedData = dec.TripleDesDecryptText(data);
+            dec = null/* TODO Change to default(_) if this is not a reference type */;
+            return decryptedData;
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            if (txtValue.Text == "") return;
+            txtResult.Text = EncryptDataKyc(txtValue.Text);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (txtValue.Text == "") return;
+            txtResult.Text = DecryptDataKyc(txtValue.Text);
+        }
+
+        #endregion
+
+
     }
 }

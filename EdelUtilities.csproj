@@ -35,6 +35,10 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AllcardEncryptDecrypt, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AllcardEncryptDecrypt.dll</HintPath>
+    </Reference>
     <Reference Include="DAL">
       <HintPath>DAL\bin\Debug\DAL.dll</HintPath>
     </Reference>
