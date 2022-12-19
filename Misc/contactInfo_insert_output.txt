@@ -1,0 +1,10 @@
+INSERT INTO tbl_MemberContactinfo
+	(RefNum, PagIBIGID, Permanent_HBUR, Permanent_Building, Permanent_LotNo, Permanent_BlockNo, Permanent_PhaseNo, Permanent_HouseNo, Permanent_StreetName, 
+	 Permanent_Subdivision, Permanent_Barangay, Permanent_PSGC_Barangay_Code, Permanent_CityMunicipality, Permanent_PSGC_City_Mun_Code, Permanent_Province,
+	 Permanent_PSGC_Province_code, Permanent_Region, Permanent_PSGC_Region_Code, Permanent_ZipCode, Present_HBUR, Present_Building, Present_LotNo, Present_BlockNo,
+	 Present_PhaseNo, Present_HouseNo, Present_StreetName, Present_Subdivision, Present_Barangay, Present_PSGC_Barangay_Code, Present_CityMunicipality,
+	 Present_PSGC_City_Mun_Code, Present_Province, Present_Province_code, Present_Region, Present_PSGC_Region_Code, Present_ZipCode, PreferredMailingAddress,
+	 Home_CountryCode, Home_AreaCode, Home_TelNo, Mobile_CountryCode, Mobile_AreaCode, Mobile_CelNo, Business_Direct_CountryCode, Business_Direct_AreaCode,
+	 Business_Direct_TelNo, Business_Trunk_CountryCode, Business_Trunk_AreaCode, Business_Trunk_TelNo, EmailAddress, EntryDate, LastUpdate, Business_Trunk_Local)
+VALUES
+	('1093220112121020566705','121020566705','','','','','','','','','ABUANAN','064502001','BAGO CITY','064502000','NEGROS OCCIDENTAL','064500000','REGION VI (WESTERN VISAYAS)','060000000','6101','','','','','','','','','ABUANAN','064502001','BAGO CITY','064502000','NEGROS OCCIDENTAL','064500000','REGION VI (WESTERN VISAYAS)','060000000','6101','','+971','971','09666725751','+63','0966','6725751','','','','','','','myrlasuarez9@gmail.com','12/01/2022 1:23:36 PM','12/01/2022 1:23:36 PM','','')

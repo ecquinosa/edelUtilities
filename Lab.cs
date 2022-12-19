@@ -348,8 +348,49 @@ namespace EdelUtilities
             System.IO.File.AppendAllText(string.Format(@"{0}\list.txt", outputFolder), l);
         }
 
+        private void GenerateMemberContactInformationLocalDb(string appDir)
+        {
+            string template = string.Format(@"{0}\contactInfo_insert.txt", appDir);
+            string sourceData = string.Format(@"{0}\Member Contact Information.txt", appDir);
+            string output = string.Format(@"{0}\contactInfo_insert_output.txt", appDir);
+
+            StringBuilder sb = new StringBuilder();
+            string[] arrData = System.IO.File.ReadAllText(sourceData).Split('|');
+            foreach (string d in arrData)
+            {
+                if (sb.ToString() != "") sb.Append(",");
+                sb.Append(string.Format("'{0}'", d));
+
+                if (d == "1093220112121020566705")
+                {
+                    if (sb.ToString() != "") sb.Append(",");
+                    sb.Append(string.Format("'121020566705'", d));
+                }
+                else if (d == "ABUANAN")
+                {
+                    if (sb.ToString() != "") sb.Append(",");
+                    sb.Append(string.Format("'064502001'", d));
+                }
+                else if (d == "BAGO CITY")
+                {
+                    if (sb.ToString() != "") sb.Append(",");
+                    sb.Append(string.Format("'064502000'", d));
+                }
+                else if (d == "NEGROS OCCIDENTAL")
+                {
+                    if (sb.ToString() != "") sb.Append(",");
+                    sb.Append(string.Format("'064500000'", d));
+
+                    if (sb.ToString() != "") sb.Append(",");
+                    sb.Append(string.Format("'REGION VI (WESTERN VISAYAS)'", d));
+
+                    if (sb.ToString() != "") sb.Append(",");
+                    sb.Append(string.Format("'060000000'", d));
+                }
+            }
+
+            System.IO.File.WriteAllText(output, System.IO.File.ReadAllText(template).Trim().Replace("@", sb.ToString().Replace(",'')",")")));
+        }
+
     }
-
-
-
 }
