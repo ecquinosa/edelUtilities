@@ -43,10 +43,10 @@ namespace EdelUtilities
             this.getBankAccountNumberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.getDirectoryFilesAndFoldersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consolidateMultipleToOneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editDeleteMIDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.editDeleteMIDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -166,6 +166,13 @@ namespace EdelUtilities
             this.consolidateMultipleToOneToolStripMenuItem.Text = "Consolidate multiple to one";
             this.consolidateMultipleToOneToolStripMenuItem.Click += new System.EventHandler(this.consolidateMultipleToOneToolStripMenuItem_Click);
             // 
+            // editDeleteMIDToolStripMenuItem
+            // 
+            this.editDeleteMIDToolStripMenuItem.Name = "editDeleteMIDToolStripMenuItem";
+            this.editDeleteMIDToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.editDeleteMIDToolStripMenuItem.Text = "Edit/ Delete MID";
+            this.editDeleteMIDToolStripMenuItem.Click += new System.EventHandler(this.editDeleteMIDToolStripMenuItem_Click);
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(185, 67);
@@ -174,7 +181,6 @@ namespace EdelUtilities
             this.button1.Size = new System.Drawing.Size(56, 19);
             this.button1.TabIndex = 2;
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox1
@@ -194,13 +200,6 @@ namespace EdelUtilities
             this.textBox2.Size = new System.Drawing.Size(334, 20);
             this.textBox2.TabIndex = 5;
             this.textBox2.Visible = false;
-            // 
-            // editDeleteMIDToolStripMenuItem
-            // 
-            this.editDeleteMIDToolStripMenuItem.Name = "editDeleteMIDToolStripMenuItem";
-            this.editDeleteMIDToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
-            this.editDeleteMIDToolStripMenuItem.Text = "Edit/ Delete MID";
-            this.editDeleteMIDToolStripMenuItem.Click += new System.EventHandler(this.editDeleteMIDToolStripMenuItem_Click);
             // 
             // Main
             // 

@@ -348,48 +348,98 @@ namespace EdelUtilities
             System.IO.File.AppendAllText(string.Format(@"{0}\list.txt", outputFolder), l);
         }
 
-        private void GenerateMemberContactInformationLocalDb(string appDir)
+        public static void GenerateMemberContactInformationLocalDb(string appDir, 
+                                                            string permBrgyCode, string permCityCode, string permProvCode, string permRegionCode, string permRegionDesc,
+                                                            string presBrgyCode, string presCityCode, string presProvCode, string presRegionCode, string presRegionDesc)
         {
-            string template = string.Format(@"{0}\contactInfo_insert.txt", appDir);
+            string template = string.Format(@"{0}\contactInfo_insert_template.sql", appDir);
             string sourceData = string.Format(@"{0}\Member Contact Information.txt", appDir);
-            string output = string.Format(@"{0}\contactInfo_insert_output.txt", appDir);
+            string output = "";
 
+            string refNum = "";
+            string mid = "";
             StringBuilder sb = new StringBuilder();
             string[] arrData = System.IO.File.ReadAllText(sourceData).Split('|');
-            foreach (string d in arrData)
+
+            for (int i = 0; i < arrData.Length - 1; i++)
             {
+                string val = arrData[i];                
+
                 if (sb.ToString() != "") sb.Append(",");
-                sb.Append(string.Format("'{0}'", d));
 
-                if (d == "1093220112121020566705")
+                if (i == 0) sb.Append(string.Format("@refNum"));
+                else sb.Append(string.Format("'{0}'", val));
+
+                //get mid from refnum
+                if (i == 0)
                 {
-                    if (sb.ToString() != "") sb.Append(",");
-                    sb.Append(string.Format("'121020566705'", d));
-                }
-                else if (d == "ABUANAN")
-                {
-                    if (sb.ToString() != "") sb.Append(",");
-                    sb.Append(string.Format("'064502001'", d));
-                }
-                else if (d == "BAGO CITY")
-                {
-                    if (sb.ToString() != "") sb.Append(",");
-                    sb.Append(string.Format("'064502000'", d));
-                }
-                else if (d == "NEGROS OCCIDENTAL")
-                {
-                    if (sb.ToString() != "") sb.Append(",");
-                    sb.Append(string.Format("'064500000'", d));
+                    refNum = val;
+                    mid = val.Substring(10, 12);
 
                     if (sb.ToString() != "") sb.Append(",");
-                    sb.Append(string.Format("'REGION VI (WESTERN VISAYAS)'", d));
+                    sb.Append(string.Format("'{0}'", mid));
+
+                    output = string.Format(@"{0}\Member Contact Information_Insert_LocalDb_{1}.sql", appDir, mid);
+                }
+
+                //get permanent brgy code
+                else if (i == 9)
+                {
+                    if (sb.ToString() != "") sb.Append(",");
+                    sb.Append(string.Format("'{0}'", permBrgyCode));
+                }
+
+                //get permanent city code
+                else if (i == 10)
+                {
+                    if (sb.ToString() != "") sb.Append(",");
+                    sb.Append(string.Format("'{0}'", permCityCode));
+                }
+
+                //get permanent province code
+                else if (i == 11)
+                {
+                    if (sb.ToString() != "") sb.Append(",");
+                    sb.Append(string.Format("'{0}'", permProvCode));                                     
+
+                    if (sb.ToString() != "") sb.Append(",");                    
+                    sb.Append(string.Format("'{0}'", permRegionDesc));
+
+                    //get permanent region code
+                    if (sb.ToString() != "") sb.Append(",");
+                    sb.Append(string.Format("'{0}'", permRegionCode));
+                }
+
+                //get present brgy code
+                else if (i == 21)
+                {
+                    if (sb.ToString() != "") sb.Append(",");
+                    sb.Append(string.Format("'{0}'", presBrgyCode));
+                }
+
+                //get present city code
+                else if (i == 22)
+                {
+                    if (sb.ToString() != "") sb.Append(",");
+                    sb.Append(string.Format("'{0}'", presCityCode));
+                }
+
+                //get present province code
+                else if (i == 23)
+                {
+                    if (sb.ToString() != "") sb.Append(",");
+                    sb.Append(string.Format("'{0}'", presProvCode));                                        
 
                     if (sb.ToString() != "") sb.Append(",");
-                    sb.Append(string.Format("'060000000'", d));
+                    sb.Append(string.Format("'{0}'", presRegionDesc));
+
+                    //get present region code
+                    if (sb.ToString() != "") sb.Append(",");
+                    sb.Append(string.Format("'{0}'", presRegionCode));
                 }
             }
 
-            System.IO.File.WriteAllText(output, System.IO.File.ReadAllText(template).Trim().Replace("@", sb.ToString().Replace(",'')",")")));
+            System.IO.File.WriteAllText(output, System.IO.File.ReadAllText(template).Trim().Replace("?refNum", refNum).Replace("@data", sb.ToString()));
         }
 
     }

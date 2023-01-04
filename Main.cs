@@ -119,13 +119,21 @@ namespace EdelUtilities
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string appDir = @"H:\My Drive\PAGIBIG\Sql Scripts\member contact info";
+            string permBrgyCode = "061914049";
+            string permCityCode = "061914000";
+            string permProvCode = "061900000";
+            string permRegionCode = "060000000";
+            string permRegionDesc = "REGION VI (WESTERN VISAYAS)";
+            string presBrgyCode = "061914049";
+            string presCityCode = "061914000";
+            string presProvCode = "061900000";
+            string presRegionCode = "060000000";
+            string presRegionDesc = "REGION VI (WESTERN VISAYAS)";
 
-            string appFolder = @"D:\app";
-            string yearFolder = System.IO.Path.Combine(appFolder, DateTime.Now.ToString("yyyy"));
-            string monthFolder = System.IO.Path.Combine(yearFolder, DateTime.Now.ToString("MM"));
-            string dayFolder = System.IO.Path.Combine(monthFolder, DateTime.Now.ToString("dd"));
-            if (!System.IO.Directory.Exists(dayFolder)) System.IO.Directory.CreateDirectory(dayFolder);
-            MessageBox.Show(dayFolder);
+            Lab.GenerateMemberContactInformationLocalDb(appDir, 
+                                                        permBrgyCode, permCityCode, permProvCode, permRegionCode,permRegionDesc,
+                                                        presBrgyCode,presCityCode,presProvCode,presRegionCode,presRegionDesc);
         }
         
     }

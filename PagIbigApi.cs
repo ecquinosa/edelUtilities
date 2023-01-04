@@ -19,7 +19,7 @@ namespace EdelUtilities
             raUBP.wsPass = "ragMANOK2kx";
             raUBP.KioskID = "user";
             raUBP.User = 0;
-
+           
             raUBP_PreProd.wsUser = "ulilangkawayan";
             raUBP_PreProd.wsPass = "ragMANOK2kx";
             raUBP_PreProd.KioskID = "user";
@@ -55,13 +55,11 @@ namespace EdelUtilities
         private ubpWS_SIT.RequestAuth raUBP_SIT_OLD = new ubpWS_SIT.RequestAuth();
         private rbankSIT_WS.RequestAuth raSIT_RBANK = new rbankSIT_WS.RequestAuth();
 
-
-        //ubpWS_PreProd
-        //http://10.88.77.179:8501/
         //private ubpWS_PreProd.ACC_MS_WEBSERVICE ubpWS_PreProd = new ubpWS_PreProd.ACC_MS_WEBSERVICE();
         //private ubpWS_PreProd.RequestAuth raUBP_PreProd = new ubpWS_PreProd.RequestAuth();
-        private ubpWS.ACC_MS_WEBSERVICE ubpWS_PreProd = new ubpWS.ACC_MS_WEBSERVICE(); //new ubpWS_PreProd.ACC_MS_WEBSERVICE();
-        private ubpWS.RequestAuth raUBP_PreProd = new ubpWS.RequestAuth(); //new ubpWS_PreProd.RequestAuth();
+
+        private ubpWS_SIT.ACC_MS_WEBSERVICE ubpWS_PreProd = new ubpWS_SIT.ACC_MS_WEBSERVICE();
+        private ubpWS_SIT.RequestAuth raUBP_PreProd = new ubpWS_SIT.RequestAuth();
 
         private void RunTemp()
         {
@@ -73,12 +71,12 @@ namespace EdelUtilities
                     txtMID.Text = line.Trim();
                     btnSubmit.PerformClick();
                 }
-            }
+            }          
         }
 
         private void SaveDataToTxt(aubWS.SubmitResult sr)
         {
-            string line = string.Concat(sr.SearchResult.MemberInfo.MemberID, "|", sr.SearchResult.MemberInfo.MemberName.FirstName, "|", sr.SearchResult.MemberInfo.MemberName.MiddleName, "|", sr.SearchResult.MemberInfo.MemberName.LastName, "|", sr.SearchResult.MemberInfo.PresentAddress.Barangay, "|", sr.SearchResult.MemberInfo.PresentAddress.CityMunicipality, "|", sr.SearchResult.MemberInfo.PresentAddress.Province, "|", sr.SearchResult.MemberInfo.MembershipCategory.EmployerName, "|", sr.SearchResult.MemberInfo.MembershipCategory.EmployerAddress.Barangay, "|", sr.SearchResult.MemberInfo.MembershipCategory.EmployerAddress.CityMunicipality, "|", sr.SearchResult.MemberInfo.MembershipCategory.EmployerAddress.Province);
+            string line = string.Concat(sr.SearchResult.MemberInfo.MemberID, "|",sr.SearchResult.MemberInfo.MemberName.FirstName, "|", sr.SearchResult.MemberInfo.MemberName.MiddleName,"|", sr.SearchResult.MemberInfo.MemberName.LastName, "|", sr.SearchResult.MemberInfo.PresentAddress.Barangay, "|", sr.SearchResult.MemberInfo.PresentAddress.CityMunicipality, "|", sr.SearchResult.MemberInfo.PresentAddress.Province, "|", sr.SearchResult.MemberInfo.MembershipCategory.EmployerName, "|", sr.SearchResult.MemberInfo.MembershipCategory.EmployerAddress.Barangay, "|", sr.SearchResult.MemberInfo.MembershipCategory.EmployerAddress.CityMunicipality, "|", sr.SearchResult.MemberInfo.MembershipCategory.EmployerAddress.Province);
             string destiFile = @"D:\1538\details.txt";
             using (var sw = new System.IO.StreamWriter(destiFile, true))
             {
@@ -110,12 +108,12 @@ namespace EdelUtilities
                             sb.Append(txtMID.Text + ", " + status + "\r");
                         }
                         else
-                        {
+                        {                            
                             sb.Append(txtMID.Text + ", Error" + "\r");
-                        }
+                        }                        
                         break;
                 }
-
+                
             }
 
             System.IO.File.WriteAllText(@"D:\contri2.txt", sb.ToString());
@@ -129,7 +127,7 @@ namespace EdelUtilities
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            if (txtMID.Text == "") return;
+            //if (txtMID.Text == "") return;
 
             rtb.Clear();
 
@@ -142,9 +140,12 @@ namespace EdelUtilities
                         break;
                     case "GetMemberInfo":
                         GetMemberInfo();
-                        break;
+                        break;                        
                     case "GetCardNo_AUB":
                         GetCardNo_AUB();
+                        break;
+                    case "ManualPackupData":
+                        ManualPackupData();
                         break;
                     default:
                         GetMemberMCRecord();
@@ -183,9 +184,9 @@ namespace EdelUtilities
                     {
                         var response1 = ubpWS.GetActiveCardInfo(raUBP, GetMID());
                         rtb.Text = Newtonsoft.Json.JsonConvert.SerializeObject(response1, Newtonsoft.Json.Formatting.Indented);
-                    }
+                    }                    
                     break;
-                case 1:
+                case 1:                    
                     var response2 = aubWS_SIT_OLD.GetActiveCardInfo(raAUB_SIT_OLD, GetMID());
                     rtb.Text = Newtonsoft.Json.JsonConvert.SerializeObject(response2, Newtonsoft.Json.Formatting.Indented);
                     break;
@@ -194,7 +195,7 @@ namespace EdelUtilities
                     rtb.Text = Newtonsoft.Json.JsonConvert.SerializeObject(response3, Newtonsoft.Json.Formatting.Indented);
                     break;
             }
-        }
+        }        
 
         private void GetMemberInfo()
         {
@@ -218,7 +219,7 @@ namespace EdelUtilities
                         var response4 = ubpWS.is_MID_RTN_Exist(raUBP, GetMID());
                         rtb.Text = Newtonsoft.Json.JsonConvert.SerializeObject(response4, Newtonsoft.Json.Formatting.Indented);
                     }
-
+                    
                     break;
                 case 1:
                     var response2 = aubWS.Is_MID_RTN_Exist(raAUB, GetMID());
@@ -234,8 +235,8 @@ namespace EdelUtilities
 
                     //SaveDataToTxt(response3);                    
                     break;
-            }
-
+            }            
+           
         }
 
         private void GetMemberMCRecord()
@@ -247,7 +248,7 @@ namespace EdelUtilities
                 case 0:
                     var response1 = ubpWS.Is_Member_Active(raUBP, GetMID());
                     rtb.Text = Newtonsoft.Json.JsonConvert.SerializeObject(response1, Newtonsoft.Json.Formatting.Indented);
-
+                   
                     break;
                 case 1:
                     var response2 = aubWS.Is_Member_Active(raAUB, GetMID());
@@ -266,7 +267,7 @@ namespace EdelUtilities
         private void GetCardNo_AUB()
         {
             var name = new aubWS_SIT_OLD.name();
-            name.firstName = "ROSALIE";
+            name.firstName = "ROSALIE";            
             name.middleName = "HERNANE";
             name.lastName = "LORENZANA";
             var inq = new aubWS_SIT_OLD.inquiry();
@@ -282,6 +283,50 @@ namespace EdelUtilities
             System.IO.File.WriteAllText(Application.StartupPath + "\\getCard.txt", Newtonsoft.Json.JsonConvert.SerializeObject(getCard));
             rtb.Text = Newtonsoft.Json.JsonConvert.SerializeObject(response2, Newtonsoft.Json.Formatting.Indented);
         }
+
+        private void ManualPackupData()
+        {
+            if (txtRefNum.Text == "" | txtAccountNumber.Text == "") return;            
+
+            switch (cboBank.SelectedIndex)
+            {
+                case 0:
+                    if (cboEnvironment.Text == "SIT")
+                    {
+                        var response1 = ubpWS_SIT_OLD.ManualPackUpData(txtRefNum.Text, txtAccountNumber.Text);
+                        rtb.Text = Newtonsoft.Json.JsonConvert.SerializeObject(response1, Newtonsoft.Json.Formatting.Indented);
+                    }
+                    else if (cboEnvironment.Text == "PRE-PROD")
+                    {
+                        var response1_PreProd = ubpWS_PreProd.ManualPackUpData(txtRefNum.Text, txtAccountNumber.Text);
+                        rtb.Text = Newtonsoft.Json.JsonConvert.SerializeObject(response1_PreProd, Newtonsoft.Json.Formatting.Indented);
+                    }
+                    else if (cboEnvironment.Text == "PROD")
+                    {
+                        var response4 = ubpWS.ManualPackUpData(txtRefNum.Text, txtAccountNumber.Text);
+                        rtb.Text = Newtonsoft.Json.JsonConvert.SerializeObject(response4, Newtonsoft.Json.Formatting.Indented);
+                    }
+
+                    break;
+                case 1:
+                    var response2 = aubWS.ManualPackUpData(txtRefNum.Text, txtAccountNumber.Text);
+                    //SaveDataToTxt(response2);
+                    rtb.Text = Newtonsoft.Json.JsonConvert.SerializeObject(response2, Newtonsoft.Json.Formatting.Indented);
+                    break;
+                case 2:
+                    if (cboEnvironment.Text == "SIT")
+                    {
+                        var response3 = rbankSIT_WS.ManualPackUpData(txtRefNum.Text, txtAccountNumber.Text);
+                        rtb.Text = Newtonsoft.Json.JsonConvert.SerializeObject(response3, Newtonsoft.Json.Formatting.Indented);
+                    }
+
+                    //SaveDataToTxt(response3);                    
+                    break;
+            }
+
+        }
+
+
 
         public void GetCardNo_AUB_prod(string mid, string firstName, string middleName, string lastName, string dob)
         {
@@ -305,8 +350,8 @@ namespace EdelUtilities
         }
 
         private void PagIbigApi_Load(object sender, EventArgs e)
-        {
-
-        }
+        {   
+            
+        }       
     }
 }
