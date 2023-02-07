@@ -39,6 +39,11 @@ namespace EdelUtilities
             raSIT_RBANK.KioskID = "user";
             raSIT_RBANK.User = 0;
 
+            raAUB_PreProd.wsUser = "ulilangkawayan";
+            raAUB_PreProd.wsPass = "ragMANOK2kx";
+            raAUB_PreProd.KioskID = "user";
+            raAUB_PreProd.User = 0;           
+
 
             cboBank.SelectedIndex = 0;
             cboApi.SelectedIndex = 0;
@@ -46,17 +51,26 @@ namespace EdelUtilities
 
         private ubpWS.ACC_MS_WEBSERVICE ubpWS = new ubpWS.ACC_MS_WEBSERVICE();
         private aubWS.ACC_MS_WEBSERVICE aubWS = new aubWS.ACC_MS_WEBSERVICE();
+
         private ubpWS_SIT.ACC_MS_WEBSERVICE ubpWS_SIT_OLD = new ubpWS_SIT.ACC_MS_WEBSERVICE();
         private aubWS_SIT_OLD.ACC_MS_WEBSERVICE aubWS_SIT_OLD = new aubWS_SIT_OLD.ACC_MS_WEBSERVICE();
+
         private rbankSIT_WS.ACC_MS_WEBSERVICE rbankSIT_WS = new rbankSIT_WS.ACC_MS_WEBSERVICE();
+
+
         private ubpWS.RequestAuth raUBP = new ubpWS.RequestAuth();
         private aubWS.RequestAuth raAUB = new aubWS.RequestAuth();
+
         private aubWS_SIT_OLD.RequestAuth raAUB_SIT_OLD = new aubWS_SIT_OLD.RequestAuth();
         private ubpWS_SIT.RequestAuth raUBP_SIT_OLD = new ubpWS_SIT.RequestAuth();
+
         private rbankSIT_WS.RequestAuth raSIT_RBANK = new rbankSIT_WS.RequestAuth();
 
         //private ubpWS_PreProd.ACC_MS_WEBSERVICE ubpWS_PreProd = new ubpWS_PreProd.ACC_MS_WEBSERVICE();
         //private ubpWS_PreProd.RequestAuth raUBP_PreProd = new ubpWS_PreProd.RequestAuth();
+
+        private aubWS_PreProd.ACC_MS_WEBSERVICE aubWS_PreProd = new aubWS_PreProd.ACC_MS_WEBSERVICE();
+        private aubWS_PreProd.RequestAuth raAUB_PreProd = new aubWS_PreProd.RequestAuth();
 
         private ubpWS_SIT.ACC_MS_WEBSERVICE ubpWS_PreProd = new ubpWS_SIT.ACC_MS_WEBSERVICE();
         private ubpWS_SIT.RequestAuth raUBP_PreProd = new ubpWS_SIT.RequestAuth();
@@ -186,9 +200,25 @@ namespace EdelUtilities
                         rtb.Text = Newtonsoft.Json.JsonConvert.SerializeObject(response1, Newtonsoft.Json.Formatting.Indented);
                     }                    
                     break;
-                case 1:                    
-                    var response2 = aubWS_SIT_OLD.GetActiveCardInfo(raAUB_SIT_OLD, GetMID());
-                    rtb.Text = Newtonsoft.Json.JsonConvert.SerializeObject(response2, Newtonsoft.Json.Formatting.Indented);
+                case 1:
+                    if (cboEnvironment.Text == "SIT")
+                    {
+                        var response_Old_SIT = aubWS_SIT_OLD.GetActiveCardInfo(raAUB_SIT_OLD, GetMID());
+                        rtb.Text = Newtonsoft.Json.JsonConvert.SerializeObject(response_Old_SIT, Newtonsoft.Json.Formatting.Indented);
+                    }
+                    else if (cboEnvironment.Text == "PRE-PROD")
+                    {
+                        var response_PreProd = aubWS_PreProd.GetActiveCardInfo(raAUB_PreProd, GetMID());
+                        rtb.Text = Newtonsoft.Json.JsonConvert.SerializeObject(response_PreProd, Newtonsoft.Json.Formatting.Indented);
+                    }
+                    else if (cboEnvironment.Text == "PROD")
+                    {
+                        var response_Prod = aubWS.GetActiveCardInfo(raAUB, GetMID());
+                        rtb.Text = Newtonsoft.Json.JsonConvert.SerializeObject(response_Prod, Newtonsoft.Json.Formatting.Indented);
+                    }
+                    break;
+
+                   
                     break;
                 case 2:
                     var response3 = rbankSIT_WS.GetActiveCardInfo(raSIT_RBANK, GetMID());
@@ -222,9 +252,23 @@ namespace EdelUtilities
                     
                     break;
                 case 1:
-                    var response2 = aubWS.Is_MID_RTN_Exist(raAUB, GetMID());
-                    SaveDataToTxt(response2);
-                    rtb.Text = Newtonsoft.Json.JsonConvert.SerializeObject(response2, Newtonsoft.Json.Formatting.Indented);
+                    if (cboEnvironment.Text == "SIT")
+                    {
+                        var response1 = ubpWS_SIT_OLD.is_MID_RTN_Exist(raUBP_SIT_OLD, GetMID());
+                        rtb.Text = Newtonsoft.Json.JsonConvert.SerializeObject(response1, Newtonsoft.Json.Formatting.Indented);
+                    }
+                    else if (cboEnvironment.Text == "PRE-PROD")
+                    {
+                        var response1_PreProd = aubWS_PreProd.is_MID_RTN_Exist(raAUB_PreProd, GetMID());                        
+                        rtb.Text = Newtonsoft.Json.JsonConvert.SerializeObject(response1_PreProd, Newtonsoft.Json.Formatting.Indented);
+                    }
+                    else if (cboEnvironment.Text == "PROD")
+                    {
+                        var response2 = aubWS.Is_MID_RTN_Exist(raAUB, GetMID());
+                        SaveDataToTxt(response2);
+                        rtb.Text = Newtonsoft.Json.JsonConvert.SerializeObject(response2, Newtonsoft.Json.Formatting.Indented);
+                    }
+                    
                     break;
                 case 2:
                     if (cboEnvironment.Text == "SIT")
