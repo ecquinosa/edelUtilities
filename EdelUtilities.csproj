@@ -66,6 +66,7 @@
     <Compile Include="AddSingleDoubleQuote.Designer.cs">
       <DependentUpon>AddSingleDoubleQuote.cs</DependentUpon>
     </Compile>
+    <Compile Include="Crypto.cs" />
     <Compile Include="EditDeleteMID.cs">
       <SubType>Form</SubType>
     </Compile>
