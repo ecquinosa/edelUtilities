@@ -1,7 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://allcardtech.com.ph/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://allcardtech.com.ph/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://allcardtech.com.ph/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://allcardtech.com.ph/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://allcardtech.com.ph/">
+      <s:element name="GetListOfUserTimeIn">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
+            <s:element minOccurs="0" maxOccurs="1" name="branchCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="workPlaceID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RequestAuth">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="wsUser" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="wsPass" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="User" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="KioskID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetListOfUserTimeInResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListOfUserTimeInResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTypeOfSpoiled">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTypeOfSpoiledResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTypeOfSpoiledResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRefeedSecretCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
+            <s:element minOccurs="0" maxOccurs="1" name="branchCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRefeedSecretCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetRefeedSecretCodeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SPX100">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="key2" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SPX100Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SPX100Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SPX101">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="key2" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SPX101Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SPX101Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="GetServerDateTime">
         <s:complexType />
       </s:element>
@@ -12,6 +110,38 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GetConfig">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetConfigResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetConfigResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSErrorLogs">
+        <s:complexType />
+      </s:element>
+      <s:element name="WSErrorLogsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSErrorLogsResult" type="tns:ArrayOfLogTrace" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfLogTrace">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="LogTrace" nillable="true" type="tns:LogTrace" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LogTrace">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Index" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Timestamp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Log" type="s:string" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="SaveMember">
         <s:complexType>
           <s:sequence>
@@ -33,14 +163,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:complexType name="RequestAuth">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="wsUser" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="wsPass" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="User" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="KioskID" type="s:string" />
-        </s:sequence>
-      </s:complexType>
       <s:complexType name="Member">
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="1" name="RefNum" type="s:string" />
@@ -418,27 +540,213 @@
           <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
         </s:sequence>
       </s:complexType>
-      <s:element name="SaveMemberRefNumPerWorkPlaceV2">
+      <s:element name="SaveMemberWithOptions">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
-            <s:element minOccurs="0" maxOccurs="1" name="refNum" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="workPlaceID" type="s:int" />
-            <s:element minOccurs="0" maxOccurs="1" name="branchCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="applicationDate" type="s:dateTime" />
-            <s:element minOccurs="0" maxOccurs="1" name="kioskID" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="loanDeductionNumber" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="IsReIssued" type="s:int" />
-            <s:element minOccurs="0" maxOccurs="1" name="warranty" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="MID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Member" type="tns:Member" />
+            <s:element minOccurs="0" maxOccurs="1" name="MembershipCategoryInfo" type="tns:MembershipCategoryInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="MemberContactinfo" type="tns:MemberContactinfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="MemContribution" type="tns:MemContribution" />
+            <s:element minOccurs="0" maxOccurs="1" name="Photo" type="tns:Photo" />
+            <s:element minOccurs="0" maxOccurs="1" name="Signature" type="tns:Signature" />
+            <s:element minOccurs="0" maxOccurs="1" name="Bio" type="tns:Bio" />
+            <s:element minOccurs="0" maxOccurs="1" name="Survey" type="tns:Survey" />
+            <s:element minOccurs="0" maxOccurs="1" name="PhotoValidID" type="tns:PhotoValidID" />
+            <s:element minOccurs="0" maxOccurs="1" name="DCS_Card_Account" type="tns:DCS_Card_Account" />
+            <s:element minOccurs="0" maxOccurs="1" name="Card" type="tns:Card" />
+            <s:element minOccurs="0" maxOccurs="1" name="InstanceIssuance" type="tns:InstanceIssuance" />
+            <s:element minOccurs="0" maxOccurs="1" name="DCS_Card_ReprintList" type="tns:DCS_Card_ReprintList" />
+            <s:element minOccurs="0" maxOccurs="1" name="MemberEmploymentHistoryList" type="tns:MemberEmploymentHistoryList" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsProcessPAGIBIGCardInfo" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsProcessPackUPData" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="SaveMemberRefNumPerWorkPlaceV2Response">
+      <s:element name="SaveMemberWithOptionsResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="SaveMemberRefNumPerWorkPlaceV2Result" type="tns:RequestResponse" />
+            <s:element minOccurs="0" maxOccurs="1" name="SaveMemberWithOptionsResult" type="tns:RequestResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Daily_Start">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
+            <s:element minOccurs="0" maxOccurs="1" name="Payload" type="tns:Issuance" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Issuance">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="WsAuth" type="tns:Auth_Service" />
+          <s:element minOccurs="1" maxOccurs="1" name="EOD_ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="RefNum" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="WorkPlaceID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApplicationDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Kiosk_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LoanDeductionNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsReIssued" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Warranty" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BankID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Bank_Code" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quantity" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Trans_Type" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Trans_Type_ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="GUI" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Version" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsLoan" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Loan_Ref_ID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Auth_Service">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="WsUser" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WsPass" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IP_Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MAC_Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Kiosk_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Branch_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Terminal" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Daily_StartResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Daily_StartResult" type="tns:RequestResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Daily_Capture">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
+            <s:element minOccurs="0" maxOccurs="1" name="Payload" type="tns:Issuance" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Daily_CaptureResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Daily_CaptureResult" type="tns:RequestResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Daily_Ending">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
+            <s:element minOccurs="0" maxOccurs="1" name="Payload" type="tns:Issuance" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Daily_EndingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Daily_EndingResult" type="tns:RequestResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveConsumables">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
+            <s:element minOccurs="0" maxOccurs="1" name="consumables" type="tns:Consumables" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardTransaction" type="tns:DCS_Card_Transaction" />
+            <s:element minOccurs="1" maxOccurs="1" name="receivedRecard" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="branchCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="workPlaceID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="transDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Consumables">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="EOD_DepositID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReceivedRibbon" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReceivedOfficialReceipt" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReceivedCongratulatoryLetter" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UsedRibbon" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UsedORPad" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UsedCongratulatoryLetter" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReceivedCard" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="InternetDataLoad" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="WorkPlace" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DCS_Card_Transaction">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransactionDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KioskID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionTypeID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quantity" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Remarks" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveConsumablesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveConsumablesResult" type="tns:RequestResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPreviousDayDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
+            <s:element minOccurs="0" maxOccurs="1" name="branchCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="selectedTab" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPreviousDayDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPreviousDayDetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EndOfDayTabStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
+            <s:element minOccurs="0" maxOccurs="1" name="branchCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="workPlaceID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="transactionDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EndOfDayTabStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EndOfDayTabStatusResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -631,23 +939,162 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="SaveMemberRefNumPerWorkPlace">
+      <s:element name="GetAUB_Country">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
-            <s:element minOccurs="0" maxOccurs="1" name="refNum" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="workPlaceID" type="s:int" />
-            <s:element minOccurs="0" maxOccurs="1" name="branchCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="applicationDate" type="s:dateTime" />
-            <s:element minOccurs="0" maxOccurs="1" name="kioskID" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="SaveMemberRefNumPerWorkPlaceResponse">
+      <s:element name="GetAUB_CountryResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="SaveMemberRefNumPerWorkPlaceResult" type="tns:RequestResponse" />
+            <s:element minOccurs="0" maxOccurs="1" name="GetAUB_CountryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAUB_Nationality">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAUB_NationalityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAUB_NationalityResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAUB_NatureOfBusiness">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAUB_NatureOfBusinessResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAUB_NatureOfBusinessResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAUB_AddressCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAUB_AddressCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAUB_AddressCodeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAUB_IDType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAUB_IDTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAUB_IDTypeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsMemberHasExistingNewCapture">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReqAuth" type="tns:RequestAuth" />
+            <s:element minOccurs="0" maxOccurs="1" name="MID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Bank_ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsMemberHasExistingNewCaptureResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsMemberHasExistingNewCaptureResult" type="tns:WS_Result" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="WS_Result">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCardCounter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
+            <s:element minOccurs="0" maxOccurs="1" name="MIDRTN" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCardCounterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCardCounterResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsMemberExistByMIDAndApplicationDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
+            <s:element minOccurs="0" maxOccurs="1" name="MID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ApplicationDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsMemberExistByMIDAndApplicationDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsMemberExistByMIDAndApplicationDateResult" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -656,13 +1103,6 @@
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
             <s:element minOccurs="0" maxOccurs="1" name="MID_RTN" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="is_MID_RTN_ExistResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="is_MID_RTN_ExistResult" type="tns:SubmitResult" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -968,18 +1408,18 @@
           <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:element name="is_MID_RTN_ExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="is_MID_RTN_ExistResult" type="tns:SubmitResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="Is_Member_Active">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
             <s:element minOccurs="0" maxOccurs="1" name="MID_RTN" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="Is_Member_ActiveResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="Is_Member_ActiveResult" type="tns:ACCMCRecordClassResult" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -991,6 +1431,35 @@
           <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:element name="Is_Member_ActiveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Is_Member_ActiveResult" type="tns:ACCMCRecordClassResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActiveCardInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
+            <s:element minOccurs="0" maxOccurs="1" name="MID_RTN" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ActiveCardInfoResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsGet" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetActiveCardInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetActiveCardInfoResult" type="tns:ActiveCardInfoResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="PushCardInfo">
         <s:complexType>
           <s:sequence>
@@ -1015,6 +1484,12 @@
           <s:element minOccurs="0" maxOccurs="1" name="MsbCode" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:complexType name="PushCardInfoResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsSuccess" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="GetErrorMsg" type="s:string" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="PushCardInfoResponse">
         <s:complexType>
           <s:sequence>
@@ -1022,60 +1497,23 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:complexType name="PushCardInfoResult">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="IsSuccess" type="s:boolean" />
-          <s:element minOccurs="0" maxOccurs="1" name="GetErrorMsg" type="s:string" />
-        </s:sequence>
-      </s:complexType>
-      <s:element name="GetKiosk">
+      <s:element name="SaveMemberRefNumPerWorkPlace">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
+            <s:element minOccurs="0" maxOccurs="1" name="refNum" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="workPlaceID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="branchCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="applicationDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="kioskID" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="GetKioskResponse">
+      <s:element name="SaveMemberRefNumPerWorkPlaceResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetKioskResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetORByMID">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
-            <s:element minOccurs="0" maxOccurs="1" name="MID" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetORByMIDResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetORByMIDResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="IsReceiptExist">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
-            <s:element minOccurs="0" maxOccurs="1" name="ORNumber" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="IsReceiptExistResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="IsReceiptExistResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="SaveMemberRefNumPerWorkPlaceResult" type="tns:RequestResponse" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1184,27 +1622,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="GetMemContribution">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetMemContributionResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetMemContributionResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
-          </s:sequence>
-        </s:complexType>
-      </s:element>
       <s:element name="GetEmploymentStatus">
         <s:complexType>
           <s:sequence>
@@ -1226,17 +1643,17 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="GetAUB_Country">
+      <s:element name="GetKiosk">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="GetAUB_CountryResponse">
+      <s:element name="GetKioskResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetAUB_CountryResult">
+            <s:element minOccurs="0" maxOccurs="1" name="GetKioskResult">
               <s:complexType>
                 <s:sequence>
                   <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
@@ -1247,80 +1664,47 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="GetAUB_Nationality">
+      <s:element name="GetORByMID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
+            <s:element minOccurs="0" maxOccurs="1" name="MID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetORByMIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetORByMIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsReceiptExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
+            <s:element minOccurs="0" maxOccurs="1" name="ORNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsReceiptExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsReceiptExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemContribution">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="GetAUB_NationalityResponse">
+      <s:element name="GetMemContributionResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetAUB_NationalityResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetAUB_NatureOfBusiness">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetAUB_NatureOfBusinessResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetAUB_NatureOfBusinessResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetAUB_AddressCode">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetAUB_AddressCodeResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetAUB_AddressCodeResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetAUB_IDType">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetAUB_IDTypeResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetAUB_IDTypeResult">
+            <s:element minOccurs="0" maxOccurs="1" name="GetMemContributionResult">
               <s:complexType>
                 <s:sequence>
                   <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
@@ -1412,13 +1796,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="GetMemberDetailsByMIDResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetMemberDetailsByMIDResult" type="tns:MemberDetails" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
       <s:complexType name="MemberDetails">
         <s:sequence>
           <s:element minOccurs="1" maxOccurs="1" name="IsSuccess" type="s:boolean" />
@@ -1438,6 +1815,13 @@
           <s:element minOccurs="0" maxOccurs="1" name="MemberEmploymentHistories" type="tns:ArrayOfMemberEmploymentHistory" />
         </s:sequence>
       </s:complexType>
+      <s:element name="GetMemberDetailsByMIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMemberDetailsByMIDResult" type="tns:MemberDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="GetMemberByMID">
         <s:complexType>
           <s:sequence>
@@ -1469,22 +1853,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="IsMemberExistByMIDAndApplicationDate">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
-            <s:element minOccurs="0" maxOccurs="1" name="MID" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="ApplicationDate" type="s:dateTime" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="IsMemberExistByMIDAndApplicationDateResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="IsMemberExistByMIDAndApplicationDateResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
       <s:element name="IsMemberHasAccount">
         <s:complexType>
           <s:sequence>
@@ -1497,21 +1865,6 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="IsMemberHasAccountResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetCardCounter">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
-            <s:element minOccurs="0" maxOccurs="1" name="MIDRTN" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetCardCounterResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="GetCardCounterResult" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1662,13 +2015,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="ValidateUserAndAccessResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ValidateUserAndAccessResult" type="tns:LogInResponse" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
       <s:complexType name="LogInResponse">
         <s:sequence>
           <s:element minOccurs="1" maxOccurs="1" name="IsSuccess" type="s:boolean" />
@@ -1709,6 +2055,13 @@
           <s:element minOccurs="0" maxOccurs="1" name="EmployerBranch" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:element name="ValidateUserAndAccessResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidateUserAndAccessResult" type="tns:LogInResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="CreateAccount_AUB_Prod">
         <s:complexType>
           <s:sequence>
@@ -1794,13 +2147,6 @@
           <s:extension base="tns:address" />
         </s:complexContent>
       </s:complexType>
-      <s:element name="CreateAccount_AUB_ProdResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="CreateAccount_AUB_ProdResult" type="tns:AUBResponse" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
       <s:complexType name="AUBResponse">
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="1" name="TxnNo" type="s:string" />
@@ -1818,6 +2164,13 @@
           <s:element minOccurs="0" maxOccurs="1" name="DateTimeAUBResponse" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:element name="CreateAccount_AUB_ProdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateAccount_AUB_ProdResult" type="tns:AUBResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="CreateAccount_AUB">
         <s:complexType>
           <s:sequence>
@@ -1901,68 +2254,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="SPX100">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="key1" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="key2" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="SPX100Response">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="SPX100Result" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="SPX101">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="key1" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="key2" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="SPX101Response">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="SPX101Result" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="WSErrorLogs">
-        <s:complexType />
-      </s:element>
-      <s:element name="WSErrorLogsResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="WSErrorLogsResult" type="tns:ArrayOfLogTrace" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="ArrayOfLogTrace">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="LogTrace" nillable="true" type="tns:LogTrace" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="LogTrace">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="Index" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="Timestamp" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="Log" type="s:string" />
-        </s:sequence>
-      </s:complexType>
-      <s:element name="GetConfig">
-        <s:complexType />
-      </s:element>
-      <s:element name="GetConfigResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetConfigResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
       <s:element name="SaveCardTransaction">
         <s:complexType>
           <s:sequence>
@@ -1971,19 +2262,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:complexType name="DCS_Card_Transaction">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="TransactionNo" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="TransactionDate" type="s:dateTime" />
-          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="KioskID" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="TransactionTypeID" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="Quantity" type="s:decimal" />
-          <s:element minOccurs="0" maxOccurs="1" name="Remarks" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
-        </s:sequence>
-      </s:complexType>
       <s:element name="SaveCardTransactionResponse">
         <s:complexType>
           <s:sequence>
@@ -2038,28 +2316,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="GetActiveCardInfo">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
-            <s:element minOccurs="0" maxOccurs="1" name="MID_RTN" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetActiveCardInfoResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetActiveCardInfoResult" type="tns:ActiveCardInfoResult" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="ActiveCardInfoResult">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="IsGet" type="s:boolean" />
-          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
-        </s:sequence>
-      </s:complexType>
       <s:element name="IsRefNumExist">
         <s:complexType>
           <s:sequence>
@@ -2176,36 +2432,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="SaveMemberWithOptions">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
-            <s:element minOccurs="0" maxOccurs="1" name="Member" type="tns:Member" />
-            <s:element minOccurs="0" maxOccurs="1" name="MembershipCategoryInfo" type="tns:MembershipCategoryInfo" />
-            <s:element minOccurs="0" maxOccurs="1" name="MemberContactinfo" type="tns:MemberContactinfo" />
-            <s:element minOccurs="0" maxOccurs="1" name="MemContribution" type="tns:MemContribution" />
-            <s:element minOccurs="0" maxOccurs="1" name="Photo" type="tns:Photo" />
-            <s:element minOccurs="0" maxOccurs="1" name="Signature" type="tns:Signature" />
-            <s:element minOccurs="0" maxOccurs="1" name="Bio" type="tns:Bio" />
-            <s:element minOccurs="0" maxOccurs="1" name="Survey" type="tns:Survey" />
-            <s:element minOccurs="0" maxOccurs="1" name="PhotoValidID" type="tns:PhotoValidID" />
-            <s:element minOccurs="0" maxOccurs="1" name="DCS_Card_Account" type="tns:DCS_Card_Account" />
-            <s:element minOccurs="0" maxOccurs="1" name="Card" type="tns:Card" />
-            <s:element minOccurs="0" maxOccurs="1" name="InstanceIssuance" type="tns:InstanceIssuance" />
-            <s:element minOccurs="0" maxOccurs="1" name="DCS_Card_ReprintList" type="tns:DCS_Card_ReprintList" />
-            <s:element minOccurs="0" maxOccurs="1" name="MemberEmploymentHistoryList" type="tns:MemberEmploymentHistoryList" />
-            <s:element minOccurs="1" maxOccurs="1" name="IsProcessPAGIBIGCardInfo" type="s:boolean" />
-            <s:element minOccurs="1" maxOccurs="1" name="IsProcessPackUPData" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="SaveMemberWithOptionsResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="SaveMemberWithOptionsResult" type="tns:RequestResponse" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
       <s:element name="GetUserIDNumber">
         <s:complexType>
           <s:sequence>
@@ -2228,18 +2454,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="GetMemberForUploadListResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetMemberForUploadListResult" type="tns:ArrayOfDCS_Upload" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="ArrayOfDCS_Upload">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="DCS_Upload" nillable="true" type="tns:DCS_Upload" />
-        </s:sequence>
-      </s:complexType>
       <s:complexType name="DCS_Upload">
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
@@ -2254,6 +2468,18 @@
           <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:complexType name="ArrayOfDCS_Upload">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DCS_Upload" nillable="true" type="tns:DCS_Upload" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetMemberForUploadListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMemberForUploadListResult" type="tns:ArrayOfDCS_Upload" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="SaveDCSUpload">
         <s:complexType>
           <s:sequence>
@@ -2280,6 +2506,13 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:complexType name="LogEmployeeResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="DateTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="LogEmployeeResponse">
         <s:complexType>
           <s:sequence>
@@ -2288,13 +2521,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:complexType name="LogEmployeeResult">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="DateTime" type="s:dateTime" />
-          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
-        </s:sequence>
-      </s:complexType>
       <s:element name="IsHoliday">
         <s:complexType>
           <s:sequence>
@@ -2384,6 +2610,11 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:complexType name="ArrayOfDepositTransaction">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DepositTransaction" nillable="true" type="tns:DepositTransaction" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="GetTop10DepositHistoryResponse">
         <s:complexType>
           <s:sequence>
@@ -2391,11 +2622,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:complexType name="ArrayOfDepositTransaction">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="DepositTransaction" nillable="true" type="tns:DepositTransaction" />
-        </s:sequence>
-      </s:complexType>
       <s:element name="GetDepositBankAccount">
         <s:complexType>
           <s:sequence>
@@ -2403,18 +2629,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="GetDepositBankAccountResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetDepositBankAccountResult" type="tns:ArrayOfDepositBankAccount" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="ArrayOfDepositBankAccount">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="DepositBankAccount" nillable="true" type="tns:DepositBankAccount" />
-        </s:sequence>
-      </s:complexType>
       <s:complexType name="DepositBankAccount">
         <s:sequence>
           <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
@@ -2422,6 +2636,18 @@
           <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:complexType name="ArrayOfDepositBankAccount">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DepositBankAccount" nillable="true" type="tns:DepositBankAccount" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetDepositBankAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDepositBankAccountResult" type="tns:ArrayOfDepositBankAccount" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="SaveVersion">
         <s:complexType>
           <s:sequence>
@@ -2475,6 +2701,11 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:complexType name="ArrayOfCashOnHand">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CashOnHand" nillable="true" type="tns:CashOnHand" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="GetTop10CashOnHandHistoryResponse">
         <s:complexType>
           <s:sequence>
@@ -2482,11 +2713,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:complexType name="ArrayOfCashOnHand">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="CashOnHand" nillable="true" type="tns:CashOnHand" />
-        </s:sequence>
-      </s:complexType>
       <s:element name="GetUserRoleByUsernamePassowrd">
         <s:complexType>
           <s:sequence>
@@ -2514,30 +2740,6 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="GetWorkPlaceResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetPreviousDayDetails">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
-            <s:element minOccurs="0" maxOccurs="1" name="branchCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="selectedTab" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetPreviousDayDetailsResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetPreviousDayDetailsResult">
               <s:complexType>
                 <s:sequence>
                   <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
@@ -2610,68 +2812,6 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="SaveMagErrorResult" type="tns:RequestResponse" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="SaveConsumables">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
-            <s:element minOccurs="0" maxOccurs="1" name="consumables" type="tns:Consumables" />
-            <s:element minOccurs="0" maxOccurs="1" name="cardTransaction" type="tns:DCS_Card_Transaction" />
-            <s:element minOccurs="1" maxOccurs="1" name="receivedRecard" type="s:int" />
-            <s:element minOccurs="0" maxOccurs="1" name="branchCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="workPlaceID" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="transDate" type="s:dateTime" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="Consumables">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="EOD_DepositID" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="ReceivedRibbon" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="ReceivedOfficialReceipt" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="ReceivedCongratulatoryLetter" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="UsedRibbon" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="UsedORPad" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="UsedCongratulatoryLetter" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="ReceivedCard" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="InternetDataLoad" type="s:string" />
-          <s:element minOccurs="1" maxOccurs="1" name="WorkPlace" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
-          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
-        </s:sequence>
-      </s:complexType>
-      <s:element name="SaveConsumablesResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="SaveConsumablesResult" type="tns:RequestResponse" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="EndOfDayTabStatus">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
-            <s:element minOccurs="0" maxOccurs="1" name="branchCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="workPlaceID" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="transactionDate" type="s:dateTime" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="EndOfDayTabStatusResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="EndOfDayTabStatusResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -2882,73 +3022,55 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="GetListOfUserTimeIn">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
-            <s:element minOccurs="0" maxOccurs="1" name="branchCode" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="workPlaceID" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetListOfUserTimeInResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetListOfUserTimeInResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetTypeOfSpoiled">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetTypeOfSpoiledResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetTypeOfSpoiledResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetRefeedSecretCode">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="requestAuth" type="tns:RequestAuth" />
-            <s:element minOccurs="0" maxOccurs="1" name="branchCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetRefeedSecretCodeResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="GetRefeedSecretCodeResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="GetListOfUserTimeInSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListOfUserTimeIn" />
+  </wsdl:message>
+  <wsdl:message name="GetListOfUserTimeInSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListOfUserTimeInResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTypeOfSpoiledSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTypeOfSpoiled" />
+  </wsdl:message>
+  <wsdl:message name="GetTypeOfSpoiledSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTypeOfSpoiledResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRefeedSecretCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRefeedSecretCode" />
+  </wsdl:message>
+  <wsdl:message name="GetRefeedSecretCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRefeedSecretCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SPX100SoapIn">
+    <wsdl:part name="parameters" element="tns:SPX100" />
+  </wsdl:message>
+  <wsdl:message name="SPX100SoapOut">
+    <wsdl:part name="parameters" element="tns:SPX100Response" />
+  </wsdl:message>
+  <wsdl:message name="SPX101SoapIn">
+    <wsdl:part name="parameters" element="tns:SPX101" />
+  </wsdl:message>
+  <wsdl:message name="SPX101SoapOut">
+    <wsdl:part name="parameters" element="tns:SPX101Response" />
+  </wsdl:message>
   <wsdl:message name="GetServerDateTimeSoapIn">
     <wsdl:part name="parameters" element="tns:GetServerDateTime" />
   </wsdl:message>
   <wsdl:message name="GetServerDateTimeSoapOut">
     <wsdl:part name="parameters" element="tns:GetServerDateTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetConfigSoapIn">
+    <wsdl:part name="parameters" element="tns:GetConfig" />
+  </wsdl:message>
+  <wsdl:message name="GetConfigSoapOut">
+    <wsdl:part name="parameters" element="tns:GetConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSErrorLogsSoapIn">
+    <wsdl:part name="parameters" element="tns:WSErrorLogs" />
+  </wsdl:message>
+  <wsdl:message name="WSErrorLogsSoapOut">
+    <wsdl:part name="parameters" element="tns:WSErrorLogsResponse" />
   </wsdl:message>
   <wsdl:message name="SaveMemberSoapIn">
     <wsdl:part name="parameters" element="tns:SaveMember" />
@@ -2956,11 +3078,47 @@
   <wsdl:message name="SaveMemberSoapOut">
     <wsdl:part name="parameters" element="tns:SaveMemberResponse" />
   </wsdl:message>
-  <wsdl:message name="SaveMemberRefNumPerWorkPlaceV2SoapIn">
-    <wsdl:part name="parameters" element="tns:SaveMemberRefNumPerWorkPlaceV2" />
+  <wsdl:message name="SaveMemberWithOptionsSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveMemberWithOptions" />
   </wsdl:message>
-  <wsdl:message name="SaveMemberRefNumPerWorkPlaceV2SoapOut">
-    <wsdl:part name="parameters" element="tns:SaveMemberRefNumPerWorkPlaceV2Response" />
+  <wsdl:message name="SaveMemberWithOptionsSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveMemberWithOptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Daily_StartSoapIn">
+    <wsdl:part name="parameters" element="tns:Daily_Start" />
+  </wsdl:message>
+  <wsdl:message name="Daily_StartSoapOut">
+    <wsdl:part name="parameters" element="tns:Daily_StartResponse" />
+  </wsdl:message>
+  <wsdl:message name="Daily_CaptureSoapIn">
+    <wsdl:part name="parameters" element="tns:Daily_Capture" />
+  </wsdl:message>
+  <wsdl:message name="Daily_CaptureSoapOut">
+    <wsdl:part name="parameters" element="tns:Daily_CaptureResponse" />
+  </wsdl:message>
+  <wsdl:message name="Daily_EndingSoapIn">
+    <wsdl:part name="parameters" element="tns:Daily_Ending" />
+  </wsdl:message>
+  <wsdl:message name="Daily_EndingSoapOut">
+    <wsdl:part name="parameters" element="tns:Daily_EndingResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveConsumablesSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveConsumables" />
+  </wsdl:message>
+  <wsdl:message name="SaveConsumablesSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveConsumablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPreviousDayDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPreviousDayDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetPreviousDayDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPreviousDayDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="EndOfDayTabStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:EndOfDayTabStatus" />
+  </wsdl:message>
+  <wsdl:message name="EndOfDayTabStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:EndOfDayTabStatusResponse" />
   </wsdl:message>
   <wsdl:message name="SaveLogTimeSoapIn">
     <wsdl:part name="parameters" element="tns:SaveLogTime" />
@@ -3022,11 +3180,53 @@
   <wsdl:message name="GetCitizenshipSoapOut">
     <wsdl:part name="parameters" element="tns:GetCitizenshipResponse" />
   </wsdl:message>
-  <wsdl:message name="SaveMemberRefNumPerWorkPlaceSoapIn">
-    <wsdl:part name="parameters" element="tns:SaveMemberRefNumPerWorkPlace" />
+  <wsdl:message name="GetAUB_CountrySoapIn">
+    <wsdl:part name="parameters" element="tns:GetAUB_Country" />
   </wsdl:message>
-  <wsdl:message name="SaveMemberRefNumPerWorkPlaceSoapOut">
-    <wsdl:part name="parameters" element="tns:SaveMemberRefNumPerWorkPlaceResponse" />
+  <wsdl:message name="GetAUB_CountrySoapOut">
+    <wsdl:part name="parameters" element="tns:GetAUB_CountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAUB_NationalitySoapIn">
+    <wsdl:part name="parameters" element="tns:GetAUB_Nationality" />
+  </wsdl:message>
+  <wsdl:message name="GetAUB_NationalitySoapOut">
+    <wsdl:part name="parameters" element="tns:GetAUB_NationalityResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAUB_NatureOfBusinessSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAUB_NatureOfBusiness" />
+  </wsdl:message>
+  <wsdl:message name="GetAUB_NatureOfBusinessSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAUB_NatureOfBusinessResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAUB_AddressCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAUB_AddressCode" />
+  </wsdl:message>
+  <wsdl:message name="GetAUB_AddressCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAUB_AddressCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAUB_IDTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAUB_IDType" />
+  </wsdl:message>
+  <wsdl:message name="GetAUB_IDTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAUB_IDTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsMemberHasExistingNewCaptureSoapIn">
+    <wsdl:part name="parameters" element="tns:IsMemberHasExistingNewCapture" />
+  </wsdl:message>
+  <wsdl:message name="IsMemberHasExistingNewCaptureSoapOut">
+    <wsdl:part name="parameters" element="tns:IsMemberHasExistingNewCaptureResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCardCounterSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCardCounter" />
+  </wsdl:message>
+  <wsdl:message name="GetCardCounterSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCardCounterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsMemberExistByMIDAndApplicationDateSoapIn">
+    <wsdl:part name="parameters" element="tns:IsMemberExistByMIDAndApplicationDate" />
+  </wsdl:message>
+  <wsdl:message name="IsMemberExistByMIDAndApplicationDateSoapOut">
+    <wsdl:part name="parameters" element="tns:IsMemberExistByMIDAndApplicationDateResponse" />
   </wsdl:message>
   <wsdl:message name="is_MID_RTN_ExistSoapIn">
     <wsdl:part name="parameters" element="tns:is_MID_RTN_Exist" />
@@ -3040,29 +3240,23 @@
   <wsdl:message name="Is_Member_ActiveSoapOut">
     <wsdl:part name="parameters" element="tns:Is_Member_ActiveResponse" />
   </wsdl:message>
+  <wsdl:message name="GetActiveCardInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetActiveCardInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveCardInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetActiveCardInfoResponse" />
+  </wsdl:message>
   <wsdl:message name="PushCardInfoSoapIn">
     <wsdl:part name="parameters" element="tns:PushCardInfo" />
   </wsdl:message>
   <wsdl:message name="PushCardInfoSoapOut">
     <wsdl:part name="parameters" element="tns:PushCardInfoResponse" />
   </wsdl:message>
-  <wsdl:message name="GetKioskSoapIn">
-    <wsdl:part name="parameters" element="tns:GetKiosk" />
+  <wsdl:message name="SaveMemberRefNumPerWorkPlaceSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveMemberRefNumPerWorkPlace" />
   </wsdl:message>
-  <wsdl:message name="GetKioskSoapOut">
-    <wsdl:part name="parameters" element="tns:GetKioskResponse" />
-  </wsdl:message>
-  <wsdl:message name="GetORByMIDSoapIn">
-    <wsdl:part name="parameters" element="tns:GetORByMID" />
-  </wsdl:message>
-  <wsdl:message name="GetORByMIDSoapOut">
-    <wsdl:part name="parameters" element="tns:GetORByMIDResponse" />
-  </wsdl:message>
-  <wsdl:message name="IsReceiptExistSoapIn">
-    <wsdl:part name="parameters" element="tns:IsReceiptExist" />
-  </wsdl:message>
-  <wsdl:message name="IsReceiptExistSoapOut">
-    <wsdl:part name="parameters" element="tns:IsReceiptExistResponse" />
+  <wsdl:message name="SaveMemberRefNumPerWorkPlaceSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveMemberRefNumPerWorkPlaceResponse" />
   </wsdl:message>
   <wsdl:message name="GetCity_MunicipalitySoapIn">
     <wsdl:part name="parameters" element="tns:GetCity_Municipality" />
@@ -3094,47 +3288,35 @@
   <wsdl:message name="GetRegionSoapOut">
     <wsdl:part name="parameters" element="tns:GetRegionResponse" />
   </wsdl:message>
-  <wsdl:message name="GetMemContributionSoapIn">
-    <wsdl:part name="parameters" element="tns:GetMemContribution" />
-  </wsdl:message>
-  <wsdl:message name="GetMemContributionSoapOut">
-    <wsdl:part name="parameters" element="tns:GetMemContributionResponse" />
-  </wsdl:message>
   <wsdl:message name="GetEmploymentStatusSoapIn">
     <wsdl:part name="parameters" element="tns:GetEmploymentStatus" />
   </wsdl:message>
   <wsdl:message name="GetEmploymentStatusSoapOut">
     <wsdl:part name="parameters" element="tns:GetEmploymentStatusResponse" />
   </wsdl:message>
-  <wsdl:message name="GetAUB_CountrySoapIn">
-    <wsdl:part name="parameters" element="tns:GetAUB_Country" />
+  <wsdl:message name="GetKioskSoapIn">
+    <wsdl:part name="parameters" element="tns:GetKiosk" />
   </wsdl:message>
-  <wsdl:message name="GetAUB_CountrySoapOut">
-    <wsdl:part name="parameters" element="tns:GetAUB_CountryResponse" />
+  <wsdl:message name="GetKioskSoapOut">
+    <wsdl:part name="parameters" element="tns:GetKioskResponse" />
   </wsdl:message>
-  <wsdl:message name="GetAUB_NationalitySoapIn">
-    <wsdl:part name="parameters" element="tns:GetAUB_Nationality" />
+  <wsdl:message name="GetORByMIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetORByMID" />
   </wsdl:message>
-  <wsdl:message name="GetAUB_NationalitySoapOut">
-    <wsdl:part name="parameters" element="tns:GetAUB_NationalityResponse" />
+  <wsdl:message name="GetORByMIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetORByMIDResponse" />
   </wsdl:message>
-  <wsdl:message name="GetAUB_NatureOfBusinessSoapIn">
-    <wsdl:part name="parameters" element="tns:GetAUB_NatureOfBusiness" />
+  <wsdl:message name="IsReceiptExistSoapIn">
+    <wsdl:part name="parameters" element="tns:IsReceiptExist" />
   </wsdl:message>
-  <wsdl:message name="GetAUB_NatureOfBusinessSoapOut">
-    <wsdl:part name="parameters" element="tns:GetAUB_NatureOfBusinessResponse" />
+  <wsdl:message name="IsReceiptExistSoapOut">
+    <wsdl:part name="parameters" element="tns:IsReceiptExistResponse" />
   </wsdl:message>
-  <wsdl:message name="GetAUB_AddressCodeSoapIn">
-    <wsdl:part name="parameters" element="tns:GetAUB_AddressCode" />
+  <wsdl:message name="GetMemContributionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMemContribution" />
   </wsdl:message>
-  <wsdl:message name="GetAUB_AddressCodeSoapOut">
-    <wsdl:part name="parameters" element="tns:GetAUB_AddressCodeResponse" />
-  </wsdl:message>
-  <wsdl:message name="GetAUB_IDTypeSoapIn">
-    <wsdl:part name="parameters" element="tns:GetAUB_IDType" />
-  </wsdl:message>
-  <wsdl:message name="GetAUB_IDTypeSoapOut">
-    <wsdl:part name="parameters" element="tns:GetAUB_IDTypeResponse" />
+  <wsdl:message name="GetMemContributionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMemContributionResponse" />
   </wsdl:message>
   <wsdl:message name="Get_IDTypeSoapIn">
     <wsdl:part name="parameters" element="tns:Get_IDType" />
@@ -3178,23 +3360,11 @@
   <wsdl:message name="GetMemberByMIDAndApplicationDateSoapOut">
     <wsdl:part name="parameters" element="tns:GetMemberByMIDAndApplicationDateResponse" />
   </wsdl:message>
-  <wsdl:message name="IsMemberExistByMIDAndApplicationDateSoapIn">
-    <wsdl:part name="parameters" element="tns:IsMemberExistByMIDAndApplicationDate" />
-  </wsdl:message>
-  <wsdl:message name="IsMemberExistByMIDAndApplicationDateSoapOut">
-    <wsdl:part name="parameters" element="tns:IsMemberExistByMIDAndApplicationDateResponse" />
-  </wsdl:message>
   <wsdl:message name="IsMemberHasAccountSoapIn">
     <wsdl:part name="parameters" element="tns:IsMemberHasAccount" />
   </wsdl:message>
   <wsdl:message name="IsMemberHasAccountSoapOut">
     <wsdl:part name="parameters" element="tns:IsMemberHasAccountResponse" />
-  </wsdl:message>
-  <wsdl:message name="GetCardCounterSoapIn">
-    <wsdl:part name="parameters" element="tns:GetCardCounter" />
-  </wsdl:message>
-  <wsdl:message name="GetCardCounterSoapOut">
-    <wsdl:part name="parameters" element="tns:GetCardCounterResponse" />
   </wsdl:message>
   <wsdl:message name="GetTotalCapturedByUserSoapIn">
     <wsdl:part name="parameters" element="tns:GetTotalCapturedByUser" />
@@ -3274,30 +3444,6 @@
   <wsdl:message name="GetCardNo_AUBSoapOut">
     <wsdl:part name="parameters" element="tns:GetCardNo_AUBResponse" />
   </wsdl:message>
-  <wsdl:message name="SPX100SoapIn">
-    <wsdl:part name="parameters" element="tns:SPX100" />
-  </wsdl:message>
-  <wsdl:message name="SPX100SoapOut">
-    <wsdl:part name="parameters" element="tns:SPX100Response" />
-  </wsdl:message>
-  <wsdl:message name="SPX101SoapIn">
-    <wsdl:part name="parameters" element="tns:SPX101" />
-  </wsdl:message>
-  <wsdl:message name="SPX101SoapOut">
-    <wsdl:part name="parameters" element="tns:SPX101Response" />
-  </wsdl:message>
-  <wsdl:message name="WSErrorLogsSoapIn">
-    <wsdl:part name="parameters" element="tns:WSErrorLogs" />
-  </wsdl:message>
-  <wsdl:message name="WSErrorLogsSoapOut">
-    <wsdl:part name="parameters" element="tns:WSErrorLogsResponse" />
-  </wsdl:message>
-  <wsdl:message name="GetConfigSoapIn">
-    <wsdl:part name="parameters" element="tns:GetConfig" />
-  </wsdl:message>
-  <wsdl:message name="GetConfigSoapOut">
-    <wsdl:part name="parameters" element="tns:GetConfigResponse" />
-  </wsdl:message>
   <wsdl:message name="SaveCardTransactionSoapIn">
     <wsdl:part name="parameters" element="tns:SaveCardTransaction" />
   </wsdl:message>
@@ -3321,12 +3467,6 @@
   </wsdl:message>
   <wsdl:message name="IsBranchHasSpoiledCardsTransactionSoapOut">
     <wsdl:part name="parameters" element="tns:IsBranchHasSpoiledCardsTransactionResponse" />
-  </wsdl:message>
-  <wsdl:message name="GetActiveCardInfoSoapIn">
-    <wsdl:part name="parameters" element="tns:GetActiveCardInfo" />
-  </wsdl:message>
-  <wsdl:message name="GetActiveCardInfoSoapOut">
-    <wsdl:part name="parameters" element="tns:GetActiveCardInfoResponse" />
   </wsdl:message>
   <wsdl:message name="IsRefNumExistSoapIn">
     <wsdl:part name="parameters" element="tns:IsRefNumExist" />
@@ -3363,12 +3503,6 @@
   </wsdl:message>
   <wsdl:message name="SaveCardSpoiledV2SoapOut">
     <wsdl:part name="parameters" element="tns:SaveCardSpoiledV2Response" />
-  </wsdl:message>
-  <wsdl:message name="SaveMemberWithOptionsSoapIn">
-    <wsdl:part name="parameters" element="tns:SaveMemberWithOptions" />
-  </wsdl:message>
-  <wsdl:message name="SaveMemberWithOptionsSoapOut">
-    <wsdl:part name="parameters" element="tns:SaveMemberWithOptionsResponse" />
   </wsdl:message>
   <wsdl:message name="GetUserIDNumberSoapIn">
     <wsdl:part name="parameters" element="tns:GetUserIDNumber" />
@@ -3460,12 +3594,6 @@
   <wsdl:message name="GetWorkPlaceSoapOut">
     <wsdl:part name="parameters" element="tns:GetWorkPlaceResponse" />
   </wsdl:message>
-  <wsdl:message name="GetPreviousDayDetailsSoapIn">
-    <wsdl:part name="parameters" element="tns:GetPreviousDayDetails" />
-  </wsdl:message>
-  <wsdl:message name="GetPreviousDayDetailsSoapOut">
-    <wsdl:part name="parameters" element="tns:GetPreviousDayDetailsResponse" />
-  </wsdl:message>
   <wsdl:message name="SaveDepositTransactionV2SoapIn">
     <wsdl:part name="parameters" element="tns:SaveDepositTransactionV2" />
   </wsdl:message>
@@ -3477,18 +3605,6 @@
   </wsdl:message>
   <wsdl:message name="SaveMagErrorSoapOut">
     <wsdl:part name="parameters" element="tns:SaveMagErrorResponse" />
-  </wsdl:message>
-  <wsdl:message name="SaveConsumablesSoapIn">
-    <wsdl:part name="parameters" element="tns:SaveConsumables" />
-  </wsdl:message>
-  <wsdl:message name="SaveConsumablesSoapOut">
-    <wsdl:part name="parameters" element="tns:SaveConsumablesResponse" />
-  </wsdl:message>
-  <wsdl:message name="EndOfDayTabStatusSoapIn">
-    <wsdl:part name="parameters" element="tns:EndOfDayTabStatus" />
-  </wsdl:message>
-  <wsdl:message name="EndOfDayTabStatusSoapOut">
-    <wsdl:part name="parameters" element="tns:EndOfDayTabStatusResponse" />
   </wsdl:message>
   <wsdl:message name="GetListOfDepositCancelledRemarksSoapIn">
     <wsdl:part name="parameters" element="tns:GetListOfDepositCancelledRemarks" />
@@ -3544,36 +3660,70 @@
   <wsdl:message name="GetWorkplaceCapturedMemberSoapOut">
     <wsdl:part name="parameters" element="tns:GetWorkplaceCapturedMemberResponse" />
   </wsdl:message>
-  <wsdl:message name="GetListOfUserTimeInSoapIn">
-    <wsdl:part name="parameters" element="tns:GetListOfUserTimeIn" />
-  </wsdl:message>
-  <wsdl:message name="GetListOfUserTimeInSoapOut">
-    <wsdl:part name="parameters" element="tns:GetListOfUserTimeInResponse" />
-  </wsdl:message>
-  <wsdl:message name="GetTypeOfSpoiledSoapIn">
-    <wsdl:part name="parameters" element="tns:GetTypeOfSpoiled" />
-  </wsdl:message>
-  <wsdl:message name="GetTypeOfSpoiledSoapOut">
-    <wsdl:part name="parameters" element="tns:GetTypeOfSpoiledResponse" />
-  </wsdl:message>
-  <wsdl:message name="GetRefeedSecretCodeSoapIn">
-    <wsdl:part name="parameters" element="tns:GetRefeedSecretCode" />
-  </wsdl:message>
-  <wsdl:message name="GetRefeedSecretCodeSoapOut">
-    <wsdl:part name="parameters" element="tns:GetRefeedSecretCodeResponse" />
-  </wsdl:message>
   <wsdl:portType name="ACC_MS_WEBSERVICESoap">
+    <wsdl:operation name="GetListOfUserTimeIn">
+      <wsdl:input message="tns:GetListOfUserTimeInSoapIn" />
+      <wsdl:output message="tns:GetListOfUserTimeInSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTypeOfSpoiled">
+      <wsdl:input message="tns:GetTypeOfSpoiledSoapIn" />
+      <wsdl:output message="tns:GetTypeOfSpoiledSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRefeedSecretCode">
+      <wsdl:input message="tns:GetRefeedSecretCodeSoapIn" />
+      <wsdl:output message="tns:GetRefeedSecretCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SPX100">
+      <wsdl:input message="tns:SPX100SoapIn" />
+      <wsdl:output message="tns:SPX100SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SPX101">
+      <wsdl:input message="tns:SPX101SoapIn" />
+      <wsdl:output message="tns:SPX101SoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="GetServerDateTime">
       <wsdl:input message="tns:GetServerDateTimeSoapIn" />
       <wsdl:output message="tns:GetServerDateTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConfig">
+      <wsdl:input message="tns:GetConfigSoapIn" />
+      <wsdl:output message="tns:GetConfigSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSErrorLogs">
+      <wsdl:input message="tns:WSErrorLogsSoapIn" />
+      <wsdl:output message="tns:WSErrorLogsSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="SaveMember">
       <wsdl:input message="tns:SaveMemberSoapIn" />
       <wsdl:output message="tns:SaveMemberSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="SaveMemberRefNumPerWorkPlaceV2">
-      <wsdl:input message="tns:SaveMemberRefNumPerWorkPlaceV2SoapIn" />
-      <wsdl:output message="tns:SaveMemberRefNumPerWorkPlaceV2SoapOut" />
+    <wsdl:operation name="SaveMemberWithOptions">
+      <wsdl:input message="tns:SaveMemberWithOptionsSoapIn" />
+      <wsdl:output message="tns:SaveMemberWithOptionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Daily_Start">
+      <wsdl:input message="tns:Daily_StartSoapIn" />
+      <wsdl:output message="tns:Daily_StartSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Daily_Capture">
+      <wsdl:input message="tns:Daily_CaptureSoapIn" />
+      <wsdl:output message="tns:Daily_CaptureSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Daily_Ending">
+      <wsdl:input message="tns:Daily_EndingSoapIn" />
+      <wsdl:output message="tns:Daily_EndingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveConsumables">
+      <wsdl:input message="tns:SaveConsumablesSoapIn" />
+      <wsdl:output message="tns:SaveConsumablesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPreviousDayDetails">
+      <wsdl:input message="tns:GetPreviousDayDetailsSoapIn" />
+      <wsdl:output message="tns:GetPreviousDayDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EndOfDayTabStatus">
+      <wsdl:input message="tns:EndOfDayTabStatusSoapIn" />
+      <wsdl:output message="tns:EndOfDayTabStatusSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="SaveLogTime">
       <wsdl:input message="tns:SaveLogTimeSoapIn" />
@@ -3615,9 +3765,37 @@
       <wsdl:input message="tns:GetCitizenshipSoapIn" />
       <wsdl:output message="tns:GetCitizenshipSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="SaveMemberRefNumPerWorkPlace">
-      <wsdl:input message="tns:SaveMemberRefNumPerWorkPlaceSoapIn" />
-      <wsdl:output message="tns:SaveMemberRefNumPerWorkPlaceSoapOut" />
+    <wsdl:operation name="GetAUB_Country">
+      <wsdl:input message="tns:GetAUB_CountrySoapIn" />
+      <wsdl:output message="tns:GetAUB_CountrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAUB_Nationality">
+      <wsdl:input message="tns:GetAUB_NationalitySoapIn" />
+      <wsdl:output message="tns:GetAUB_NationalitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAUB_NatureOfBusiness">
+      <wsdl:input message="tns:GetAUB_NatureOfBusinessSoapIn" />
+      <wsdl:output message="tns:GetAUB_NatureOfBusinessSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAUB_AddressCode">
+      <wsdl:input message="tns:GetAUB_AddressCodeSoapIn" />
+      <wsdl:output message="tns:GetAUB_AddressCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAUB_IDType">
+      <wsdl:input message="tns:GetAUB_IDTypeSoapIn" />
+      <wsdl:output message="tns:GetAUB_IDTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsMemberHasExistingNewCapture">
+      <wsdl:input message="tns:IsMemberHasExistingNewCaptureSoapIn" />
+      <wsdl:output message="tns:IsMemberHasExistingNewCaptureSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCardCounter">
+      <wsdl:input message="tns:GetCardCounterSoapIn" />
+      <wsdl:output message="tns:GetCardCounterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsMemberExistByMIDAndApplicationDate">
+      <wsdl:input message="tns:IsMemberExistByMIDAndApplicationDateSoapIn" />
+      <wsdl:output message="tns:IsMemberExistByMIDAndApplicationDateSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="is_MID_RTN_Exist">
       <wsdl:input message="tns:is_MID_RTN_ExistSoapIn" />
@@ -3627,21 +3805,17 @@
       <wsdl:input message="tns:Is_Member_ActiveSoapIn" />
       <wsdl:output message="tns:Is_Member_ActiveSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetActiveCardInfo">
+      <wsdl:input message="tns:GetActiveCardInfoSoapIn" />
+      <wsdl:output message="tns:GetActiveCardInfoSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="PushCardInfo">
       <wsdl:input message="tns:PushCardInfoSoapIn" />
       <wsdl:output message="tns:PushCardInfoSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="GetKiosk">
-      <wsdl:input message="tns:GetKioskSoapIn" />
-      <wsdl:output message="tns:GetKioskSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="GetORByMID">
-      <wsdl:input message="tns:GetORByMIDSoapIn" />
-      <wsdl:output message="tns:GetORByMIDSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="IsReceiptExist">
-      <wsdl:input message="tns:IsReceiptExistSoapIn" />
-      <wsdl:output message="tns:IsReceiptExistSoapOut" />
+    <wsdl:operation name="SaveMemberRefNumPerWorkPlace">
+      <wsdl:input message="tns:SaveMemberRefNumPerWorkPlaceSoapIn" />
+      <wsdl:output message="tns:SaveMemberRefNumPerWorkPlaceSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetCity_Municipality">
       <wsdl:input message="tns:GetCity_MunicipalitySoapIn" />
@@ -3663,33 +3837,25 @@
       <wsdl:input message="tns:GetRegionSoapIn" />
       <wsdl:output message="tns:GetRegionSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="GetMemContribution">
-      <wsdl:input message="tns:GetMemContributionSoapIn" />
-      <wsdl:output message="tns:GetMemContributionSoapOut" />
-    </wsdl:operation>
     <wsdl:operation name="GetEmploymentStatus">
       <wsdl:input message="tns:GetEmploymentStatusSoapIn" />
       <wsdl:output message="tns:GetEmploymentStatusSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="GetAUB_Country">
-      <wsdl:input message="tns:GetAUB_CountrySoapIn" />
-      <wsdl:output message="tns:GetAUB_CountrySoapOut" />
+    <wsdl:operation name="GetKiosk">
+      <wsdl:input message="tns:GetKioskSoapIn" />
+      <wsdl:output message="tns:GetKioskSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="GetAUB_Nationality">
-      <wsdl:input message="tns:GetAUB_NationalitySoapIn" />
-      <wsdl:output message="tns:GetAUB_NationalitySoapOut" />
+    <wsdl:operation name="GetORByMID">
+      <wsdl:input message="tns:GetORByMIDSoapIn" />
+      <wsdl:output message="tns:GetORByMIDSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="GetAUB_NatureOfBusiness">
-      <wsdl:input message="tns:GetAUB_NatureOfBusinessSoapIn" />
-      <wsdl:output message="tns:GetAUB_NatureOfBusinessSoapOut" />
+    <wsdl:operation name="IsReceiptExist">
+      <wsdl:input message="tns:IsReceiptExistSoapIn" />
+      <wsdl:output message="tns:IsReceiptExistSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="GetAUB_AddressCode">
-      <wsdl:input message="tns:GetAUB_AddressCodeSoapIn" />
-      <wsdl:output message="tns:GetAUB_AddressCodeSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="GetAUB_IDType">
-      <wsdl:input message="tns:GetAUB_IDTypeSoapIn" />
-      <wsdl:output message="tns:GetAUB_IDTypeSoapOut" />
+    <wsdl:operation name="GetMemContribution">
+      <wsdl:input message="tns:GetMemContributionSoapIn" />
+      <wsdl:output message="tns:GetMemContributionSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="Get_IDType">
       <wsdl:input message="tns:Get_IDTypeSoapIn" />
@@ -3719,17 +3885,9 @@
       <wsdl:input message="tns:GetMemberByMIDAndApplicationDateSoapIn" />
       <wsdl:output message="tns:GetMemberByMIDAndApplicationDateSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="IsMemberExistByMIDAndApplicationDate">
-      <wsdl:input message="tns:IsMemberExistByMIDAndApplicationDateSoapIn" />
-      <wsdl:output message="tns:IsMemberExistByMIDAndApplicationDateSoapOut" />
-    </wsdl:operation>
     <wsdl:operation name="IsMemberHasAccount">
       <wsdl:input message="tns:IsMemberHasAccountSoapIn" />
       <wsdl:output message="tns:IsMemberHasAccountSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="GetCardCounter">
-      <wsdl:input message="tns:GetCardCounterSoapIn" />
-      <wsdl:output message="tns:GetCardCounterSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetTotalCapturedByUser">
       <wsdl:input message="tns:GetTotalCapturedByUserSoapIn" />
@@ -3783,22 +3941,6 @@
       <wsdl:input message="tns:GetCardNo_AUBSoapIn" />
       <wsdl:output message="tns:GetCardNo_AUBSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="SPX100">
-      <wsdl:input message="tns:SPX100SoapIn" />
-      <wsdl:output message="tns:SPX100SoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="SPX101">
-      <wsdl:input message="tns:SPX101SoapIn" />
-      <wsdl:output message="tns:SPX101SoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="WSErrorLogs">
-      <wsdl:input message="tns:WSErrorLogsSoapIn" />
-      <wsdl:output message="tns:WSErrorLogsSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="GetConfig">
-      <wsdl:input message="tns:GetConfigSoapIn" />
-      <wsdl:output message="tns:GetConfigSoapOut" />
-    </wsdl:operation>
     <wsdl:operation name="SaveCardTransaction">
       <wsdl:input message="tns:SaveCardTransactionSoapIn" />
       <wsdl:output message="tns:SaveCardTransactionSoapOut" />
@@ -3814,10 +3956,6 @@
     <wsdl:operation name="IsBranchHasSpoiledCardsTransaction">
       <wsdl:input message="tns:IsBranchHasSpoiledCardsTransactionSoapIn" />
       <wsdl:output message="tns:IsBranchHasSpoiledCardsTransactionSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="GetActiveCardInfo">
-      <wsdl:input message="tns:GetActiveCardInfoSoapIn" />
-      <wsdl:output message="tns:GetActiveCardInfoSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="IsRefNumExist">
       <wsdl:input message="tns:IsRefNumExistSoapIn" />
@@ -3842,10 +3980,6 @@
     <wsdl:operation name="SaveCardSpoiledV2">
       <wsdl:input message="tns:SaveCardSpoiledV2SoapIn" />
       <wsdl:output message="tns:SaveCardSpoiledV2SoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="SaveMemberWithOptions">
-      <wsdl:input message="tns:SaveMemberWithOptionsSoapIn" />
-      <wsdl:output message="tns:SaveMemberWithOptionsSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetUserIDNumber">
       <wsdl:input message="tns:GetUserIDNumberSoapIn" />
@@ -3907,10 +4041,6 @@
       <wsdl:input message="tns:GetWorkPlaceSoapIn" />
       <wsdl:output message="tns:GetWorkPlaceSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="GetPreviousDayDetails">
-      <wsdl:input message="tns:GetPreviousDayDetailsSoapIn" />
-      <wsdl:output message="tns:GetPreviousDayDetailsSoapOut" />
-    </wsdl:operation>
     <wsdl:operation name="SaveDepositTransactionV2">
       <wsdl:input message="tns:SaveDepositTransactionV2SoapIn" />
       <wsdl:output message="tns:SaveDepositTransactionV2SoapOut" />
@@ -3918,14 +4048,6 @@
     <wsdl:operation name="SaveMagError">
       <wsdl:input message="tns:SaveMagErrorSoapIn" />
       <wsdl:output message="tns:SaveMagErrorSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="SaveConsumables">
-      <wsdl:input message="tns:SaveConsumablesSoapIn" />
-      <wsdl:output message="tns:SaveConsumablesSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="EndOfDayTabStatus">
-      <wsdl:input message="tns:EndOfDayTabStatusSoapIn" />
-      <wsdl:output message="tns:EndOfDayTabStatusSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetListOfDepositCancelledRemarks">
       <wsdl:input message="tns:GetListOfDepositCancelledRemarksSoapIn" />
@@ -3963,23 +4085,74 @@
       <wsdl:input message="tns:GetWorkplaceCapturedMemberSoapIn" />
       <wsdl:output message="tns:GetWorkplaceCapturedMemberSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="GetListOfUserTimeIn">
-      <wsdl:input message="tns:GetListOfUserTimeInSoapIn" />
-      <wsdl:output message="tns:GetListOfUserTimeInSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="GetTypeOfSpoiled">
-      <wsdl:input message="tns:GetTypeOfSpoiledSoapIn" />
-      <wsdl:output message="tns:GetTypeOfSpoiledSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="GetRefeedSecretCode">
-      <wsdl:input message="tns:GetRefeedSecretCodeSoapIn" />
-      <wsdl:output message="tns:GetRefeedSecretCodeSoapOut" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ACC_MS_WEBSERVICESoap" type="tns:ACC_MS_WEBSERVICESoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetListOfUserTimeIn">
+      <soap:operation soapAction="http://allcardtech.com.ph/GetListOfUserTimeIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTypeOfSpoiled">
+      <soap:operation soapAction="http://allcardtech.com.ph/GetTypeOfSpoiled" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRefeedSecretCode">
+      <soap:operation soapAction="http://allcardtech.com.ph/GetRefeedSecretCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SPX100">
+      <soap:operation soapAction="http://allcardtech.com.ph/SPX100" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SPX101">
+      <soap:operation soapAction="http://allcardtech.com.ph/SPX101" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetServerDateTime">
       <soap:operation soapAction="http://allcardtech.com.ph/GetServerDateTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConfig">
+      <soap:operation soapAction="http://allcardtech.com.ph/GetConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSErrorLogs">
+      <soap:operation soapAction="http://allcardtech.com.ph/WSErrorLogs" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -3996,8 +4169,62 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="SaveMemberRefNumPerWorkPlaceV2">
-      <soap:operation soapAction="http://allcardtech.com.ph/SaveMemberRefNumPerWorkPlaceV2" style="document" />
+    <wsdl:operation name="SaveMemberWithOptions">
+      <soap:operation soapAction="http://allcardtech.com.ph/SaveMemberWithOptions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Daily_Start">
+      <soap:operation soapAction="http://allcardtech.com.ph/Daily_Start" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Daily_Capture">
+      <soap:operation soapAction="http://allcardtech.com.ph/Daily_Capture" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Daily_Ending">
+      <soap:operation soapAction="http://allcardtech.com.ph/Daily_Ending" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveConsumables">
+      <soap:operation soapAction="http://allcardtech.com.ph/SaveConsumables" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPreviousDayDetails">
+      <soap:operation soapAction="http://allcardtech.com.ph/GetPreviousDayDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EndOfDayTabStatus">
+      <soap:operation soapAction="http://allcardtech.com.ph/EndOfDayTabStatus" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4095,8 +4322,71 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="SaveMemberRefNumPerWorkPlace">
-      <soap:operation soapAction="http://allcardtech.com.ph/SaveMemberRefNumPerWorkPlace" style="document" />
+    <wsdl:operation name="GetAUB_Country">
+      <soap:operation soapAction="http://allcardtech.com.ph/GetAUB_Country" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAUB_Nationality">
+      <soap:operation soapAction="http://allcardtech.com.ph/GetAUB_Nationality" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAUB_NatureOfBusiness">
+      <soap:operation soapAction="http://allcardtech.com.ph/GetAUB_NatureOfBusiness" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAUB_AddressCode">
+      <soap:operation soapAction="http://allcardtech.com.ph/GetAUB_AddressCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAUB_IDType">
+      <soap:operation soapAction="http://allcardtech.com.ph/GetAUB_IDType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsMemberHasExistingNewCapture">
+      <soap:operation soapAction="http://allcardtech.com.ph/IsMemberHasExistingNewCapture" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardCounter">
+      <soap:operation soapAction="http://allcardtech.com.ph/GetCardCounter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsMemberExistByMIDAndApplicationDate">
+      <soap:operation soapAction="http://allcardtech.com.ph/IsMemberExistByMIDAndApplicationDate" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4122,6 +4412,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetActiveCardInfo">
+      <soap:operation soapAction="http://allcardtech.com.ph/GetActiveCardInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="PushCardInfo">
       <soap:operation soapAction="http://allcardtech.com.ph/PushCardInfo" style="document" />
       <wsdl:input>
@@ -4131,26 +4430,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetKiosk">
-      <soap:operation soapAction="http://allcardtech.com.ph/GetKiosk" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetORByMID">
-      <soap:operation soapAction="http://allcardtech.com.ph/GetORByMID" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="IsReceiptExist">
-      <soap:operation soapAction="http://allcardtech.com.ph/IsReceiptExist" style="document" />
+    <wsdl:operation name="SaveMemberRefNumPerWorkPlace">
+      <soap:operation soapAction="http://allcardtech.com.ph/SaveMemberRefNumPerWorkPlace" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4203,15 +4484,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetMemContribution">
-      <soap:operation soapAction="http://allcardtech.com.ph/GetMemContribution" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="GetEmploymentStatus">
       <soap:operation soapAction="http://allcardtech.com.ph/GetEmploymentStatus" style="document" />
       <wsdl:input>
@@ -4221,8 +4493,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetAUB_Country">
-      <soap:operation soapAction="http://allcardtech.com.ph/GetAUB_Country" style="document" />
+    <wsdl:operation name="GetKiosk">
+      <soap:operation soapAction="http://allcardtech.com.ph/GetKiosk" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4230,8 +4502,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetAUB_Nationality">
-      <soap:operation soapAction="http://allcardtech.com.ph/GetAUB_Nationality" style="document" />
+    <wsdl:operation name="GetORByMID">
+      <soap:operation soapAction="http://allcardtech.com.ph/GetORByMID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4239,8 +4511,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetAUB_NatureOfBusiness">
-      <soap:operation soapAction="http://allcardtech.com.ph/GetAUB_NatureOfBusiness" style="document" />
+    <wsdl:operation name="IsReceiptExist">
+      <soap:operation soapAction="http://allcardtech.com.ph/IsReceiptExist" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4248,17 +4520,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetAUB_AddressCode">
-      <soap:operation soapAction="http://allcardtech.com.ph/GetAUB_AddressCode" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetAUB_IDType">
-      <soap:operation soapAction="http://allcardtech.com.ph/GetAUB_IDType" style="document" />
+    <wsdl:operation name="GetMemContribution">
+      <soap:operation soapAction="http://allcardtech.com.ph/GetMemContribution" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4329,26 +4592,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="IsMemberExistByMIDAndApplicationDate">
-      <soap:operation soapAction="http://allcardtech.com.ph/IsMemberExistByMIDAndApplicationDate" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="IsMemberHasAccount">
       <soap:operation soapAction="http://allcardtech.com.ph/IsMemberHasAccount" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetCardCounter">
-      <soap:operation soapAction="http://allcardtech.com.ph/GetCardCounter" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4473,42 +4718,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="SPX100">
-      <soap:operation soapAction="http://allcardtech.com.ph/SPX100" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SPX101">
-      <soap:operation soapAction="http://allcardtech.com.ph/SPX101" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="WSErrorLogs">
-      <soap:operation soapAction="http://allcardtech.com.ph/WSErrorLogs" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetConfig">
-      <soap:operation soapAction="http://allcardtech.com.ph/GetConfig" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="SaveCardTransaction">
       <soap:operation soapAction="http://allcardtech.com.ph/SaveCardTransaction" style="document" />
       <wsdl:input>
@@ -4538,15 +4747,6 @@
     </wsdl:operation>
     <wsdl:operation name="IsBranchHasSpoiledCardsTransaction">
       <soap:operation soapAction="http://allcardtech.com.ph/IsBranchHasSpoiledCardsTransaction" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetActiveCardInfo">
-      <soap:operation soapAction="http://allcardtech.com.ph/GetActiveCardInfo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4601,15 +4801,6 @@
     </wsdl:operation>
     <wsdl:operation name="SaveCardSpoiledV2">
       <soap:operation soapAction="http://allcardtech.com.ph/SaveCardSpoiledV2" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SaveMemberWithOptions">
-      <soap:operation soapAction="http://allcardtech.com.ph/SaveMemberWithOptions" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4752,15 +4943,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetPreviousDayDetails">
-      <soap:operation soapAction="http://allcardtech.com.ph/GetPreviousDayDetails" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="SaveDepositTransactionV2">
       <soap:operation soapAction="http://allcardtech.com.ph/SaveDepositTransactionV2" style="document" />
       <wsdl:input>
@@ -4772,24 +4954,6 @@
     </wsdl:operation>
     <wsdl:operation name="SaveMagError">
       <soap:operation soapAction="http://allcardtech.com.ph/SaveMagError" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SaveConsumables">
-      <soap:operation soapAction="http://allcardtech.com.ph/SaveConsumables" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="EndOfDayTabStatus">
-      <soap:operation soapAction="http://allcardtech.com.ph/EndOfDayTabStatus" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -4878,38 +5042,74 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetListOfUserTimeIn">
-      <soap:operation soapAction="http://allcardtech.com.ph/GetListOfUserTimeIn" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetTypeOfSpoiled">
-      <soap:operation soapAction="http://allcardtech.com.ph/GetTypeOfSpoiled" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetRefeedSecretCode">
-      <soap:operation soapAction="http://allcardtech.com.ph/GetRefeedSecretCode" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="ACC_MS_WEBSERVICESoap12" type="tns:ACC_MS_WEBSERVICESoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetListOfUserTimeIn">
+      <soap12:operation soapAction="http://allcardtech.com.ph/GetListOfUserTimeIn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTypeOfSpoiled">
+      <soap12:operation soapAction="http://allcardtech.com.ph/GetTypeOfSpoiled" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRefeedSecretCode">
+      <soap12:operation soapAction="http://allcardtech.com.ph/GetRefeedSecretCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SPX100">
+      <soap12:operation soapAction="http://allcardtech.com.ph/SPX100" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SPX101">
+      <soap12:operation soapAction="http://allcardtech.com.ph/SPX101" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetServerDateTime">
       <soap12:operation soapAction="http://allcardtech.com.ph/GetServerDateTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConfig">
+      <soap12:operation soapAction="http://allcardtech.com.ph/GetConfig" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSErrorLogs">
+      <soap12:operation soapAction="http://allcardtech.com.ph/WSErrorLogs" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -4926,8 +5126,62 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="SaveMemberRefNumPerWorkPlaceV2">
-      <soap12:operation soapAction="http://allcardtech.com.ph/SaveMemberRefNumPerWorkPlaceV2" style="document" />
+    <wsdl:operation name="SaveMemberWithOptions">
+      <soap12:operation soapAction="http://allcardtech.com.ph/SaveMemberWithOptions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Daily_Start">
+      <soap12:operation soapAction="http://allcardtech.com.ph/Daily_Start" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Daily_Capture">
+      <soap12:operation soapAction="http://allcardtech.com.ph/Daily_Capture" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Daily_Ending">
+      <soap12:operation soapAction="http://allcardtech.com.ph/Daily_Ending" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveConsumables">
+      <soap12:operation soapAction="http://allcardtech.com.ph/SaveConsumables" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPreviousDayDetails">
+      <soap12:operation soapAction="http://allcardtech.com.ph/GetPreviousDayDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EndOfDayTabStatus">
+      <soap12:operation soapAction="http://allcardtech.com.ph/EndOfDayTabStatus" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5025,8 +5279,71 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="SaveMemberRefNumPerWorkPlace">
-      <soap12:operation soapAction="http://allcardtech.com.ph/SaveMemberRefNumPerWorkPlace" style="document" />
+    <wsdl:operation name="GetAUB_Country">
+      <soap12:operation soapAction="http://allcardtech.com.ph/GetAUB_Country" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAUB_Nationality">
+      <soap12:operation soapAction="http://allcardtech.com.ph/GetAUB_Nationality" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAUB_NatureOfBusiness">
+      <soap12:operation soapAction="http://allcardtech.com.ph/GetAUB_NatureOfBusiness" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAUB_AddressCode">
+      <soap12:operation soapAction="http://allcardtech.com.ph/GetAUB_AddressCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAUB_IDType">
+      <soap12:operation soapAction="http://allcardtech.com.ph/GetAUB_IDType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsMemberHasExistingNewCapture">
+      <soap12:operation soapAction="http://allcardtech.com.ph/IsMemberHasExistingNewCapture" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardCounter">
+      <soap12:operation soapAction="http://allcardtech.com.ph/GetCardCounter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsMemberExistByMIDAndApplicationDate">
+      <soap12:operation soapAction="http://allcardtech.com.ph/IsMemberExistByMIDAndApplicationDate" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5052,6 +5369,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetActiveCardInfo">
+      <soap12:operation soapAction="http://allcardtech.com.ph/GetActiveCardInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="PushCardInfo">
       <soap12:operation soapAction="http://allcardtech.com.ph/PushCardInfo" style="document" />
       <wsdl:input>
@@ -5061,26 +5387,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetKiosk">
-      <soap12:operation soapAction="http://allcardtech.com.ph/GetKiosk" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetORByMID">
-      <soap12:operation soapAction="http://allcardtech.com.ph/GetORByMID" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="IsReceiptExist">
-      <soap12:operation soapAction="http://allcardtech.com.ph/IsReceiptExist" style="document" />
+    <wsdl:operation name="SaveMemberRefNumPerWorkPlace">
+      <soap12:operation soapAction="http://allcardtech.com.ph/SaveMemberRefNumPerWorkPlace" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5133,15 +5441,6 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetMemContribution">
-      <soap12:operation soapAction="http://allcardtech.com.ph/GetMemContribution" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="GetEmploymentStatus">
       <soap12:operation soapAction="http://allcardtech.com.ph/GetEmploymentStatus" style="document" />
       <wsdl:input>
@@ -5151,8 +5450,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetAUB_Country">
-      <soap12:operation soapAction="http://allcardtech.com.ph/GetAUB_Country" style="document" />
+    <wsdl:operation name="GetKiosk">
+      <soap12:operation soapAction="http://allcardtech.com.ph/GetKiosk" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5160,8 +5459,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetAUB_Nationality">
-      <soap12:operation soapAction="http://allcardtech.com.ph/GetAUB_Nationality" style="document" />
+    <wsdl:operation name="GetORByMID">
+      <soap12:operation soapAction="http://allcardtech.com.ph/GetORByMID" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5169,8 +5468,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetAUB_NatureOfBusiness">
-      <soap12:operation soapAction="http://allcardtech.com.ph/GetAUB_NatureOfBusiness" style="document" />
+    <wsdl:operation name="IsReceiptExist">
+      <soap12:operation soapAction="http://allcardtech.com.ph/IsReceiptExist" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5178,17 +5477,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetAUB_AddressCode">
-      <soap12:operation soapAction="http://allcardtech.com.ph/GetAUB_AddressCode" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetAUB_IDType">
-      <soap12:operation soapAction="http://allcardtech.com.ph/GetAUB_IDType" style="document" />
+    <wsdl:operation name="GetMemContribution">
+      <soap12:operation soapAction="http://allcardtech.com.ph/GetMemContribution" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5259,26 +5549,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="IsMemberExistByMIDAndApplicationDate">
-      <soap12:operation soapAction="http://allcardtech.com.ph/IsMemberExistByMIDAndApplicationDate" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="IsMemberHasAccount">
       <soap12:operation soapAction="http://allcardtech.com.ph/IsMemberHasAccount" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetCardCounter">
-      <soap12:operation soapAction="http://allcardtech.com.ph/GetCardCounter" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5403,42 +5675,6 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="SPX100">
-      <soap12:operation soapAction="http://allcardtech.com.ph/SPX100" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SPX101">
-      <soap12:operation soapAction="http://allcardtech.com.ph/SPX101" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="WSErrorLogs">
-      <soap12:operation soapAction="http://allcardtech.com.ph/WSErrorLogs" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetConfig">
-      <soap12:operation soapAction="http://allcardtech.com.ph/GetConfig" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="SaveCardTransaction">
       <soap12:operation soapAction="http://allcardtech.com.ph/SaveCardTransaction" style="document" />
       <wsdl:input>
@@ -5468,15 +5704,6 @@
     </wsdl:operation>
     <wsdl:operation name="IsBranchHasSpoiledCardsTransaction">
       <soap12:operation soapAction="http://allcardtech.com.ph/IsBranchHasSpoiledCardsTransaction" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetActiveCardInfo">
-      <soap12:operation soapAction="http://allcardtech.com.ph/GetActiveCardInfo" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5531,15 +5758,6 @@
     </wsdl:operation>
     <wsdl:operation name="SaveCardSpoiledV2">
       <soap12:operation soapAction="http://allcardtech.com.ph/SaveCardSpoiledV2" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SaveMemberWithOptions">
-      <soap12:operation soapAction="http://allcardtech.com.ph/SaveMemberWithOptions" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5682,15 +5900,6 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetPreviousDayDetails">
-      <soap12:operation soapAction="http://allcardtech.com.ph/GetPreviousDayDetails" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="SaveDepositTransactionV2">
       <soap12:operation soapAction="http://allcardtech.com.ph/SaveDepositTransactionV2" style="document" />
       <wsdl:input>
@@ -5702,24 +5911,6 @@
     </wsdl:operation>
     <wsdl:operation name="SaveMagError">
       <soap12:operation soapAction="http://allcardtech.com.ph/SaveMagError" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SaveConsumables">
-      <soap12:operation soapAction="http://allcardtech.com.ph/SaveConsumables" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="EndOfDayTabStatus">
-      <soap12:operation soapAction="http://allcardtech.com.ph/EndOfDayTabStatus" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -5808,40 +5999,13 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetListOfUserTimeIn">
-      <soap12:operation soapAction="http://allcardtech.com.ph/GetListOfUserTimeIn" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetTypeOfSpoiled">
-      <soap12:operation soapAction="http://allcardtech.com.ph/GetTypeOfSpoiled" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetRefeedSecretCode">
-      <soap12:operation soapAction="http://allcardtech.com.ph/GetRefeedSecretCode" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="ACC_MS_WEBSERVICE">
     <wsdl:port name="ACC_MS_WEBSERVICESoap" binding="tns:ACC_MS_WEBSERVICESoap">
-      <soap:address location="http://ubp.allcard.com.ph:82/ACC_MS_WEBSERVICE.asmx" />
+      <soap:address location="http://ubp.allcard.com.ph:8501/ACC_MS_WEBSERVICE.asmx" />
     </wsdl:port>
     <wsdl:port name="ACC_MS_WEBSERVICESoap12" binding="tns:ACC_MS_WEBSERVICESoap12">
-      <soap12:address location="http://ubp.allcard.com.ph:82/ACC_MS_WEBSERVICE.asmx" />
+      <soap12:address location="http://ubp.allcard.com.ph:8501/ACC_MS_WEBSERVICE.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

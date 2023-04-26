@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<DiscoveryClientResultsFile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Results>
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://ubp.allcard.com.ph:82/ACC_MS_WEBSERVICE.asmx?wsdl" filename="ACC_MS_WEBSERVICE.wsdl" />
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://ubp.allcard.com.ph:82/ACC_MS_WEBSERVICE.asmx?disco" filename="ACC_MS_WEBSERVICE.disco" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://ubp.allcard.com.ph:8501/ACC_MS_WEBSERVICE.asmx?disco" filename="ACC_MS_WEBSERVICE.disco" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://ubp.allcard.com.ph:8501/ACC_MS_WEBSERVICE.asmx?wsdl" filename="ACC_MS_WEBSERVICE.wsdl" />
   </Results>
 </DiscoveryClientResultsFile>

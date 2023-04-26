@@ -146,7 +146,26 @@ namespace DAL
                 strErrorMessage = ex.Message;
                 return false;
             }
-        }      
+        }
+
+        public bool SelectUBP_Savings_Account(string refId, string pagibigId)
+        {
+            try
+            {
+                OpenConnection();                
+                cmd = new SqlCommand("SELECT * FROM UBP_Savings_Account WHERE Ref_ID=@Ref_ID AND Pagibig_ID=@Pagibig_ID", con);
+                cmd.Parameters.AddWithValue("Ref_ID", refId);
+                cmd.Parameters.AddWithValue("Pagibig_ID", pagibigId);
+                FillDataAdapter(CommandType.Text);                
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                strErrorMessage = ex.Message;
+                return false;
+            }
+        }
 
         public bool ExecuteQuery(string strQuery, CommandType cmdType = CommandType.Text)
         {

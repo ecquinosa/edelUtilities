@@ -18,6 +18,8 @@ namespace EdelUtilities
 
         private string ubpConStr = "Server=10.88.77.68;Database=LCDB_01;User=allcard;Password=MalboroLights#;";
         private string aubConStr = "Server=10.88.77.71;Database=LCDB_01;User=allcard;Password=MarlboroLights#;";
+
+        private string sysConStr_PreProd = "Server=10.88.77.174;Database=LCDB_01_SYS;User=applcdb;Password=Avega2019#;";
         DAL.MsSql dal = null;
         private DataTable dtDbase = null;
 
@@ -65,14 +67,34 @@ namespace EdelUtilities
                 else sb.Append(String.Format(",'{0}'", v.Trim().Replace(" ", "").Replace("-", "")));
             }
 
+            string tableFields = "*";
+            if (chkMember.Visible)
+            {
+                if (!chkMember.Checked) tableFields = "RefNum, PagIBIGID, Member_FirstName, Member_MiddleName, Member_LastName, Application_Remarks, ApplicationDate, EntryDate, UserName, KioskID, requesting_branchcode";
+            }
 
-            if (dal.SelectQuery(String.Format("SELECT * FROM {0} WHERE {1} IN ({2})", cboTable.Text.Trim(), cboField.Text.Trim(), sb.ToString())))
+            if (dal.SelectQuery(String.Format("SELECT {3} FROM {0} WHERE {1} IN ({2})", cboTable.Text.Trim(), cboField.Text.Trim(), sb.ToString(),tableFields)))
             {
                 grid.DataSource = dal.TableResult;
                 if (dal.TableResult.DefaultView.Count > 0) lblResult.Text = "TOTAL : " + dal.TableResult.DefaultView.Count.ToString();
                 else lblResult.Text = "";
             }
             dal.Dispose();            
+        }
+
+        private void Test()
+        {
+            dal = null;
+            //string conStr = "";            
+            dal = new DAL.MsSql(sysConStr_PreProd);
+
+            if (dal.SelectUBP_Savings_Account("PG60E26391", "121008000650"))
+            {
+                grid.DataSource = dal.TableResult;
+                if (dal.TableResult.DefaultView.Count > 0) lblResult.Text = "TOTAL : " + dal.TableResult.DefaultView.Count.ToString();
+                else lblResult.Text = "";
+            }
+            dal.Dispose();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -102,6 +124,8 @@ namespace EdelUtilities
             //cboField.DisplayMember = "COLUMN_NAME";
             //cboField.ValueMember = "COLUMN_NAME";
             cboField.SelectedIndex = cboField.FindStringExact("PagIBIGID");
+
+            if (cboTable.Text == "tbl_Member") chkMember.Visible = true; else chkMember.Visible = false;
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -118,6 +142,11 @@ namespace EdelUtilities
                     this.Enabled = true;
                 }
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Test();
         }
     }
 }

@@ -102,6 +102,9 @@ namespace EdelUtilities
 
         private void button1_Click(object sender, EventArgs e)
         {
+            WS_X();
+
+            return;
             string[] mids = System.IO.File.ReadAllText(@"D:\contri.txt").Split('\r');
             StringBuilder sb = new StringBuilder();
 
@@ -396,6 +399,14 @@ namespace EdelUtilities
         private void PagIbigApi_Load(object sender, EventArgs e)
         {   
             
-        }       
+        }
+
+        private void WS_X()
+        {
+            if (GetMID() == "") return;
+
+            var response_Prod = ubpWS.IsMemberHasExistingNewCapture(raUBP, GetMID(), "1");
+            rtb.Text = Newtonsoft.Json.JsonConvert.SerializeObject(response_Prod, Newtonsoft.Json.Formatting.Indented);
+        }
     }
 }

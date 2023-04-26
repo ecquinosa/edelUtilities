@@ -348,12 +348,14 @@ namespace EdelUtilities
             System.IO.File.AppendAllText(string.Format(@"{0}\list.txt", outputFolder), l);
         }
 
-        public static void GenerateMemberContactInformationLocalDb(string appDir, 
+        public static void GenerateMemberContactInformationLocalDb_Insert(string appDir, string sourceFile, 
                                                             string permBrgyCode, string permCityCode, string permProvCode, string permRegionCode, string permRegionDesc,
                                                             string presBrgyCode, string presCityCode, string presProvCode, string presRegionCode, string presRegionDesc)
         {
             string template = string.Format(@"{0}\contactInfo_insert_template.sql", appDir);
-            string sourceData = string.Format(@"{0}\Member Contact Information.txt", appDir);
+            //string sourceData = string.Format(@"{0}\Member Contact Information.txt", appDir);
+            //string sourceData = string.Format(@"{0}\Member Contact Information.txt", @"C:\Users\Edel\Downloads\Contact info");
+            string sourceData = sourceFile;
             string output = "";
 
             string refNum = "";
@@ -440,6 +442,72 @@ namespace EdelUtilities
             }
 
             System.IO.File.WriteAllText(output, System.IO.File.ReadAllText(template).Trim().Replace("?refNum", refNum).Replace("@data", sb.ToString()));
+        }
+
+        public static void GenerateMemberContactInformationLocalDb_Update(string appDir, string sourceFile,
+                                                            string permBrgyCode, string permCityCode, string permProvCode, string permRegionCode,
+                                                            string permBrgyDesc, string permCityDesc, string permProvDesc, string permRegionDesc,
+                                                            string presBrgyCode, string presCityCode, string presProvCode, string presRegionCode,
+                                                            string presBrgyDesc, string presCityDesc, string presProvDesc, string presRegionDesc,
+                                                            string permZipCode, string presZipCode)
+        {
+            string template = string.Format(@"{0}\contactInfo_update_template.sql", appDir);
+            
+            string sourceData = sourceFile;
+            string output = "";
+            
+            string data = System.IO.File.ReadAllText(sourceData);
+            string templateData = System.IO.File.ReadAllText(template);
+
+            string refNum = data.Split('|')[0];
+            string mid = refNum.Substring(10, 12);
+            output = string.Format(@"{0}\Member Contact Information_Update_LocalDb_{1}.sql", appDir, mid);
+
+            templateData = templateData.Replace("?refNum", refNum);
+
+            templateData = templateData.Replace("@A1", permBrgyCode);
+            templateData = templateData.Replace("@A2", permBrgyDesc);
+            templateData = templateData.Replace("@A3", permCityCode);
+            templateData = templateData.Replace("@A4", permCityDesc);
+            templateData = templateData.Replace("@A5", permProvCode);
+            templateData = templateData.Replace("@A6", permProvDesc);
+            templateData = templateData.Replace("@A7", permRegionCode);
+            templateData = templateData.Replace("@A8", permRegionDesc);
+            templateData = templateData.Replace("@A9", permZipCode);
+
+            templateData = templateData.Replace("@B1", presBrgyCode);
+            templateData = templateData.Replace("@B2", presBrgyDesc);
+            templateData = templateData.Replace("@B3", presCityCode);
+            templateData = templateData.Replace("@B4", presCityDesc);
+            templateData = templateData.Replace("@B5", presProvCode);
+            templateData = templateData.Replace("@B6", presProvDesc);
+            templateData = templateData.Replace("@B7", presRegionCode);
+            templateData = templateData.Replace("@B8", presRegionDesc);
+            templateData = templateData.Replace("@B9", presZipCode);
+
+            System.IO.File.WriteAllText(output, templateData);
+        }
+
+        public static string GetExpirationDate()
+        {
+            var Expiry = "2030-10";
+
+            var expYear = Convert.ToInt32(Expiry.Substring(0, 4));
+            var exPmonth = Convert.ToInt32(Expiry.Substring(5, 2));
+            var cardExpirationDate = new DateTime(expYear, exPmonth, 1, 23, 59, 59).AddMonths(1).AddDays(-1);
+
+            return cardExpirationDate.ToString();
+        }
+
+        public static string ValidateNumber(string value)
+        {
+            var isNumeric = long.TryParse(value, out _);
+            if (!isNumeric)
+            {                
+                return "Failed";
+            }
+
+            return "Success";
         }
 
     }

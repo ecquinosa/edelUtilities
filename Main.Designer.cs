@@ -44,6 +44,7 @@ namespace EdelUtilities
             this.getDirectoryFilesAndFoldersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consolidateMultipleToOneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editDeleteMIDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pagIbigMemberContactInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -77,7 +78,8 @@ namespace EdelUtilities
             this.getBankAccountNumberToolStripMenuItem,
             this.getDirectoryFilesAndFoldersToolStripMenuItem,
             this.consolidateMultipleToOneToolStripMenuItem,
-            this.editDeleteMIDToolStripMenuItem});
+            this.editDeleteMIDToolStripMenuItem,
+            this.pagIbigMemberContactInfoToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(46, 20);
             this.toolStripMenuItem1.Text = "Tools";
@@ -173,12 +175,20 @@ namespace EdelUtilities
             this.editDeleteMIDToolStripMenuItem.Text = "Edit/ Delete MID";
             this.editDeleteMIDToolStripMenuItem.Click += new System.EventHandler(this.editDeleteMIDToolStripMenuItem_Click);
             // 
+            // pagIbigMemberContactInfoToolStripMenuItem
+            // 
+            this.pagIbigMemberContactInfoToolStripMenuItem.Name = "pagIbigMemberContactInfoToolStripMenuItem";
+            this.pagIbigMemberContactInfoToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
+            this.pagIbigMemberContactInfoToolStripMenuItem.Text = "PagIbig Member Contact Info";
+            this.pagIbigMemberContactInfoToolStripMenuItem.Click += new System.EventHandler(this.pagIbigMemberContactInfoToolStripMenuItem_Click);
+            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(185, 67);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(549, 440);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 19);
+            this.button1.Size = new System.Drawing.Size(94, 33);
             this.button1.TabIndex = 2;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Visible = false;
@@ -245,5 +255,6 @@ namespace EdelUtilities
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.ToolStripMenuItem editDeleteMIDToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pagIbigMemberContactInfoToolStripMenuItem;
     }
 }

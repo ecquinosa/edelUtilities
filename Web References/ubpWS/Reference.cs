@@ -14,28 +14,54 @@
 #pragma warning disable 1591
 
 namespace EdelUtilities.ubpWS {
-    using System.Diagnostics;
     using System;
+    using System.Web.Services;
+    using System.Diagnostics;
+    using System.Web.Services.Protocols;
     using System.Xml.Serialization;
     using System.ComponentModel;
-    using System.Web.Services.Protocols;
-    using System.Web.Services;
     using System.Data;
     
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Web.Services.WebServiceBindingAttribute(Name="ACC_MS_WEBSERVICESoap", Namespace="http://allcardtech.com.ph/")]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(address))]
     public partial class ACC_MS_WEBSERVICE : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
+        private System.Threading.SendOrPostCallback GetListOfUserTimeInOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetTypeOfSpoiledOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetRefeedSecretCodeOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback SPX100OperationCompleted;
+        
+        private System.Threading.SendOrPostCallback SPX101OperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetServerDateTimeOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetConfigOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback WSErrorLogsOperationCompleted;
         
         private System.Threading.SendOrPostCallback SaveMemberOperationCompleted;
         
-        private System.Threading.SendOrPostCallback SaveMemberRefNumPerWorkPlaceV2OperationCompleted;
+        private System.Threading.SendOrPostCallback SaveMemberWithOptionsOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Daily_StartOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Daily_CaptureOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Daily_EndingOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback SaveConsumablesOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetPreviousDayDetailsOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback EndOfDayTabStatusOperationCompleted;
         
         private System.Threading.SendOrPostCallback SaveLogTimeOperationCompleted;
         
@@ -57,19 +83,31 @@ namespace EdelUtilities.ubpWS {
         
         private System.Threading.SendOrPostCallback GetCitizenshipOperationCompleted;
         
-        private System.Threading.SendOrPostCallback SaveMemberRefNumPerWorkPlaceOperationCompleted;
+        private System.Threading.SendOrPostCallback GetAUB_CountryOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetAUB_NationalityOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetAUB_NatureOfBusinessOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetAUB_AddressCodeOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetAUB_IDTypeOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback IsMemberHasExistingNewCaptureOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetCardCounterOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback IsMemberExistByMIDAndApplicationDateOperationCompleted;
         
         private System.Threading.SendOrPostCallback is_MID_RTN_ExistOperationCompleted;
         
         private System.Threading.SendOrPostCallback Is_Member_ActiveOperationCompleted;
         
+        private System.Threading.SendOrPostCallback GetActiveCardInfoOperationCompleted;
+        
         private System.Threading.SendOrPostCallback PushCardInfoOperationCompleted;
         
-        private System.Threading.SendOrPostCallback GetKioskOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetORByMIDOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback IsReceiptExistOperationCompleted;
+        private System.Threading.SendOrPostCallback SaveMemberRefNumPerWorkPlaceOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetCity_MunicipalityOperationCompleted;
         
@@ -81,19 +119,15 @@ namespace EdelUtilities.ubpWS {
         
         private System.Threading.SendOrPostCallback GetRegionOperationCompleted;
         
-        private System.Threading.SendOrPostCallback GetMemContributionOperationCompleted;
-        
         private System.Threading.SendOrPostCallback GetEmploymentStatusOperationCompleted;
         
-        private System.Threading.SendOrPostCallback GetAUB_CountryOperationCompleted;
+        private System.Threading.SendOrPostCallback GetKioskOperationCompleted;
         
-        private System.Threading.SendOrPostCallback GetAUB_NationalityOperationCompleted;
+        private System.Threading.SendOrPostCallback GetORByMIDOperationCompleted;
         
-        private System.Threading.SendOrPostCallback GetAUB_NatureOfBusinessOperationCompleted;
+        private System.Threading.SendOrPostCallback IsReceiptExistOperationCompleted;
         
-        private System.Threading.SendOrPostCallback GetAUB_AddressCodeOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetAUB_IDTypeOperationCompleted;
+        private System.Threading.SendOrPostCallback GetMemContributionOperationCompleted;
         
         private System.Threading.SendOrPostCallback Get_IDTypeOperationCompleted;
         
@@ -109,11 +143,7 @@ namespace EdelUtilities.ubpWS {
         
         private System.Threading.SendOrPostCallback GetMemberByMIDAndApplicationDateOperationCompleted;
         
-        private System.Threading.SendOrPostCallback IsMemberExistByMIDAndApplicationDateOperationCompleted;
-        
         private System.Threading.SendOrPostCallback IsMemberHasAccountOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetCardCounterOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetTotalCapturedByUserOperationCompleted;
         
@@ -141,14 +171,6 @@ namespace EdelUtilities.ubpWS {
         
         private System.Threading.SendOrPostCallback GetCardNo_AUBOperationCompleted;
         
-        private System.Threading.SendOrPostCallback SPX100OperationCompleted;
-        
-        private System.Threading.SendOrPostCallback SPX101OperationCompleted;
-        
-        private System.Threading.SendOrPostCallback WSErrorLogsOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetConfigOperationCompleted;
-        
         private System.Threading.SendOrPostCallback SaveCardTransactionOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetTotalSpoiledCardByBranchAndDateOperationCompleted;
@@ -156,8 +178,6 @@ namespace EdelUtilities.ubpWS {
         private System.Threading.SendOrPostCallback GetTotalBranchCardsOperationCompleted;
         
         private System.Threading.SendOrPostCallback IsBranchHasSpoiledCardsTransactionOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetActiveCardInfoOperationCompleted;
         
         private System.Threading.SendOrPostCallback IsRefNumExistOperationCompleted;
         
@@ -170,8 +190,6 @@ namespace EdelUtilities.ubpWS {
         private System.Threading.SendOrPostCallback SaveCardSpoiledOperationCompleted;
         
         private System.Threading.SendOrPostCallback SaveCardSpoiledV2OperationCompleted;
-        
-        private System.Threading.SendOrPostCallback SaveMemberWithOptionsOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetUserIDNumberOperationCompleted;
         
@@ -203,15 +221,9 @@ namespace EdelUtilities.ubpWS {
         
         private System.Threading.SendOrPostCallback GetWorkPlaceOperationCompleted;
         
-        private System.Threading.SendOrPostCallback GetPreviousDayDetailsOperationCompleted;
-        
         private System.Threading.SendOrPostCallback SaveDepositTransactionV2OperationCompleted;
         
         private System.Threading.SendOrPostCallback SaveMagErrorOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback SaveConsumablesOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback EndOfDayTabStatusOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetListOfDepositCancelledRemarksOperationCompleted;
         
@@ -230,12 +242,6 @@ namespace EdelUtilities.ubpWS {
         private System.Threading.SendOrPostCallback IsUserHasTimeInOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetWorkplaceCapturedMemberOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetListOfUserTimeInOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetTypeOfSpoiledOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback GetRefeedSecretCodeOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -276,13 +282,52 @@ namespace EdelUtilities.ubpWS {
         }
         
         /// <remarks/>
+        public event GetListOfUserTimeInCompletedEventHandler GetListOfUserTimeInCompleted;
+        
+        /// <remarks/>
+        public event GetTypeOfSpoiledCompletedEventHandler GetTypeOfSpoiledCompleted;
+        
+        /// <remarks/>
+        public event GetRefeedSecretCodeCompletedEventHandler GetRefeedSecretCodeCompleted;
+        
+        /// <remarks/>
+        public event SPX100CompletedEventHandler SPX100Completed;
+        
+        /// <remarks/>
+        public event SPX101CompletedEventHandler SPX101Completed;
+        
+        /// <remarks/>
         public event GetServerDateTimeCompletedEventHandler GetServerDateTimeCompleted;
+        
+        /// <remarks/>
+        public event GetConfigCompletedEventHandler GetConfigCompleted;
+        
+        /// <remarks/>
+        public event WSErrorLogsCompletedEventHandler WSErrorLogsCompleted;
         
         /// <remarks/>
         public event SaveMemberCompletedEventHandler SaveMemberCompleted;
         
         /// <remarks/>
-        public event SaveMemberRefNumPerWorkPlaceV2CompletedEventHandler SaveMemberRefNumPerWorkPlaceV2Completed;
+        public event SaveMemberWithOptionsCompletedEventHandler SaveMemberWithOptionsCompleted;
+        
+        /// <remarks/>
+        public event Daily_StartCompletedEventHandler Daily_StartCompleted;
+        
+        /// <remarks/>
+        public event Daily_CaptureCompletedEventHandler Daily_CaptureCompleted;
+        
+        /// <remarks/>
+        public event Daily_EndingCompletedEventHandler Daily_EndingCompleted;
+        
+        /// <remarks/>
+        public event SaveConsumablesCompletedEventHandler SaveConsumablesCompleted;
+        
+        /// <remarks/>
+        public event GetPreviousDayDetailsCompletedEventHandler GetPreviousDayDetailsCompleted;
+        
+        /// <remarks/>
+        public event EndOfDayTabStatusCompletedEventHandler EndOfDayTabStatusCompleted;
         
         /// <remarks/>
         public event SaveLogTimeCompletedEventHandler SaveLogTimeCompleted;
@@ -315,7 +360,28 @@ namespace EdelUtilities.ubpWS {
         public event GetCitizenshipCompletedEventHandler GetCitizenshipCompleted;
         
         /// <remarks/>
-        public event SaveMemberRefNumPerWorkPlaceCompletedEventHandler SaveMemberRefNumPerWorkPlaceCompleted;
+        public event GetAUB_CountryCompletedEventHandler GetAUB_CountryCompleted;
+        
+        /// <remarks/>
+        public event GetAUB_NationalityCompletedEventHandler GetAUB_NationalityCompleted;
+        
+        /// <remarks/>
+        public event GetAUB_NatureOfBusinessCompletedEventHandler GetAUB_NatureOfBusinessCompleted;
+        
+        /// <remarks/>
+        public event GetAUB_AddressCodeCompletedEventHandler GetAUB_AddressCodeCompleted;
+        
+        /// <remarks/>
+        public event GetAUB_IDTypeCompletedEventHandler GetAUB_IDTypeCompleted;
+        
+        /// <remarks/>
+        public event IsMemberHasExistingNewCaptureCompletedEventHandler IsMemberHasExistingNewCaptureCompleted;
+        
+        /// <remarks/>
+        public event GetCardCounterCompletedEventHandler GetCardCounterCompleted;
+        
+        /// <remarks/>
+        public event IsMemberExistByMIDAndApplicationDateCompletedEventHandler IsMemberExistByMIDAndApplicationDateCompleted;
         
         /// <remarks/>
         public event is_MID_RTN_ExistCompletedEventHandler is_MID_RTN_ExistCompleted;
@@ -324,16 +390,13 @@ namespace EdelUtilities.ubpWS {
         public event Is_Member_ActiveCompletedEventHandler Is_Member_ActiveCompleted;
         
         /// <remarks/>
+        public event GetActiveCardInfoCompletedEventHandler GetActiveCardInfoCompleted;
+        
+        /// <remarks/>
         public event PushCardInfoCompletedEventHandler PushCardInfoCompleted;
         
         /// <remarks/>
-        public event GetKioskCompletedEventHandler GetKioskCompleted;
-        
-        /// <remarks/>
-        public event GetORByMIDCompletedEventHandler GetORByMIDCompleted;
-        
-        /// <remarks/>
-        public event IsReceiptExistCompletedEventHandler IsReceiptExistCompleted;
+        public event SaveMemberRefNumPerWorkPlaceCompletedEventHandler SaveMemberRefNumPerWorkPlaceCompleted;
         
         /// <remarks/>
         public event GetCity_MunicipalityCompletedEventHandler GetCity_MunicipalityCompleted;
@@ -351,25 +414,19 @@ namespace EdelUtilities.ubpWS {
         public event GetRegionCompletedEventHandler GetRegionCompleted;
         
         /// <remarks/>
-        public event GetMemContributionCompletedEventHandler GetMemContributionCompleted;
-        
-        /// <remarks/>
         public event GetEmploymentStatusCompletedEventHandler GetEmploymentStatusCompleted;
         
         /// <remarks/>
-        public event GetAUB_CountryCompletedEventHandler GetAUB_CountryCompleted;
+        public event GetKioskCompletedEventHandler GetKioskCompleted;
         
         /// <remarks/>
-        public event GetAUB_NationalityCompletedEventHandler GetAUB_NationalityCompleted;
+        public event GetORByMIDCompletedEventHandler GetORByMIDCompleted;
         
         /// <remarks/>
-        public event GetAUB_NatureOfBusinessCompletedEventHandler GetAUB_NatureOfBusinessCompleted;
+        public event IsReceiptExistCompletedEventHandler IsReceiptExistCompleted;
         
         /// <remarks/>
-        public event GetAUB_AddressCodeCompletedEventHandler GetAUB_AddressCodeCompleted;
-        
-        /// <remarks/>
-        public event GetAUB_IDTypeCompletedEventHandler GetAUB_IDTypeCompleted;
+        public event GetMemContributionCompletedEventHandler GetMemContributionCompleted;
         
         /// <remarks/>
         public event Get_IDTypeCompletedEventHandler Get_IDTypeCompleted;
@@ -393,13 +450,7 @@ namespace EdelUtilities.ubpWS {
         public event GetMemberByMIDAndApplicationDateCompletedEventHandler GetMemberByMIDAndApplicationDateCompleted;
         
         /// <remarks/>
-        public event IsMemberExistByMIDAndApplicationDateCompletedEventHandler IsMemberExistByMIDAndApplicationDateCompleted;
-        
-        /// <remarks/>
         public event IsMemberHasAccountCompletedEventHandler IsMemberHasAccountCompleted;
-        
-        /// <remarks/>
-        public event GetCardCounterCompletedEventHandler GetCardCounterCompleted;
         
         /// <remarks/>
         public event GetTotalCapturedByUserCompletedEventHandler GetTotalCapturedByUserCompleted;
@@ -441,18 +492,6 @@ namespace EdelUtilities.ubpWS {
         public event GetCardNo_AUBCompletedEventHandler GetCardNo_AUBCompleted;
         
         /// <remarks/>
-        public event SPX100CompletedEventHandler SPX100Completed;
-        
-        /// <remarks/>
-        public event SPX101CompletedEventHandler SPX101Completed;
-        
-        /// <remarks/>
-        public event WSErrorLogsCompletedEventHandler WSErrorLogsCompleted;
-        
-        /// <remarks/>
-        public event GetConfigCompletedEventHandler GetConfigCompleted;
-        
-        /// <remarks/>
         public event SaveCardTransactionCompletedEventHandler SaveCardTransactionCompleted;
         
         /// <remarks/>
@@ -463,9 +502,6 @@ namespace EdelUtilities.ubpWS {
         
         /// <remarks/>
         public event IsBranchHasSpoiledCardsTransactionCompletedEventHandler IsBranchHasSpoiledCardsTransactionCompleted;
-        
-        /// <remarks/>
-        public event GetActiveCardInfoCompletedEventHandler GetActiveCardInfoCompleted;
         
         /// <remarks/>
         public event IsRefNumExistCompletedEventHandler IsRefNumExistCompleted;
@@ -484,9 +520,6 @@ namespace EdelUtilities.ubpWS {
         
         /// <remarks/>
         public event SaveCardSpoiledV2CompletedEventHandler SaveCardSpoiledV2Completed;
-        
-        /// <remarks/>
-        public event SaveMemberWithOptionsCompletedEventHandler SaveMemberWithOptionsCompleted;
         
         /// <remarks/>
         public event GetUserIDNumberCompletedEventHandler GetUserIDNumberCompleted;
@@ -534,19 +567,10 @@ namespace EdelUtilities.ubpWS {
         public event GetWorkPlaceCompletedEventHandler GetWorkPlaceCompleted;
         
         /// <remarks/>
-        public event GetPreviousDayDetailsCompletedEventHandler GetPreviousDayDetailsCompleted;
-        
-        /// <remarks/>
         public event SaveDepositTransactionV2CompletedEventHandler SaveDepositTransactionV2Completed;
         
         /// <remarks/>
         public event SaveMagErrorCompletedEventHandler SaveMagErrorCompleted;
-        
-        /// <remarks/>
-        public event SaveConsumablesCompletedEventHandler SaveConsumablesCompleted;
-        
-        /// <remarks/>
-        public event EndOfDayTabStatusCompletedEventHandler EndOfDayTabStatusCompleted;
         
         /// <remarks/>
         public event GetListOfDepositCancelledRemarksCompletedEventHandler GetListOfDepositCancelledRemarksCompleted;
@@ -576,13 +600,161 @@ namespace EdelUtilities.ubpWS {
         public event GetWorkplaceCapturedMemberCompletedEventHandler GetWorkplaceCapturedMemberCompleted;
         
         /// <remarks/>
-        public event GetListOfUserTimeInCompletedEventHandler GetListOfUserTimeInCompleted;
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/GetListOfUserTimeIn", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable GetListOfUserTimeIn(RequestAuth requestAuth, string branchCode, int workPlaceID) {
+            object[] results = this.Invoke("GetListOfUserTimeIn", new object[] {
+                        requestAuth,
+                        branchCode,
+                        workPlaceID});
+            return ((System.Data.DataTable)(results[0]));
+        }
         
         /// <remarks/>
-        public event GetTypeOfSpoiledCompletedEventHandler GetTypeOfSpoiledCompleted;
+        public void GetListOfUserTimeInAsync(RequestAuth requestAuth, string branchCode, int workPlaceID) {
+            this.GetListOfUserTimeInAsync(requestAuth, branchCode, workPlaceID, null);
+        }
         
         /// <remarks/>
-        public event GetRefeedSecretCodeCompletedEventHandler GetRefeedSecretCodeCompleted;
+        public void GetListOfUserTimeInAsync(RequestAuth requestAuth, string branchCode, int workPlaceID, object userState) {
+            if ((this.GetListOfUserTimeInOperationCompleted == null)) {
+                this.GetListOfUserTimeInOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetListOfUserTimeInOperationCompleted);
+            }
+            this.InvokeAsync("GetListOfUserTimeIn", new object[] {
+                        requestAuth,
+                        branchCode,
+                        workPlaceID}, this.GetListOfUserTimeInOperationCompleted, userState);
+        }
+        
+        private void OnGetListOfUserTimeInOperationCompleted(object arg) {
+            if ((this.GetListOfUserTimeInCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetListOfUserTimeInCompleted(this, new GetListOfUserTimeInCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/GetTypeOfSpoiled", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable GetTypeOfSpoiled(RequestAuth requestAuth) {
+            object[] results = this.Invoke("GetTypeOfSpoiled", new object[] {
+                        requestAuth});
+            return ((System.Data.DataTable)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetTypeOfSpoiledAsync(RequestAuth requestAuth) {
+            this.GetTypeOfSpoiledAsync(requestAuth, null);
+        }
+        
+        /// <remarks/>
+        public void GetTypeOfSpoiledAsync(RequestAuth requestAuth, object userState) {
+            if ((this.GetTypeOfSpoiledOperationCompleted == null)) {
+                this.GetTypeOfSpoiledOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetTypeOfSpoiledOperationCompleted);
+            }
+            this.InvokeAsync("GetTypeOfSpoiled", new object[] {
+                        requestAuth}, this.GetTypeOfSpoiledOperationCompleted, userState);
+        }
+        
+        private void OnGetTypeOfSpoiledOperationCompleted(object arg) {
+            if ((this.GetTypeOfSpoiledCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetTypeOfSpoiledCompleted(this, new GetTypeOfSpoiledCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/GetRefeedSecretCode", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool GetRefeedSecretCode(RequestAuth requestAuth, string branchCode, string code) {
+            object[] results = this.Invoke("GetRefeedSecretCode", new object[] {
+                        requestAuth,
+                        branchCode,
+                        code});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetRefeedSecretCodeAsync(RequestAuth requestAuth, string branchCode, string code) {
+            this.GetRefeedSecretCodeAsync(requestAuth, branchCode, code, null);
+        }
+        
+        /// <remarks/>
+        public void GetRefeedSecretCodeAsync(RequestAuth requestAuth, string branchCode, string code, object userState) {
+            if ((this.GetRefeedSecretCodeOperationCompleted == null)) {
+                this.GetRefeedSecretCodeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetRefeedSecretCodeOperationCompleted);
+            }
+            this.InvokeAsync("GetRefeedSecretCode", new object[] {
+                        requestAuth,
+                        branchCode,
+                        code}, this.GetRefeedSecretCodeOperationCompleted, userState);
+        }
+        
+        private void OnGetRefeedSecretCodeOperationCompleted(object arg) {
+            if ((this.GetRefeedSecretCodeCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetRefeedSecretCodeCompleted(this, new GetRefeedSecretCodeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/SPX100", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string SPX100(string key1, string key2) {
+            object[] results = this.Invoke("SPX100", new object[] {
+                        key1,
+                        key2});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void SPX100Async(string key1, string key2) {
+            this.SPX100Async(key1, key2, null);
+        }
+        
+        /// <remarks/>
+        public void SPX100Async(string key1, string key2, object userState) {
+            if ((this.SPX100OperationCompleted == null)) {
+                this.SPX100OperationCompleted = new System.Threading.SendOrPostCallback(this.OnSPX100OperationCompleted);
+            }
+            this.InvokeAsync("SPX100", new object[] {
+                        key1,
+                        key2}, this.SPX100OperationCompleted, userState);
+        }
+        
+        private void OnSPX100OperationCompleted(object arg) {
+            if ((this.SPX100Completed != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.SPX100Completed(this, new SPX100CompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/SPX101", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string SPX101(string key1, string key2) {
+            object[] results = this.Invoke("SPX101", new object[] {
+                        key1,
+                        key2});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void SPX101Async(string key1, string key2) {
+            this.SPX101Async(key1, key2, null);
+        }
+        
+        /// <remarks/>
+        public void SPX101Async(string key1, string key2, object userState) {
+            if ((this.SPX101OperationCompleted == null)) {
+                this.SPX101OperationCompleted = new System.Threading.SendOrPostCallback(this.OnSPX101OperationCompleted);
+            }
+            this.InvokeAsync("SPX101", new object[] {
+                        key1,
+                        key2}, this.SPX101OperationCompleted, userState);
+        }
+        
+        private void OnSPX101OperationCompleted(object arg) {
+            if ((this.SPX101Completed != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.SPX101Completed(this, new SPX101CompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/GetServerDateTime", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -608,6 +780,60 @@ namespace EdelUtilities.ubpWS {
             if ((this.GetServerDateTimeCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.GetServerDateTimeCompleted(this, new GetServerDateTimeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/GetConfig", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string GetConfig() {
+            object[] results = this.Invoke("GetConfig", new object[0]);
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetConfigAsync() {
+            this.GetConfigAsync(null);
+        }
+        
+        /// <remarks/>
+        public void GetConfigAsync(object userState) {
+            if ((this.GetConfigOperationCompleted == null)) {
+                this.GetConfigOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetConfigOperationCompleted);
+            }
+            this.InvokeAsync("GetConfig", new object[0], this.GetConfigOperationCompleted, userState);
+        }
+        
+        private void OnGetConfigOperationCompleted(object arg) {
+            if ((this.GetConfigCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetConfigCompleted(this, new GetConfigCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/WSErrorLogs", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public LogTrace[] WSErrorLogs() {
+            object[] results = this.Invoke("WSErrorLogs", new object[0]);
+            return ((LogTrace[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void WSErrorLogsAsync() {
+            this.WSErrorLogsAsync(null);
+        }
+        
+        /// <remarks/>
+        public void WSErrorLogsAsync(object userState) {
+            if ((this.WSErrorLogsOperationCompleted == null)) {
+                this.WSErrorLogsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnWSErrorLogsOperationCompleted);
+            }
+            this.InvokeAsync("WSErrorLogs", new object[0], this.WSErrorLogsOperationCompleted, userState);
+        }
+        
+        private void OnWSErrorLogsOperationCompleted(object arg) {
+            if ((this.WSErrorLogsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.WSErrorLogsCompleted(this, new WSErrorLogsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -685,51 +911,323 @@ namespace EdelUtilities.ubpWS {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/SaveMemberRefNumPerWorkPlaceV2", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public RequestResponse SaveMemberRefNumPerWorkPlaceV2(RequestAuth requestAuth, string refNum, int workPlaceID, string branchCode, string userName, System.DateTime applicationDate, string kioskID, string loanDeductionNumber, int IsReIssued, string warranty, string MID) {
-            object[] results = this.Invoke("SaveMemberRefNumPerWorkPlaceV2", new object[] {
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/SaveMemberWithOptions", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public RequestResponse SaveMemberWithOptions(
+                    RequestAuth requestAuth, 
+                    Member Member, 
+                    MembershipCategoryInfo MembershipCategoryInfo, 
+                    MemberContactinfo MemberContactinfo, 
+                    MemContribution MemContribution, 
+                    Photo Photo, 
+                    Signature Signature, 
+                    Bio Bio, 
+                    Survey Survey, 
+                    PhotoValidID PhotoValidID, 
+                    DCS_Card_Account DCS_Card_Account, 
+                    Card Card, 
+                    InstanceIssuance InstanceIssuance, 
+                    DCS_Card_ReprintList DCS_Card_ReprintList, 
+                    MemberEmploymentHistoryList MemberEmploymentHistoryList, 
+                    bool IsProcessPAGIBIGCardInfo, 
+                    bool IsProcessPackUPData) {
+            object[] results = this.Invoke("SaveMemberWithOptions", new object[] {
                         requestAuth,
-                        refNum,
-                        workPlaceID,
-                        branchCode,
-                        userName,
-                        applicationDate,
-                        kioskID,
-                        loanDeductionNumber,
-                        IsReIssued,
-                        warranty,
-                        MID});
+                        Member,
+                        MembershipCategoryInfo,
+                        MemberContactinfo,
+                        MemContribution,
+                        Photo,
+                        Signature,
+                        Bio,
+                        Survey,
+                        PhotoValidID,
+                        DCS_Card_Account,
+                        Card,
+                        InstanceIssuance,
+                        DCS_Card_ReprintList,
+                        MemberEmploymentHistoryList,
+                        IsProcessPAGIBIGCardInfo,
+                        IsProcessPackUPData});
             return ((RequestResponse)(results[0]));
         }
         
         /// <remarks/>
-        public void SaveMemberRefNumPerWorkPlaceV2Async(RequestAuth requestAuth, string refNum, int workPlaceID, string branchCode, string userName, System.DateTime applicationDate, string kioskID, string loanDeductionNumber, int IsReIssued, string warranty, string MID) {
-            this.SaveMemberRefNumPerWorkPlaceV2Async(requestAuth, refNum, workPlaceID, branchCode, userName, applicationDate, kioskID, loanDeductionNumber, IsReIssued, warranty, MID, null);
+        public void SaveMemberWithOptionsAsync(
+                    RequestAuth requestAuth, 
+                    Member Member, 
+                    MembershipCategoryInfo MembershipCategoryInfo, 
+                    MemberContactinfo MemberContactinfo, 
+                    MemContribution MemContribution, 
+                    Photo Photo, 
+                    Signature Signature, 
+                    Bio Bio, 
+                    Survey Survey, 
+                    PhotoValidID PhotoValidID, 
+                    DCS_Card_Account DCS_Card_Account, 
+                    Card Card, 
+                    InstanceIssuance InstanceIssuance, 
+                    DCS_Card_ReprintList DCS_Card_ReprintList, 
+                    MemberEmploymentHistoryList MemberEmploymentHistoryList, 
+                    bool IsProcessPAGIBIGCardInfo, 
+                    bool IsProcessPackUPData) {
+            this.SaveMemberWithOptionsAsync(requestAuth, Member, MembershipCategoryInfo, MemberContactinfo, MemContribution, Photo, Signature, Bio, Survey, PhotoValidID, DCS_Card_Account, Card, InstanceIssuance, DCS_Card_ReprintList, MemberEmploymentHistoryList, IsProcessPAGIBIGCardInfo, IsProcessPackUPData, null);
         }
         
         /// <remarks/>
-        public void SaveMemberRefNumPerWorkPlaceV2Async(RequestAuth requestAuth, string refNum, int workPlaceID, string branchCode, string userName, System.DateTime applicationDate, string kioskID, string loanDeductionNumber, int IsReIssued, string warranty, string MID, object userState) {
-            if ((this.SaveMemberRefNumPerWorkPlaceV2OperationCompleted == null)) {
-                this.SaveMemberRefNumPerWorkPlaceV2OperationCompleted = new System.Threading.SendOrPostCallback(this.OnSaveMemberRefNumPerWorkPlaceV2OperationCompleted);
+        public void SaveMemberWithOptionsAsync(
+                    RequestAuth requestAuth, 
+                    Member Member, 
+                    MembershipCategoryInfo MembershipCategoryInfo, 
+                    MemberContactinfo MemberContactinfo, 
+                    MemContribution MemContribution, 
+                    Photo Photo, 
+                    Signature Signature, 
+                    Bio Bio, 
+                    Survey Survey, 
+                    PhotoValidID PhotoValidID, 
+                    DCS_Card_Account DCS_Card_Account, 
+                    Card Card, 
+                    InstanceIssuance InstanceIssuance, 
+                    DCS_Card_ReprintList DCS_Card_ReprintList, 
+                    MemberEmploymentHistoryList MemberEmploymentHistoryList, 
+                    bool IsProcessPAGIBIGCardInfo, 
+                    bool IsProcessPackUPData, 
+                    object userState) {
+            if ((this.SaveMemberWithOptionsOperationCompleted == null)) {
+                this.SaveMemberWithOptionsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSaveMemberWithOptionsOperationCompleted);
             }
-            this.InvokeAsync("SaveMemberRefNumPerWorkPlaceV2", new object[] {
+            this.InvokeAsync("SaveMemberWithOptions", new object[] {
                         requestAuth,
-                        refNum,
-                        workPlaceID,
-                        branchCode,
-                        userName,
-                        applicationDate,
-                        kioskID,
-                        loanDeductionNumber,
-                        IsReIssued,
-                        warranty,
-                        MID}, this.SaveMemberRefNumPerWorkPlaceV2OperationCompleted, userState);
+                        Member,
+                        MembershipCategoryInfo,
+                        MemberContactinfo,
+                        MemContribution,
+                        Photo,
+                        Signature,
+                        Bio,
+                        Survey,
+                        PhotoValidID,
+                        DCS_Card_Account,
+                        Card,
+                        InstanceIssuance,
+                        DCS_Card_ReprintList,
+                        MemberEmploymentHistoryList,
+                        IsProcessPAGIBIGCardInfo,
+                        IsProcessPackUPData}, this.SaveMemberWithOptionsOperationCompleted, userState);
         }
         
-        private void OnSaveMemberRefNumPerWorkPlaceV2OperationCompleted(object arg) {
-            if ((this.SaveMemberRefNumPerWorkPlaceV2Completed != null)) {
+        private void OnSaveMemberWithOptionsOperationCompleted(object arg) {
+            if ((this.SaveMemberWithOptionsCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.SaveMemberRefNumPerWorkPlaceV2Completed(this, new SaveMemberRefNumPerWorkPlaceV2CompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.SaveMemberWithOptionsCompleted(this, new SaveMemberWithOptionsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/Daily_Start", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public RequestResponse Daily_Start(RequestAuth requestAuth, Issuance Payload) {
+            object[] results = this.Invoke("Daily_Start", new object[] {
+                        requestAuth,
+                        Payload});
+            return ((RequestResponse)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Daily_StartAsync(RequestAuth requestAuth, Issuance Payload) {
+            this.Daily_StartAsync(requestAuth, Payload, null);
+        }
+        
+        /// <remarks/>
+        public void Daily_StartAsync(RequestAuth requestAuth, Issuance Payload, object userState) {
+            if ((this.Daily_StartOperationCompleted == null)) {
+                this.Daily_StartOperationCompleted = new System.Threading.SendOrPostCallback(this.OnDaily_StartOperationCompleted);
+            }
+            this.InvokeAsync("Daily_Start", new object[] {
+                        requestAuth,
+                        Payload}, this.Daily_StartOperationCompleted, userState);
+        }
+        
+        private void OnDaily_StartOperationCompleted(object arg) {
+            if ((this.Daily_StartCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Daily_StartCompleted(this, new Daily_StartCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/Daily_Capture", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public RequestResponse Daily_Capture(RequestAuth requestAuth, Issuance Payload) {
+            object[] results = this.Invoke("Daily_Capture", new object[] {
+                        requestAuth,
+                        Payload});
+            return ((RequestResponse)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Daily_CaptureAsync(RequestAuth requestAuth, Issuance Payload) {
+            this.Daily_CaptureAsync(requestAuth, Payload, null);
+        }
+        
+        /// <remarks/>
+        public void Daily_CaptureAsync(RequestAuth requestAuth, Issuance Payload, object userState) {
+            if ((this.Daily_CaptureOperationCompleted == null)) {
+                this.Daily_CaptureOperationCompleted = new System.Threading.SendOrPostCallback(this.OnDaily_CaptureOperationCompleted);
+            }
+            this.InvokeAsync("Daily_Capture", new object[] {
+                        requestAuth,
+                        Payload}, this.Daily_CaptureOperationCompleted, userState);
+        }
+        
+        private void OnDaily_CaptureOperationCompleted(object arg) {
+            if ((this.Daily_CaptureCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Daily_CaptureCompleted(this, new Daily_CaptureCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/Daily_Ending", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public RequestResponse Daily_Ending(RequestAuth requestAuth, Issuance Payload) {
+            object[] results = this.Invoke("Daily_Ending", new object[] {
+                        requestAuth,
+                        Payload});
+            return ((RequestResponse)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Daily_EndingAsync(RequestAuth requestAuth, Issuance Payload) {
+            this.Daily_EndingAsync(requestAuth, Payload, null);
+        }
+        
+        /// <remarks/>
+        public void Daily_EndingAsync(RequestAuth requestAuth, Issuance Payload, object userState) {
+            if ((this.Daily_EndingOperationCompleted == null)) {
+                this.Daily_EndingOperationCompleted = new System.Threading.SendOrPostCallback(this.OnDaily_EndingOperationCompleted);
+            }
+            this.InvokeAsync("Daily_Ending", new object[] {
+                        requestAuth,
+                        Payload}, this.Daily_EndingOperationCompleted, userState);
+        }
+        
+        private void OnDaily_EndingOperationCompleted(object arg) {
+            if ((this.Daily_EndingCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Daily_EndingCompleted(this, new Daily_EndingCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/SaveConsumables", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public RequestResponse SaveConsumables(RequestAuth requestAuth, Consumables consumables, DCS_Card_Transaction cardTransaction, int receivedRecard, string branchCode, string userName, int workPlaceID, System.DateTime transDate) {
+            object[] results = this.Invoke("SaveConsumables", new object[] {
+                        requestAuth,
+                        consumables,
+                        cardTransaction,
+                        receivedRecard,
+                        branchCode,
+                        userName,
+                        workPlaceID,
+                        transDate});
+            return ((RequestResponse)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void SaveConsumablesAsync(RequestAuth requestAuth, Consumables consumables, DCS_Card_Transaction cardTransaction, int receivedRecard, string branchCode, string userName, int workPlaceID, System.DateTime transDate) {
+            this.SaveConsumablesAsync(requestAuth, consumables, cardTransaction, receivedRecard, branchCode, userName, workPlaceID, transDate, null);
+        }
+        
+        /// <remarks/>
+        public void SaveConsumablesAsync(RequestAuth requestAuth, Consumables consumables, DCS_Card_Transaction cardTransaction, int receivedRecard, string branchCode, string userName, int workPlaceID, System.DateTime transDate, object userState) {
+            if ((this.SaveConsumablesOperationCompleted == null)) {
+                this.SaveConsumablesOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSaveConsumablesOperationCompleted);
+            }
+            this.InvokeAsync("SaveConsumables", new object[] {
+                        requestAuth,
+                        consumables,
+                        cardTransaction,
+                        receivedRecard,
+                        branchCode,
+                        userName,
+                        workPlaceID,
+                        transDate}, this.SaveConsumablesOperationCompleted, userState);
+        }
+        
+        private void OnSaveConsumablesOperationCompleted(object arg) {
+            if ((this.SaveConsumablesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.SaveConsumablesCompleted(this, new SaveConsumablesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/GetPreviousDayDetails", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable GetPreviousDayDetails(RequestAuth requestAuth, string branchCode, string userName, int selectedTab) {
+            object[] results = this.Invoke("GetPreviousDayDetails", new object[] {
+                        requestAuth,
+                        branchCode,
+                        userName,
+                        selectedTab});
+            return ((System.Data.DataTable)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetPreviousDayDetailsAsync(RequestAuth requestAuth, string branchCode, string userName, int selectedTab) {
+            this.GetPreviousDayDetailsAsync(requestAuth, branchCode, userName, selectedTab, null);
+        }
+        
+        /// <remarks/>
+        public void GetPreviousDayDetailsAsync(RequestAuth requestAuth, string branchCode, string userName, int selectedTab, object userState) {
+            if ((this.GetPreviousDayDetailsOperationCompleted == null)) {
+                this.GetPreviousDayDetailsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetPreviousDayDetailsOperationCompleted);
+            }
+            this.InvokeAsync("GetPreviousDayDetails", new object[] {
+                        requestAuth,
+                        branchCode,
+                        userName,
+                        selectedTab}, this.GetPreviousDayDetailsOperationCompleted, userState);
+        }
+        
+        private void OnGetPreviousDayDetailsOperationCompleted(object arg) {
+            if ((this.GetPreviousDayDetailsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetPreviousDayDetailsCompleted(this, new GetPreviousDayDetailsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/EndOfDayTabStatus", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable EndOfDayTabStatus(RequestAuth requestAuth, string branchCode, string userName, int workPlaceID, System.DateTime transactionDate) {
+            object[] results = this.Invoke("EndOfDayTabStatus", new object[] {
+                        requestAuth,
+                        branchCode,
+                        userName,
+                        workPlaceID,
+                        transactionDate});
+            return ((System.Data.DataTable)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void EndOfDayTabStatusAsync(RequestAuth requestAuth, string branchCode, string userName, int workPlaceID, System.DateTime transactionDate) {
+            this.EndOfDayTabStatusAsync(requestAuth, branchCode, userName, workPlaceID, transactionDate, null);
+        }
+        
+        /// <remarks/>
+        public void EndOfDayTabStatusAsync(RequestAuth requestAuth, string branchCode, string userName, int workPlaceID, System.DateTime transactionDate, object userState) {
+            if ((this.EndOfDayTabStatusOperationCompleted == null)) {
+                this.EndOfDayTabStatusOperationCompleted = new System.Threading.SendOrPostCallback(this.OnEndOfDayTabStatusOperationCompleted);
+            }
+            this.InvokeAsync("EndOfDayTabStatus", new object[] {
+                        requestAuth,
+                        branchCode,
+                        userName,
+                        workPlaceID,
+                        transactionDate}, this.EndOfDayTabStatusOperationCompleted, userState);
+        }
+        
+        private void OnEndOfDayTabStatusOperationCompleted(object arg) {
+            if ((this.EndOfDayTabStatusCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.EndOfDayTabStatusCompleted(this, new EndOfDayTabStatusCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1038,43 +1536,244 @@ namespace EdelUtilities.ubpWS {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/SaveMemberRefNumPerWorkPlace", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public RequestResponse SaveMemberRefNumPerWorkPlace(RequestAuth requestAuth, string refNum, int workPlaceID, string branchCode, string userName, System.DateTime applicationDate, string kioskID) {
-            object[] results = this.Invoke("SaveMemberRefNumPerWorkPlace", new object[] {
-                        requestAuth,
-                        refNum,
-                        workPlaceID,
-                        branchCode,
-                        userName,
-                        applicationDate,
-                        kioskID});
-            return ((RequestResponse)(results[0]));
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/GetAUB_Country", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable GetAUB_Country(RequestAuth requestAuth) {
+            object[] results = this.Invoke("GetAUB_Country", new object[] {
+                        requestAuth});
+            return ((System.Data.DataTable)(results[0]));
         }
         
         /// <remarks/>
-        public void SaveMemberRefNumPerWorkPlaceAsync(RequestAuth requestAuth, string refNum, int workPlaceID, string branchCode, string userName, System.DateTime applicationDate, string kioskID) {
-            this.SaveMemberRefNumPerWorkPlaceAsync(requestAuth, refNum, workPlaceID, branchCode, userName, applicationDate, kioskID, null);
+        public void GetAUB_CountryAsync(RequestAuth requestAuth) {
+            this.GetAUB_CountryAsync(requestAuth, null);
         }
         
         /// <remarks/>
-        public void SaveMemberRefNumPerWorkPlaceAsync(RequestAuth requestAuth, string refNum, int workPlaceID, string branchCode, string userName, System.DateTime applicationDate, string kioskID, object userState) {
-            if ((this.SaveMemberRefNumPerWorkPlaceOperationCompleted == null)) {
-                this.SaveMemberRefNumPerWorkPlaceOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSaveMemberRefNumPerWorkPlaceOperationCompleted);
+        public void GetAUB_CountryAsync(RequestAuth requestAuth, object userState) {
+            if ((this.GetAUB_CountryOperationCompleted == null)) {
+                this.GetAUB_CountryOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetAUB_CountryOperationCompleted);
             }
-            this.InvokeAsync("SaveMemberRefNumPerWorkPlace", new object[] {
-                        requestAuth,
-                        refNum,
-                        workPlaceID,
-                        branchCode,
-                        userName,
-                        applicationDate,
-                        kioskID}, this.SaveMemberRefNumPerWorkPlaceOperationCompleted, userState);
+            this.InvokeAsync("GetAUB_Country", new object[] {
+                        requestAuth}, this.GetAUB_CountryOperationCompleted, userState);
         }
         
-        private void OnSaveMemberRefNumPerWorkPlaceOperationCompleted(object arg) {
-            if ((this.SaveMemberRefNumPerWorkPlaceCompleted != null)) {
+        private void OnGetAUB_CountryOperationCompleted(object arg) {
+            if ((this.GetAUB_CountryCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.SaveMemberRefNumPerWorkPlaceCompleted(this, new SaveMemberRefNumPerWorkPlaceCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.GetAUB_CountryCompleted(this, new GetAUB_CountryCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/GetAUB_Nationality", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable GetAUB_Nationality(RequestAuth requestAuth) {
+            object[] results = this.Invoke("GetAUB_Nationality", new object[] {
+                        requestAuth});
+            return ((System.Data.DataTable)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetAUB_NationalityAsync(RequestAuth requestAuth) {
+            this.GetAUB_NationalityAsync(requestAuth, null);
+        }
+        
+        /// <remarks/>
+        public void GetAUB_NationalityAsync(RequestAuth requestAuth, object userState) {
+            if ((this.GetAUB_NationalityOperationCompleted == null)) {
+                this.GetAUB_NationalityOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetAUB_NationalityOperationCompleted);
+            }
+            this.InvokeAsync("GetAUB_Nationality", new object[] {
+                        requestAuth}, this.GetAUB_NationalityOperationCompleted, userState);
+        }
+        
+        private void OnGetAUB_NationalityOperationCompleted(object arg) {
+            if ((this.GetAUB_NationalityCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetAUB_NationalityCompleted(this, new GetAUB_NationalityCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/GetAUB_NatureOfBusiness", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable GetAUB_NatureOfBusiness(RequestAuth requestAuth) {
+            object[] results = this.Invoke("GetAUB_NatureOfBusiness", new object[] {
+                        requestAuth});
+            return ((System.Data.DataTable)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetAUB_NatureOfBusinessAsync(RequestAuth requestAuth) {
+            this.GetAUB_NatureOfBusinessAsync(requestAuth, null);
+        }
+        
+        /// <remarks/>
+        public void GetAUB_NatureOfBusinessAsync(RequestAuth requestAuth, object userState) {
+            if ((this.GetAUB_NatureOfBusinessOperationCompleted == null)) {
+                this.GetAUB_NatureOfBusinessOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetAUB_NatureOfBusinessOperationCompleted);
+            }
+            this.InvokeAsync("GetAUB_NatureOfBusiness", new object[] {
+                        requestAuth}, this.GetAUB_NatureOfBusinessOperationCompleted, userState);
+        }
+        
+        private void OnGetAUB_NatureOfBusinessOperationCompleted(object arg) {
+            if ((this.GetAUB_NatureOfBusinessCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetAUB_NatureOfBusinessCompleted(this, new GetAUB_NatureOfBusinessCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/GetAUB_AddressCode", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable GetAUB_AddressCode(RequestAuth requestAuth) {
+            object[] results = this.Invoke("GetAUB_AddressCode", new object[] {
+                        requestAuth});
+            return ((System.Data.DataTable)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetAUB_AddressCodeAsync(RequestAuth requestAuth) {
+            this.GetAUB_AddressCodeAsync(requestAuth, null);
+        }
+        
+        /// <remarks/>
+        public void GetAUB_AddressCodeAsync(RequestAuth requestAuth, object userState) {
+            if ((this.GetAUB_AddressCodeOperationCompleted == null)) {
+                this.GetAUB_AddressCodeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetAUB_AddressCodeOperationCompleted);
+            }
+            this.InvokeAsync("GetAUB_AddressCode", new object[] {
+                        requestAuth}, this.GetAUB_AddressCodeOperationCompleted, userState);
+        }
+        
+        private void OnGetAUB_AddressCodeOperationCompleted(object arg) {
+            if ((this.GetAUB_AddressCodeCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetAUB_AddressCodeCompleted(this, new GetAUB_AddressCodeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/GetAUB_IDType", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable GetAUB_IDType(RequestAuth requestAuth) {
+            object[] results = this.Invoke("GetAUB_IDType", new object[] {
+                        requestAuth});
+            return ((System.Data.DataTable)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetAUB_IDTypeAsync(RequestAuth requestAuth) {
+            this.GetAUB_IDTypeAsync(requestAuth, null);
+        }
+        
+        /// <remarks/>
+        public void GetAUB_IDTypeAsync(RequestAuth requestAuth, object userState) {
+            if ((this.GetAUB_IDTypeOperationCompleted == null)) {
+                this.GetAUB_IDTypeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetAUB_IDTypeOperationCompleted);
+            }
+            this.InvokeAsync("GetAUB_IDType", new object[] {
+                        requestAuth}, this.GetAUB_IDTypeOperationCompleted, userState);
+        }
+        
+        private void OnGetAUB_IDTypeOperationCompleted(object arg) {
+            if ((this.GetAUB_IDTypeCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetAUB_IDTypeCompleted(this, new GetAUB_IDTypeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/IsMemberHasExistingNewCapture", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public WS_Result IsMemberHasExistingNewCapture(RequestAuth ReqAuth, string MID, string Bank_ID) {
+            object[] results = this.Invoke("IsMemberHasExistingNewCapture", new object[] {
+                        ReqAuth,
+                        MID,
+                        Bank_ID});
+            return ((WS_Result)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void IsMemberHasExistingNewCaptureAsync(RequestAuth ReqAuth, string MID, string Bank_ID) {
+            this.IsMemberHasExistingNewCaptureAsync(ReqAuth, MID, Bank_ID, null);
+        }
+        
+        /// <remarks/>
+        public void IsMemberHasExistingNewCaptureAsync(RequestAuth ReqAuth, string MID, string Bank_ID, object userState) {
+            if ((this.IsMemberHasExistingNewCaptureOperationCompleted == null)) {
+                this.IsMemberHasExistingNewCaptureOperationCompleted = new System.Threading.SendOrPostCallback(this.OnIsMemberHasExistingNewCaptureOperationCompleted);
+            }
+            this.InvokeAsync("IsMemberHasExistingNewCapture", new object[] {
+                        ReqAuth,
+                        MID,
+                        Bank_ID}, this.IsMemberHasExistingNewCaptureOperationCompleted, userState);
+        }
+        
+        private void OnIsMemberHasExistingNewCaptureOperationCompleted(object arg) {
+            if ((this.IsMemberHasExistingNewCaptureCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.IsMemberHasExistingNewCaptureCompleted(this, new IsMemberHasExistingNewCaptureCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/GetCardCounter", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public int GetCardCounter(RequestAuth requestAuth, string MIDRTN) {
+            object[] results = this.Invoke("GetCardCounter", new object[] {
+                        requestAuth,
+                        MIDRTN});
+            return ((int)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetCardCounterAsync(RequestAuth requestAuth, string MIDRTN) {
+            this.GetCardCounterAsync(requestAuth, MIDRTN, null);
+        }
+        
+        /// <remarks/>
+        public void GetCardCounterAsync(RequestAuth requestAuth, string MIDRTN, object userState) {
+            if ((this.GetCardCounterOperationCompleted == null)) {
+                this.GetCardCounterOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetCardCounterOperationCompleted);
+            }
+            this.InvokeAsync("GetCardCounter", new object[] {
+                        requestAuth,
+                        MIDRTN}, this.GetCardCounterOperationCompleted, userState);
+        }
+        
+        private void OnGetCardCounterOperationCompleted(object arg) {
+            if ((this.GetCardCounterCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetCardCounterCompleted(this, new GetCardCounterCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/IsMemberExistByMIDAndApplicationDate", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool IsMemberExistByMIDAndApplicationDate(RequestAuth requestAuth, string MID, System.DateTime ApplicationDate) {
+            object[] results = this.Invoke("IsMemberExistByMIDAndApplicationDate", new object[] {
+                        requestAuth,
+                        MID,
+                        ApplicationDate});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void IsMemberExistByMIDAndApplicationDateAsync(RequestAuth requestAuth, string MID, System.DateTime ApplicationDate) {
+            this.IsMemberExistByMIDAndApplicationDateAsync(requestAuth, MID, ApplicationDate, null);
+        }
+        
+        /// <remarks/>
+        public void IsMemberExistByMIDAndApplicationDateAsync(RequestAuth requestAuth, string MID, System.DateTime ApplicationDate, object userState) {
+            if ((this.IsMemberExistByMIDAndApplicationDateOperationCompleted == null)) {
+                this.IsMemberExistByMIDAndApplicationDateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnIsMemberExistByMIDAndApplicationDateOperationCompleted);
+            }
+            this.InvokeAsync("IsMemberExistByMIDAndApplicationDate", new object[] {
+                        requestAuth,
+                        MID,
+                        ApplicationDate}, this.IsMemberExistByMIDAndApplicationDateOperationCompleted, userState);
+        }
+        
+        private void OnIsMemberExistByMIDAndApplicationDateOperationCompleted(object arg) {
+            if ((this.IsMemberExistByMIDAndApplicationDateCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.IsMemberExistByMIDAndApplicationDateCompleted(this, new IsMemberExistByMIDAndApplicationDateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1141,6 +1840,37 @@ namespace EdelUtilities.ubpWS {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/GetActiveCardInfo", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public ActiveCardInfoResult GetActiveCardInfo(RequestAuth requestAuth, string MID_RTN) {
+            object[] results = this.Invoke("GetActiveCardInfo", new object[] {
+                        requestAuth,
+                        MID_RTN});
+            return ((ActiveCardInfoResult)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetActiveCardInfoAsync(RequestAuth requestAuth, string MID_RTN) {
+            this.GetActiveCardInfoAsync(requestAuth, MID_RTN, null);
+        }
+        
+        /// <remarks/>
+        public void GetActiveCardInfoAsync(RequestAuth requestAuth, string MID_RTN, object userState) {
+            if ((this.GetActiveCardInfoOperationCompleted == null)) {
+                this.GetActiveCardInfoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetActiveCardInfoOperationCompleted);
+            }
+            this.InvokeAsync("GetActiveCardInfo", new object[] {
+                        requestAuth,
+                        MID_RTN}, this.GetActiveCardInfoOperationCompleted, userState);
+        }
+        
+        private void OnGetActiveCardInfoOperationCompleted(object arg) {
+            if ((this.GetActiveCardInfoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetActiveCardInfoCompleted(this, new GetActiveCardInfoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/PushCardInfo", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public PushCardInfoResult PushCardInfo(RequestAuth requestAuth, PushCardInfoRequest pushCardInfoRequest) {
             object[] results = this.Invoke("PushCardInfo", new object[] {
@@ -1172,93 +1902,43 @@ namespace EdelUtilities.ubpWS {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/GetKiosk", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public System.Data.DataTable GetKiosk(RequestAuth requestAuth) {
-            object[] results = this.Invoke("GetKiosk", new object[] {
-                        requestAuth});
-            return ((System.Data.DataTable)(results[0]));
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/SaveMemberRefNumPerWorkPlace", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public RequestResponse SaveMemberRefNumPerWorkPlace(RequestAuth requestAuth, string refNum, int workPlaceID, string branchCode, string userName, System.DateTime applicationDate, string kioskID) {
+            object[] results = this.Invoke("SaveMemberRefNumPerWorkPlace", new object[] {
+                        requestAuth,
+                        refNum,
+                        workPlaceID,
+                        branchCode,
+                        userName,
+                        applicationDate,
+                        kioskID});
+            return ((RequestResponse)(results[0]));
         }
         
         /// <remarks/>
-        public void GetKioskAsync(RequestAuth requestAuth) {
-            this.GetKioskAsync(requestAuth, null);
+        public void SaveMemberRefNumPerWorkPlaceAsync(RequestAuth requestAuth, string refNum, int workPlaceID, string branchCode, string userName, System.DateTime applicationDate, string kioskID) {
+            this.SaveMemberRefNumPerWorkPlaceAsync(requestAuth, refNum, workPlaceID, branchCode, userName, applicationDate, kioskID, null);
         }
         
         /// <remarks/>
-        public void GetKioskAsync(RequestAuth requestAuth, object userState) {
-            if ((this.GetKioskOperationCompleted == null)) {
-                this.GetKioskOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetKioskOperationCompleted);
+        public void SaveMemberRefNumPerWorkPlaceAsync(RequestAuth requestAuth, string refNum, int workPlaceID, string branchCode, string userName, System.DateTime applicationDate, string kioskID, object userState) {
+            if ((this.SaveMemberRefNumPerWorkPlaceOperationCompleted == null)) {
+                this.SaveMemberRefNumPerWorkPlaceOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSaveMemberRefNumPerWorkPlaceOperationCompleted);
             }
-            this.InvokeAsync("GetKiosk", new object[] {
-                        requestAuth}, this.GetKioskOperationCompleted, userState);
+            this.InvokeAsync("SaveMemberRefNumPerWorkPlace", new object[] {
+                        requestAuth,
+                        refNum,
+                        workPlaceID,
+                        branchCode,
+                        userName,
+                        applicationDate,
+                        kioskID}, this.SaveMemberRefNumPerWorkPlaceOperationCompleted, userState);
         }
         
-        private void OnGetKioskOperationCompleted(object arg) {
-            if ((this.GetKioskCompleted != null)) {
+        private void OnSaveMemberRefNumPerWorkPlaceOperationCompleted(object arg) {
+            if ((this.SaveMemberRefNumPerWorkPlaceCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetKioskCompleted(this, new GetKioskCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/GetORByMID", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string GetORByMID(RequestAuth requestAuth, string MID) {
-            object[] results = this.Invoke("GetORByMID", new object[] {
-                        requestAuth,
-                        MID});
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetORByMIDAsync(RequestAuth requestAuth, string MID) {
-            this.GetORByMIDAsync(requestAuth, MID, null);
-        }
-        
-        /// <remarks/>
-        public void GetORByMIDAsync(RequestAuth requestAuth, string MID, object userState) {
-            if ((this.GetORByMIDOperationCompleted == null)) {
-                this.GetORByMIDOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetORByMIDOperationCompleted);
-            }
-            this.InvokeAsync("GetORByMID", new object[] {
-                        requestAuth,
-                        MID}, this.GetORByMIDOperationCompleted, userState);
-        }
-        
-        private void OnGetORByMIDOperationCompleted(object arg) {
-            if ((this.GetORByMIDCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetORByMIDCompleted(this, new GetORByMIDCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/IsReceiptExist", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool IsReceiptExist(RequestAuth requestAuth, string ORNumber) {
-            object[] results = this.Invoke("IsReceiptExist", new object[] {
-                        requestAuth,
-                        ORNumber});
-            return ((bool)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void IsReceiptExistAsync(RequestAuth requestAuth, string ORNumber) {
-            this.IsReceiptExistAsync(requestAuth, ORNumber, null);
-        }
-        
-        /// <remarks/>
-        public void IsReceiptExistAsync(RequestAuth requestAuth, string ORNumber, object userState) {
-            if ((this.IsReceiptExistOperationCompleted == null)) {
-                this.IsReceiptExistOperationCompleted = new System.Threading.SendOrPostCallback(this.OnIsReceiptExistOperationCompleted);
-            }
-            this.InvokeAsync("IsReceiptExist", new object[] {
-                        requestAuth,
-                        ORNumber}, this.IsReceiptExistOperationCompleted, userState);
-        }
-        
-        private void OnIsReceiptExistOperationCompleted(object arg) {
-            if ((this.IsReceiptExistCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.IsReceiptExistCompleted(this, new IsReceiptExistCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.SaveMemberRefNumPerWorkPlaceCompleted(this, new SaveMemberRefNumPerWorkPlaceCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1408,35 +2088,6 @@ namespace EdelUtilities.ubpWS {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/GetMemContribution", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public System.Data.DataTable GetMemContribution(RequestAuth requestAuth) {
-            object[] results = this.Invoke("GetMemContribution", new object[] {
-                        requestAuth});
-            return ((System.Data.DataTable)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetMemContributionAsync(RequestAuth requestAuth) {
-            this.GetMemContributionAsync(requestAuth, null);
-        }
-        
-        /// <remarks/>
-        public void GetMemContributionAsync(RequestAuth requestAuth, object userState) {
-            if ((this.GetMemContributionOperationCompleted == null)) {
-                this.GetMemContributionOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetMemContributionOperationCompleted);
-            }
-            this.InvokeAsync("GetMemContribution", new object[] {
-                        requestAuth}, this.GetMemContributionOperationCompleted, userState);
-        }
-        
-        private void OnGetMemContributionOperationCompleted(object arg) {
-            if ((this.GetMemContributionCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetMemContributionCompleted(this, new GetMemContributionCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/GetEmploymentStatus", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public System.Data.DataTable GetEmploymentStatus(RequestAuth requestAuth) {
             object[] results = this.Invoke("GetEmploymentStatus", new object[] {
@@ -1466,147 +2117,122 @@ namespace EdelUtilities.ubpWS {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/GetAUB_Country", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public System.Data.DataTable GetAUB_Country(RequestAuth requestAuth) {
-            object[] results = this.Invoke("GetAUB_Country", new object[] {
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/GetKiosk", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable GetKiosk(RequestAuth requestAuth) {
+            object[] results = this.Invoke("GetKiosk", new object[] {
                         requestAuth});
             return ((System.Data.DataTable)(results[0]));
         }
         
         /// <remarks/>
-        public void GetAUB_CountryAsync(RequestAuth requestAuth) {
-            this.GetAUB_CountryAsync(requestAuth, null);
+        public void GetKioskAsync(RequestAuth requestAuth) {
+            this.GetKioskAsync(requestAuth, null);
         }
         
         /// <remarks/>
-        public void GetAUB_CountryAsync(RequestAuth requestAuth, object userState) {
-            if ((this.GetAUB_CountryOperationCompleted == null)) {
-                this.GetAUB_CountryOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetAUB_CountryOperationCompleted);
+        public void GetKioskAsync(RequestAuth requestAuth, object userState) {
+            if ((this.GetKioskOperationCompleted == null)) {
+                this.GetKioskOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetKioskOperationCompleted);
             }
-            this.InvokeAsync("GetAUB_Country", new object[] {
-                        requestAuth}, this.GetAUB_CountryOperationCompleted, userState);
+            this.InvokeAsync("GetKiosk", new object[] {
+                        requestAuth}, this.GetKioskOperationCompleted, userState);
         }
         
-        private void OnGetAUB_CountryOperationCompleted(object arg) {
-            if ((this.GetAUB_CountryCompleted != null)) {
+        private void OnGetKioskOperationCompleted(object arg) {
+            if ((this.GetKioskCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetAUB_CountryCompleted(this, new GetAUB_CountryCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.GetKioskCompleted(this, new GetKioskCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/GetAUB_Nationality", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public System.Data.DataTable GetAUB_Nationality(RequestAuth requestAuth) {
-            object[] results = this.Invoke("GetAUB_Nationality", new object[] {
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/GetORByMID", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string GetORByMID(RequestAuth requestAuth, string MID) {
+            object[] results = this.Invoke("GetORByMID", new object[] {
+                        requestAuth,
+                        MID});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetORByMIDAsync(RequestAuth requestAuth, string MID) {
+            this.GetORByMIDAsync(requestAuth, MID, null);
+        }
+        
+        /// <remarks/>
+        public void GetORByMIDAsync(RequestAuth requestAuth, string MID, object userState) {
+            if ((this.GetORByMIDOperationCompleted == null)) {
+                this.GetORByMIDOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetORByMIDOperationCompleted);
+            }
+            this.InvokeAsync("GetORByMID", new object[] {
+                        requestAuth,
+                        MID}, this.GetORByMIDOperationCompleted, userState);
+        }
+        
+        private void OnGetORByMIDOperationCompleted(object arg) {
+            if ((this.GetORByMIDCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetORByMIDCompleted(this, new GetORByMIDCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/IsReceiptExist", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool IsReceiptExist(RequestAuth requestAuth, string ORNumber) {
+            object[] results = this.Invoke("IsReceiptExist", new object[] {
+                        requestAuth,
+                        ORNumber});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void IsReceiptExistAsync(RequestAuth requestAuth, string ORNumber) {
+            this.IsReceiptExistAsync(requestAuth, ORNumber, null);
+        }
+        
+        /// <remarks/>
+        public void IsReceiptExistAsync(RequestAuth requestAuth, string ORNumber, object userState) {
+            if ((this.IsReceiptExistOperationCompleted == null)) {
+                this.IsReceiptExistOperationCompleted = new System.Threading.SendOrPostCallback(this.OnIsReceiptExistOperationCompleted);
+            }
+            this.InvokeAsync("IsReceiptExist", new object[] {
+                        requestAuth,
+                        ORNumber}, this.IsReceiptExistOperationCompleted, userState);
+        }
+        
+        private void OnIsReceiptExistOperationCompleted(object arg) {
+            if ((this.IsReceiptExistCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.IsReceiptExistCompleted(this, new IsReceiptExistCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/GetMemContribution", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable GetMemContribution(RequestAuth requestAuth) {
+            object[] results = this.Invoke("GetMemContribution", new object[] {
                         requestAuth});
             return ((System.Data.DataTable)(results[0]));
         }
         
         /// <remarks/>
-        public void GetAUB_NationalityAsync(RequestAuth requestAuth) {
-            this.GetAUB_NationalityAsync(requestAuth, null);
+        public void GetMemContributionAsync(RequestAuth requestAuth) {
+            this.GetMemContributionAsync(requestAuth, null);
         }
         
         /// <remarks/>
-        public void GetAUB_NationalityAsync(RequestAuth requestAuth, object userState) {
-            if ((this.GetAUB_NationalityOperationCompleted == null)) {
-                this.GetAUB_NationalityOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetAUB_NationalityOperationCompleted);
+        public void GetMemContributionAsync(RequestAuth requestAuth, object userState) {
+            if ((this.GetMemContributionOperationCompleted == null)) {
+                this.GetMemContributionOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetMemContributionOperationCompleted);
             }
-            this.InvokeAsync("GetAUB_Nationality", new object[] {
-                        requestAuth}, this.GetAUB_NationalityOperationCompleted, userState);
+            this.InvokeAsync("GetMemContribution", new object[] {
+                        requestAuth}, this.GetMemContributionOperationCompleted, userState);
         }
         
-        private void OnGetAUB_NationalityOperationCompleted(object arg) {
-            if ((this.GetAUB_NationalityCompleted != null)) {
+        private void OnGetMemContributionOperationCompleted(object arg) {
+            if ((this.GetMemContributionCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetAUB_NationalityCompleted(this, new GetAUB_NationalityCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/GetAUB_NatureOfBusiness", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public System.Data.DataTable GetAUB_NatureOfBusiness(RequestAuth requestAuth) {
-            object[] results = this.Invoke("GetAUB_NatureOfBusiness", new object[] {
-                        requestAuth});
-            return ((System.Data.DataTable)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetAUB_NatureOfBusinessAsync(RequestAuth requestAuth) {
-            this.GetAUB_NatureOfBusinessAsync(requestAuth, null);
-        }
-        
-        /// <remarks/>
-        public void GetAUB_NatureOfBusinessAsync(RequestAuth requestAuth, object userState) {
-            if ((this.GetAUB_NatureOfBusinessOperationCompleted == null)) {
-                this.GetAUB_NatureOfBusinessOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetAUB_NatureOfBusinessOperationCompleted);
-            }
-            this.InvokeAsync("GetAUB_NatureOfBusiness", new object[] {
-                        requestAuth}, this.GetAUB_NatureOfBusinessOperationCompleted, userState);
-        }
-        
-        private void OnGetAUB_NatureOfBusinessOperationCompleted(object arg) {
-            if ((this.GetAUB_NatureOfBusinessCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetAUB_NatureOfBusinessCompleted(this, new GetAUB_NatureOfBusinessCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/GetAUB_AddressCode", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public System.Data.DataTable GetAUB_AddressCode(RequestAuth requestAuth) {
-            object[] results = this.Invoke("GetAUB_AddressCode", new object[] {
-                        requestAuth});
-            return ((System.Data.DataTable)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetAUB_AddressCodeAsync(RequestAuth requestAuth) {
-            this.GetAUB_AddressCodeAsync(requestAuth, null);
-        }
-        
-        /// <remarks/>
-        public void GetAUB_AddressCodeAsync(RequestAuth requestAuth, object userState) {
-            if ((this.GetAUB_AddressCodeOperationCompleted == null)) {
-                this.GetAUB_AddressCodeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetAUB_AddressCodeOperationCompleted);
-            }
-            this.InvokeAsync("GetAUB_AddressCode", new object[] {
-                        requestAuth}, this.GetAUB_AddressCodeOperationCompleted, userState);
-        }
-        
-        private void OnGetAUB_AddressCodeOperationCompleted(object arg) {
-            if ((this.GetAUB_AddressCodeCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetAUB_AddressCodeCompleted(this, new GetAUB_AddressCodeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/GetAUB_IDType", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public System.Data.DataTable GetAUB_IDType(RequestAuth requestAuth) {
-            object[] results = this.Invoke("GetAUB_IDType", new object[] {
-                        requestAuth});
-            return ((System.Data.DataTable)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetAUB_IDTypeAsync(RequestAuth requestAuth) {
-            this.GetAUB_IDTypeAsync(requestAuth, null);
-        }
-        
-        /// <remarks/>
-        public void GetAUB_IDTypeAsync(RequestAuth requestAuth, object userState) {
-            if ((this.GetAUB_IDTypeOperationCompleted == null)) {
-                this.GetAUB_IDTypeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetAUB_IDTypeOperationCompleted);
-            }
-            this.InvokeAsync("GetAUB_IDType", new object[] {
-                        requestAuth}, this.GetAUB_IDTypeOperationCompleted, userState);
-        }
-        
-        private void OnGetAUB_IDTypeOperationCompleted(object arg) {
-            if ((this.GetAUB_IDTypeCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetAUB_IDTypeCompleted(this, new GetAUB_IDTypeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.GetMemContributionCompleted(this, new GetMemContributionCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1828,39 +2454,6 @@ namespace EdelUtilities.ubpWS {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/IsMemberExistByMIDAndApplicationDate", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool IsMemberExistByMIDAndApplicationDate(RequestAuth requestAuth, string MID, System.DateTime ApplicationDate) {
-            object[] results = this.Invoke("IsMemberExistByMIDAndApplicationDate", new object[] {
-                        requestAuth,
-                        MID,
-                        ApplicationDate});
-            return ((bool)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void IsMemberExistByMIDAndApplicationDateAsync(RequestAuth requestAuth, string MID, System.DateTime ApplicationDate) {
-            this.IsMemberExistByMIDAndApplicationDateAsync(requestAuth, MID, ApplicationDate, null);
-        }
-        
-        /// <remarks/>
-        public void IsMemberExistByMIDAndApplicationDateAsync(RequestAuth requestAuth, string MID, System.DateTime ApplicationDate, object userState) {
-            if ((this.IsMemberExistByMIDAndApplicationDateOperationCompleted == null)) {
-                this.IsMemberExistByMIDAndApplicationDateOperationCompleted = new System.Threading.SendOrPostCallback(this.OnIsMemberExistByMIDAndApplicationDateOperationCompleted);
-            }
-            this.InvokeAsync("IsMemberExistByMIDAndApplicationDate", new object[] {
-                        requestAuth,
-                        MID,
-                        ApplicationDate}, this.IsMemberExistByMIDAndApplicationDateOperationCompleted, userState);
-        }
-        
-        private void OnIsMemberExistByMIDAndApplicationDateOperationCompleted(object arg) {
-            if ((this.IsMemberExistByMIDAndApplicationDateCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.IsMemberExistByMIDAndApplicationDateCompleted(this, new IsMemberExistByMIDAndApplicationDateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/IsMemberHasAccount", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public bool IsMemberHasAccount(RequestAuth requestAuth, string MID) {
             object[] results = this.Invoke("IsMemberHasAccount", new object[] {
@@ -1888,37 +2481,6 @@ namespace EdelUtilities.ubpWS {
             if ((this.IsMemberHasAccountCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.IsMemberHasAccountCompleted(this, new IsMemberHasAccountCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/GetCardCounter", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int GetCardCounter(RequestAuth requestAuth, string MIDRTN) {
-            object[] results = this.Invoke("GetCardCounter", new object[] {
-                        requestAuth,
-                        MIDRTN});
-            return ((int)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetCardCounterAsync(RequestAuth requestAuth, string MIDRTN) {
-            this.GetCardCounterAsync(requestAuth, MIDRTN, null);
-        }
-        
-        /// <remarks/>
-        public void GetCardCounterAsync(RequestAuth requestAuth, string MIDRTN, object userState) {
-            if ((this.GetCardCounterOperationCompleted == null)) {
-                this.GetCardCounterOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetCardCounterOperationCompleted);
-            }
-            this.InvokeAsync("GetCardCounter", new object[] {
-                        requestAuth,
-                        MIDRTN}, this.GetCardCounterOperationCompleted, userState);
-        }
-        
-        private void OnGetCardCounterOperationCompleted(object arg) {
-            if ((this.GetCardCounterCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetCardCounterCompleted(this, new GetCardCounterCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -2350,122 +2912,6 @@ namespace EdelUtilities.ubpWS {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/SPX100", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string SPX100(string key1, string key2) {
-            object[] results = this.Invoke("SPX100", new object[] {
-                        key1,
-                        key2});
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void SPX100Async(string key1, string key2) {
-            this.SPX100Async(key1, key2, null);
-        }
-        
-        /// <remarks/>
-        public void SPX100Async(string key1, string key2, object userState) {
-            if ((this.SPX100OperationCompleted == null)) {
-                this.SPX100OperationCompleted = new System.Threading.SendOrPostCallback(this.OnSPX100OperationCompleted);
-            }
-            this.InvokeAsync("SPX100", new object[] {
-                        key1,
-                        key2}, this.SPX100OperationCompleted, userState);
-        }
-        
-        private void OnSPX100OperationCompleted(object arg) {
-            if ((this.SPX100Completed != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.SPX100Completed(this, new SPX100CompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/SPX101", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string SPX101(string key1, string key2) {
-            object[] results = this.Invoke("SPX101", new object[] {
-                        key1,
-                        key2});
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void SPX101Async(string key1, string key2) {
-            this.SPX101Async(key1, key2, null);
-        }
-        
-        /// <remarks/>
-        public void SPX101Async(string key1, string key2, object userState) {
-            if ((this.SPX101OperationCompleted == null)) {
-                this.SPX101OperationCompleted = new System.Threading.SendOrPostCallback(this.OnSPX101OperationCompleted);
-            }
-            this.InvokeAsync("SPX101", new object[] {
-                        key1,
-                        key2}, this.SPX101OperationCompleted, userState);
-        }
-        
-        private void OnSPX101OperationCompleted(object arg) {
-            if ((this.SPX101Completed != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.SPX101Completed(this, new SPX101CompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/WSErrorLogs", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public LogTrace[] WSErrorLogs() {
-            object[] results = this.Invoke("WSErrorLogs", new object[0]);
-            return ((LogTrace[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void WSErrorLogsAsync() {
-            this.WSErrorLogsAsync(null);
-        }
-        
-        /// <remarks/>
-        public void WSErrorLogsAsync(object userState) {
-            if ((this.WSErrorLogsOperationCompleted == null)) {
-                this.WSErrorLogsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnWSErrorLogsOperationCompleted);
-            }
-            this.InvokeAsync("WSErrorLogs", new object[0], this.WSErrorLogsOperationCompleted, userState);
-        }
-        
-        private void OnWSErrorLogsOperationCompleted(object arg) {
-            if ((this.WSErrorLogsCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.WSErrorLogsCompleted(this, new WSErrorLogsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/GetConfig", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public string GetConfig() {
-            object[] results = this.Invoke("GetConfig", new object[0]);
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetConfigAsync() {
-            this.GetConfigAsync(null);
-        }
-        
-        /// <remarks/>
-        public void GetConfigAsync(object userState) {
-            if ((this.GetConfigOperationCompleted == null)) {
-                this.GetConfigOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetConfigOperationCompleted);
-            }
-            this.InvokeAsync("GetConfig", new object[0], this.GetConfigOperationCompleted, userState);
-        }
-        
-        private void OnGetConfigOperationCompleted(object arg) {
-            if ((this.GetConfigCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetConfigCompleted(this, new GetConfigCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/SaveCardTransaction", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public RequestResponse SaveCardTransaction(RequestAuth requestAuth, DCS_Card_Transaction cardTransaction) {
             object[] results = this.Invoke("SaveCardTransaction", new object[] {
@@ -2590,37 +3036,6 @@ namespace EdelUtilities.ubpWS {
             if ((this.IsBranchHasSpoiledCardsTransactionCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.IsBranchHasSpoiledCardsTransactionCompleted(this, new IsBranchHasSpoiledCardsTransactionCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/GetActiveCardInfo", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public ActiveCardInfoResult GetActiveCardInfo(RequestAuth requestAuth, string MID_RTN) {
-            object[] results = this.Invoke("GetActiveCardInfo", new object[] {
-                        requestAuth,
-                        MID_RTN});
-            return ((ActiveCardInfoResult)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetActiveCardInfoAsync(RequestAuth requestAuth, string MID_RTN) {
-            this.GetActiveCardInfoAsync(requestAuth, MID_RTN, null);
-        }
-        
-        /// <remarks/>
-        public void GetActiveCardInfoAsync(RequestAuth requestAuth, string MID_RTN, object userState) {
-            if ((this.GetActiveCardInfoOperationCompleted == null)) {
-                this.GetActiveCardInfoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetActiveCardInfoOperationCompleted);
-            }
-            this.InvokeAsync("GetActiveCardInfo", new object[] {
-                        requestAuth,
-                        MID_RTN}, this.GetActiveCardInfoOperationCompleted, userState);
-        }
-        
-        private void OnGetActiveCardInfoOperationCompleted(object arg) {
-            if ((this.GetActiveCardInfoCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetActiveCardInfoCompleted(this, new GetActiveCardInfoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -2827,119 +3242,6 @@ namespace EdelUtilities.ubpWS {
             if ((this.SaveCardSpoiledV2Completed != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.SaveCardSpoiledV2Completed(this, new SaveCardSpoiledV2CompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/SaveMemberWithOptions", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public RequestResponse SaveMemberWithOptions(
-                    RequestAuth requestAuth, 
-                    Member Member, 
-                    MembershipCategoryInfo MembershipCategoryInfo, 
-                    MemberContactinfo MemberContactinfo, 
-                    MemContribution MemContribution, 
-                    Photo Photo, 
-                    Signature Signature, 
-                    Bio Bio, 
-                    Survey Survey, 
-                    PhotoValidID PhotoValidID, 
-                    DCS_Card_Account DCS_Card_Account, 
-                    Card Card, 
-                    InstanceIssuance InstanceIssuance, 
-                    DCS_Card_ReprintList DCS_Card_ReprintList, 
-                    MemberEmploymentHistoryList MemberEmploymentHistoryList, 
-                    bool IsProcessPAGIBIGCardInfo, 
-                    bool IsProcessPackUPData) {
-            object[] results = this.Invoke("SaveMemberWithOptions", new object[] {
-                        requestAuth,
-                        Member,
-                        MembershipCategoryInfo,
-                        MemberContactinfo,
-                        MemContribution,
-                        Photo,
-                        Signature,
-                        Bio,
-                        Survey,
-                        PhotoValidID,
-                        DCS_Card_Account,
-                        Card,
-                        InstanceIssuance,
-                        DCS_Card_ReprintList,
-                        MemberEmploymentHistoryList,
-                        IsProcessPAGIBIGCardInfo,
-                        IsProcessPackUPData});
-            return ((RequestResponse)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void SaveMemberWithOptionsAsync(
-                    RequestAuth requestAuth, 
-                    Member Member, 
-                    MembershipCategoryInfo MembershipCategoryInfo, 
-                    MemberContactinfo MemberContactinfo, 
-                    MemContribution MemContribution, 
-                    Photo Photo, 
-                    Signature Signature, 
-                    Bio Bio, 
-                    Survey Survey, 
-                    PhotoValidID PhotoValidID, 
-                    DCS_Card_Account DCS_Card_Account, 
-                    Card Card, 
-                    InstanceIssuance InstanceIssuance, 
-                    DCS_Card_ReprintList DCS_Card_ReprintList, 
-                    MemberEmploymentHistoryList MemberEmploymentHistoryList, 
-                    bool IsProcessPAGIBIGCardInfo, 
-                    bool IsProcessPackUPData) {
-            this.SaveMemberWithOptionsAsync(requestAuth, Member, MembershipCategoryInfo, MemberContactinfo, MemContribution, Photo, Signature, Bio, Survey, PhotoValidID, DCS_Card_Account, Card, InstanceIssuance, DCS_Card_ReprintList, MemberEmploymentHistoryList, IsProcessPAGIBIGCardInfo, IsProcessPackUPData, null);
-        }
-        
-        /// <remarks/>
-        public void SaveMemberWithOptionsAsync(
-                    RequestAuth requestAuth, 
-                    Member Member, 
-                    MembershipCategoryInfo MembershipCategoryInfo, 
-                    MemberContactinfo MemberContactinfo, 
-                    MemContribution MemContribution, 
-                    Photo Photo, 
-                    Signature Signature, 
-                    Bio Bio, 
-                    Survey Survey, 
-                    PhotoValidID PhotoValidID, 
-                    DCS_Card_Account DCS_Card_Account, 
-                    Card Card, 
-                    InstanceIssuance InstanceIssuance, 
-                    DCS_Card_ReprintList DCS_Card_ReprintList, 
-                    MemberEmploymentHistoryList MemberEmploymentHistoryList, 
-                    bool IsProcessPAGIBIGCardInfo, 
-                    bool IsProcessPackUPData, 
-                    object userState) {
-            if ((this.SaveMemberWithOptionsOperationCompleted == null)) {
-                this.SaveMemberWithOptionsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSaveMemberWithOptionsOperationCompleted);
-            }
-            this.InvokeAsync("SaveMemberWithOptions", new object[] {
-                        requestAuth,
-                        Member,
-                        MembershipCategoryInfo,
-                        MemberContactinfo,
-                        MemContribution,
-                        Photo,
-                        Signature,
-                        Bio,
-                        Survey,
-                        PhotoValidID,
-                        DCS_Card_Account,
-                        Card,
-                        InstanceIssuance,
-                        DCS_Card_ReprintList,
-                        MemberEmploymentHistoryList,
-                        IsProcessPAGIBIGCardInfo,
-                        IsProcessPackUPData}, this.SaveMemberWithOptionsOperationCompleted, userState);
-        }
-        
-        private void OnSaveMemberWithOptionsOperationCompleted(object arg) {
-            if ((this.SaveMemberWithOptionsCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.SaveMemberWithOptionsCompleted(this, new SaveMemberWithOptionsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -3416,41 +3718,6 @@ namespace EdelUtilities.ubpWS {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/GetPreviousDayDetails", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public System.Data.DataTable GetPreviousDayDetails(RequestAuth requestAuth, string branchCode, string userName, int selectedTab) {
-            object[] results = this.Invoke("GetPreviousDayDetails", new object[] {
-                        requestAuth,
-                        branchCode,
-                        userName,
-                        selectedTab});
-            return ((System.Data.DataTable)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetPreviousDayDetailsAsync(RequestAuth requestAuth, string branchCode, string userName, int selectedTab) {
-            this.GetPreviousDayDetailsAsync(requestAuth, branchCode, userName, selectedTab, null);
-        }
-        
-        /// <remarks/>
-        public void GetPreviousDayDetailsAsync(RequestAuth requestAuth, string branchCode, string userName, int selectedTab, object userState) {
-            if ((this.GetPreviousDayDetailsOperationCompleted == null)) {
-                this.GetPreviousDayDetailsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetPreviousDayDetailsOperationCompleted);
-            }
-            this.InvokeAsync("GetPreviousDayDetails", new object[] {
-                        requestAuth,
-                        branchCode,
-                        userName,
-                        selectedTab}, this.GetPreviousDayDetailsOperationCompleted, userState);
-        }
-        
-        private void OnGetPreviousDayDetailsOperationCompleted(object arg) {
-            if ((this.GetPreviousDayDetailsCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetPreviousDayDetailsCompleted(this, new GetPreviousDayDetailsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/SaveDepositTransactionV2", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public RequestResponse SaveDepositTransactionV2(RequestAuth requestAuth, DepositTransactionV2 deposit) {
             object[] results = this.Invoke("SaveDepositTransactionV2", new object[] {
@@ -3511,86 +3778,6 @@ namespace EdelUtilities.ubpWS {
             if ((this.SaveMagErrorCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.SaveMagErrorCompleted(this, new SaveMagErrorCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/SaveConsumables", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public RequestResponse SaveConsumables(RequestAuth requestAuth, Consumables consumables, DCS_Card_Transaction cardTransaction, int receivedRecard, string branchCode, string userName, int workPlaceID, System.DateTime transDate) {
-            object[] results = this.Invoke("SaveConsumables", new object[] {
-                        requestAuth,
-                        consumables,
-                        cardTransaction,
-                        receivedRecard,
-                        branchCode,
-                        userName,
-                        workPlaceID,
-                        transDate});
-            return ((RequestResponse)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void SaveConsumablesAsync(RequestAuth requestAuth, Consumables consumables, DCS_Card_Transaction cardTransaction, int receivedRecard, string branchCode, string userName, int workPlaceID, System.DateTime transDate) {
-            this.SaveConsumablesAsync(requestAuth, consumables, cardTransaction, receivedRecard, branchCode, userName, workPlaceID, transDate, null);
-        }
-        
-        /// <remarks/>
-        public void SaveConsumablesAsync(RequestAuth requestAuth, Consumables consumables, DCS_Card_Transaction cardTransaction, int receivedRecard, string branchCode, string userName, int workPlaceID, System.DateTime transDate, object userState) {
-            if ((this.SaveConsumablesOperationCompleted == null)) {
-                this.SaveConsumablesOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSaveConsumablesOperationCompleted);
-            }
-            this.InvokeAsync("SaveConsumables", new object[] {
-                        requestAuth,
-                        consumables,
-                        cardTransaction,
-                        receivedRecard,
-                        branchCode,
-                        userName,
-                        workPlaceID,
-                        transDate}, this.SaveConsumablesOperationCompleted, userState);
-        }
-        
-        private void OnSaveConsumablesOperationCompleted(object arg) {
-            if ((this.SaveConsumablesCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.SaveConsumablesCompleted(this, new SaveConsumablesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/EndOfDayTabStatus", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public System.Data.DataTable EndOfDayTabStatus(RequestAuth requestAuth, string branchCode, string userName, int workPlaceID, System.DateTime transactionDate) {
-            object[] results = this.Invoke("EndOfDayTabStatus", new object[] {
-                        requestAuth,
-                        branchCode,
-                        userName,
-                        workPlaceID,
-                        transactionDate});
-            return ((System.Data.DataTable)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void EndOfDayTabStatusAsync(RequestAuth requestAuth, string branchCode, string userName, int workPlaceID, System.DateTime transactionDate) {
-            this.EndOfDayTabStatusAsync(requestAuth, branchCode, userName, workPlaceID, transactionDate, null);
-        }
-        
-        /// <remarks/>
-        public void EndOfDayTabStatusAsync(RequestAuth requestAuth, string branchCode, string userName, int workPlaceID, System.DateTime transactionDate, object userState) {
-            if ((this.EndOfDayTabStatusOperationCompleted == null)) {
-                this.EndOfDayTabStatusOperationCompleted = new System.Threading.SendOrPostCallback(this.OnEndOfDayTabStatusOperationCompleted);
-            }
-            this.InvokeAsync("EndOfDayTabStatus", new object[] {
-                        requestAuth,
-                        branchCode,
-                        userName,
-                        workPlaceID,
-                        transactionDate}, this.EndOfDayTabStatusOperationCompleted, userState);
-        }
-        
-        private void OnEndOfDayTabStatusOperationCompleted(object arg) {
-            if ((this.EndOfDayTabStatusCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.EndOfDayTabStatusCompleted(this, new EndOfDayTabStatusCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -3912,101 +4099,6 @@ namespace EdelUtilities.ubpWS {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/GetListOfUserTimeIn", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public System.Data.DataTable GetListOfUserTimeIn(RequestAuth requestAuth, string branchCode, int workPlaceID) {
-            object[] results = this.Invoke("GetListOfUserTimeIn", new object[] {
-                        requestAuth,
-                        branchCode,
-                        workPlaceID});
-            return ((System.Data.DataTable)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetListOfUserTimeInAsync(RequestAuth requestAuth, string branchCode, int workPlaceID) {
-            this.GetListOfUserTimeInAsync(requestAuth, branchCode, workPlaceID, null);
-        }
-        
-        /// <remarks/>
-        public void GetListOfUserTimeInAsync(RequestAuth requestAuth, string branchCode, int workPlaceID, object userState) {
-            if ((this.GetListOfUserTimeInOperationCompleted == null)) {
-                this.GetListOfUserTimeInOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetListOfUserTimeInOperationCompleted);
-            }
-            this.InvokeAsync("GetListOfUserTimeIn", new object[] {
-                        requestAuth,
-                        branchCode,
-                        workPlaceID}, this.GetListOfUserTimeInOperationCompleted, userState);
-        }
-        
-        private void OnGetListOfUserTimeInOperationCompleted(object arg) {
-            if ((this.GetListOfUserTimeInCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetListOfUserTimeInCompleted(this, new GetListOfUserTimeInCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/GetTypeOfSpoiled", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public System.Data.DataTable GetTypeOfSpoiled(RequestAuth requestAuth) {
-            object[] results = this.Invoke("GetTypeOfSpoiled", new object[] {
-                        requestAuth});
-            return ((System.Data.DataTable)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetTypeOfSpoiledAsync(RequestAuth requestAuth) {
-            this.GetTypeOfSpoiledAsync(requestAuth, null);
-        }
-        
-        /// <remarks/>
-        public void GetTypeOfSpoiledAsync(RequestAuth requestAuth, object userState) {
-            if ((this.GetTypeOfSpoiledOperationCompleted == null)) {
-                this.GetTypeOfSpoiledOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetTypeOfSpoiledOperationCompleted);
-            }
-            this.InvokeAsync("GetTypeOfSpoiled", new object[] {
-                        requestAuth}, this.GetTypeOfSpoiledOperationCompleted, userState);
-        }
-        
-        private void OnGetTypeOfSpoiledOperationCompleted(object arg) {
-            if ((this.GetTypeOfSpoiledCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetTypeOfSpoiledCompleted(this, new GetTypeOfSpoiledCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://allcardtech.com.ph/GetRefeedSecretCode", RequestNamespace="http://allcardtech.com.ph/", ResponseNamespace="http://allcardtech.com.ph/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool GetRefeedSecretCode(RequestAuth requestAuth, string branchCode, string code) {
-            object[] results = this.Invoke("GetRefeedSecretCode", new object[] {
-                        requestAuth,
-                        branchCode,
-                        code});
-            return ((bool)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void GetRefeedSecretCodeAsync(RequestAuth requestAuth, string branchCode, string code) {
-            this.GetRefeedSecretCodeAsync(requestAuth, branchCode, code, null);
-        }
-        
-        /// <remarks/>
-        public void GetRefeedSecretCodeAsync(RequestAuth requestAuth, string branchCode, string code, object userState) {
-            if ((this.GetRefeedSecretCodeOperationCompleted == null)) {
-                this.GetRefeedSecretCodeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetRefeedSecretCodeOperationCompleted);
-            }
-            this.InvokeAsync("GetRefeedSecretCode", new object[] {
-                        requestAuth,
-                        branchCode,
-                        code}, this.GetRefeedSecretCodeOperationCompleted, userState);
-        }
-        
-        private void OnGetRefeedSecretCodeOperationCompleted(object arg) {
-            if ((this.GetRefeedSecretCodeCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetRefeedSecretCodeCompleted(this, new GetRefeedSecretCodeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -4026,7 +4118,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4083,7 +4175,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4200,160 +4292,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://allcardtech.com.ph/")]
-    public partial class Consumables {
-        
-        private int eOD_DepositIDField;
-        
-        private int receivedRibbonField;
-        
-        private int receivedOfficialReceiptField;
-        
-        private int receivedCongratulatoryLetterField;
-        
-        private int usedRibbonField;
-        
-        private int usedORPadField;
-        
-        private int usedCongratulatoryLetterField;
-        
-        private int receivedCardField;
-        
-        private string internetDataLoadField;
-        
-        private int workPlaceField;
-        
-        private string branchCodeField;
-        
-        private string errorMessageField;
-        
-        /// <remarks/>
-        public int EOD_DepositID {
-            get {
-                return this.eOD_DepositIDField;
-            }
-            set {
-                this.eOD_DepositIDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int ReceivedRibbon {
-            get {
-                return this.receivedRibbonField;
-            }
-            set {
-                this.receivedRibbonField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int ReceivedOfficialReceipt {
-            get {
-                return this.receivedOfficialReceiptField;
-            }
-            set {
-                this.receivedOfficialReceiptField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int ReceivedCongratulatoryLetter {
-            get {
-                return this.receivedCongratulatoryLetterField;
-            }
-            set {
-                this.receivedCongratulatoryLetterField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int UsedRibbon {
-            get {
-                return this.usedRibbonField;
-            }
-            set {
-                this.usedRibbonField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int UsedORPad {
-            get {
-                return this.usedORPadField;
-            }
-            set {
-                this.usedORPadField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int UsedCongratulatoryLetter {
-            get {
-                return this.usedCongratulatoryLetterField;
-            }
-            set {
-                this.usedCongratulatoryLetterField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int ReceivedCard {
-            get {
-                return this.receivedCardField;
-            }
-            set {
-                this.receivedCardField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string InternetDataLoad {
-            get {
-                return this.internetDataLoadField;
-            }
-            set {
-                this.internetDataLoadField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int WorkPlace {
-            get {
-                return this.workPlaceField;
-            }
-            set {
-                this.workPlaceField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string BranchCode {
-            get {
-                return this.branchCodeField;
-            }
-            set {
-                this.branchCodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string ErrorMessage {
-            get {
-                return this.errorMessageField;
-            }
-            set {
-                this.errorMessageField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4723,7 +4662,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4852,7 +4791,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4897,7 +4836,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5099,7 +5038,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5144,7 +5083,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5273,7 +5212,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5366,214 +5305,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://allcardtech.com.ph/")]
-    public partial class ActiveCardInfoResult {
-        
-        private string cardNumberField;
-        
-        private bool isGetField;
-        
-        private string errorMessageField;
-        
-        /// <remarks/>
-        public string CardNumber {
-            get {
-                return this.cardNumberField;
-            }
-            set {
-                this.cardNumberField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public bool IsGet {
-            get {
-                return this.isGetField;
-            }
-            set {
-                this.isGetField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string ErrorMessage {
-            get {
-                return this.errorMessageField;
-            }
-            set {
-                this.errorMessageField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://allcardtech.com.ph/")]
-    public partial class DCS_Card_Transaction {
-        
-        private string transactionNoField;
-        
-        private System.DateTime transactionDateField;
-        
-        private string usernameField;
-        
-        private string branchCodeField;
-        
-        private string kioskIDField;
-        
-        private string transactionTypeIDField;
-        
-        private decimal quantityField;
-        
-        private string remarksField;
-        
-        private string errorMessageField;
-        
-        /// <remarks/>
-        public string TransactionNo {
-            get {
-                return this.transactionNoField;
-            }
-            set {
-                this.transactionNoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public System.DateTime TransactionDate {
-            get {
-                return this.transactionDateField;
-            }
-            set {
-                this.transactionDateField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Username {
-            get {
-                return this.usernameField;
-            }
-            set {
-                this.usernameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string BranchCode {
-            get {
-                return this.branchCodeField;
-            }
-            set {
-                this.branchCodeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string KioskID {
-            get {
-                return this.kioskIDField;
-            }
-            set {
-                this.kioskIDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string TransactionTypeID {
-            get {
-                return this.transactionTypeIDField;
-            }
-            set {
-                this.transactionTypeIDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public decimal Quantity {
-            get {
-                return this.quantityField;
-            }
-            set {
-                this.quantityField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Remarks {
-            get {
-                return this.remarksField;
-            }
-            set {
-                this.remarksField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string ErrorMessage {
-            get {
-                return this.errorMessageField;
-            }
-            set {
-                this.errorMessageField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://allcardtech.com.ph/")]
-    public partial class LogTrace {
-        
-        private int indexField;
-        
-        private string timestampField;
-        
-        private string logField;
-        
-        /// <remarks/>
-        public int Index {
-            get {
-                return this.indexField;
-            }
-            set {
-                this.indexField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Timestamp {
-            get {
-                return this.timestampField;
-            }
-            set {
-                this.timestampField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Log {
-            get {
-                return this.logField;
-            }
-            set {
-                this.logField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5618,7 +5350,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5663,7 +5395,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5720,7 +5452,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5777,7 +5509,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5834,7 +5566,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6001,7 +5733,7 @@ namespace EdelUtilities.ubpWS {
     /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(aub_permanentAddress))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(homeAddress))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6094,7 +5826,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6103,7 +5835,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6112,7 +5844,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6169,7 +5901,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6466,7 +6198,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6559,7 +6291,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6628,7 +6360,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6685,7 +6417,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6730,7 +6462,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6871,7 +6603,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7060,7 +6792,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7777,7 +7509,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8230,7 +7962,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8899,7 +8631,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9124,7 +8856,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9218,7 +8950,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9312,7 +9044,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9593,7 +9325,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9830,7 +9562,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -9948,7 +9680,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10089,7 +9821,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10254,7 +9986,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10371,7 +10103,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10512,7 +10244,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10545,7 +10277,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10698,7 +10430,52 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://allcardtech.com.ph/")]
+    public partial class ActiveCardInfoResult {
+        
+        private string cardNumberField;
+        
+        private bool isGetField;
+        
+        private string errorMessageField;
+        
+        /// <remarks/>
+        public string CardNumber {
+            get {
+                return this.cardNumberField;
+            }
+            set {
+                this.cardNumberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public bool IsGet {
+            get {
+                return this.isGetField;
+            }
+            set {
+                this.isGetField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ErrorMessage {
+            get {
+                return this.errorMessageField;
+            }
+            set {
+                this.errorMessageField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10755,7 +10532,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -10992,7 +10769,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11013,7 +10790,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11154,7 +10931,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11516,7 +11293,7 @@ namespace EdelUtilities.ubpWS {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(MobileTelNo))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(BusinessDirectTelNo))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(BusinessTrunkTelNo))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11575,7 +11352,7 @@ namespace EdelUtilities.ubpWS {
     /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(BusinessDirectTelNo))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(BusinessTrunkTelNo))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11585,7 +11362,7 @@ namespace EdelUtilities.ubpWS {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(BusinessTrunkTelNo))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11594,7 +11371,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11603,7 +11380,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11684,7 +11461,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11708,7 +11485,7 @@ namespace EdelUtilities.ubpWS {
     /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(PresentAddress))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(EmployerAddress))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11921,7 +11698,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11930,7 +11707,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -11939,7 +11716,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12158,7 +11935,7 @@ namespace EdelUtilities.ubpWS {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(FatherName))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(SpouseName))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Beneficiaries))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12231,7 +12008,7 @@ namespace EdelUtilities.ubpWS {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(FatherName))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(SpouseName))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Beneficiaries))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12243,7 +12020,7 @@ namespace EdelUtilities.ubpWS {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(FatherName))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(SpouseName))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Beneficiaries))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12254,7 +12031,7 @@ namespace EdelUtilities.ubpWS {
     /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(SpouseName))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Beneficiaries))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12264,7 +12041,7 @@ namespace EdelUtilities.ubpWS {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Beneficiaries))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12273,7 +12050,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12294,7 +12071,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -12963,7 +12740,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13032,7 +12809,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13125,7 +12902,676 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://allcardtech.com.ph/")]
+    public partial class WS_Result {
+        
+        private bool successField;
+        
+        private string messageField;
+        
+        private object dataField;
+        
+        /// <remarks/>
+        public bool Success {
+            get {
+                return this.successField;
+            }
+            set {
+                this.successField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Message {
+            get {
+                return this.messageField;
+            }
+            set {
+                this.messageField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public object Data {
+            get {
+                return this.dataField;
+            }
+            set {
+                this.dataField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://allcardtech.com.ph/")]
+    public partial class DCS_Card_Transaction {
+        
+        private string transactionNoField;
+        
+        private System.DateTime transactionDateField;
+        
+        private string usernameField;
+        
+        private string branchCodeField;
+        
+        private string kioskIDField;
+        
+        private string transactionTypeIDField;
+        
+        private decimal quantityField;
+        
+        private string remarksField;
+        
+        private string errorMessageField;
+        
+        /// <remarks/>
+        public string TransactionNo {
+            get {
+                return this.transactionNoField;
+            }
+            set {
+                this.transactionNoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime TransactionDate {
+            get {
+                return this.transactionDateField;
+            }
+            set {
+                this.transactionDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Username {
+            get {
+                return this.usernameField;
+            }
+            set {
+                this.usernameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string BranchCode {
+            get {
+                return this.branchCodeField;
+            }
+            set {
+                this.branchCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string KioskID {
+            get {
+                return this.kioskIDField;
+            }
+            set {
+                this.kioskIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TransactionTypeID {
+            get {
+                return this.transactionTypeIDField;
+            }
+            set {
+                this.transactionTypeIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public decimal Quantity {
+            get {
+                return this.quantityField;
+            }
+            set {
+                this.quantityField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Remarks {
+            get {
+                return this.remarksField;
+            }
+            set {
+                this.remarksField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ErrorMessage {
+            get {
+                return this.errorMessageField;
+            }
+            set {
+                this.errorMessageField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://allcardtech.com.ph/")]
+    public partial class Consumables {
+        
+        private int eOD_DepositIDField;
+        
+        private int receivedRibbonField;
+        
+        private int receivedOfficialReceiptField;
+        
+        private int receivedCongratulatoryLetterField;
+        
+        private int usedRibbonField;
+        
+        private int usedORPadField;
+        
+        private int usedCongratulatoryLetterField;
+        
+        private int receivedCardField;
+        
+        private string internetDataLoadField;
+        
+        private int workPlaceField;
+        
+        private string branchCodeField;
+        
+        private string errorMessageField;
+        
+        /// <remarks/>
+        public int EOD_DepositID {
+            get {
+                return this.eOD_DepositIDField;
+            }
+            set {
+                this.eOD_DepositIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int ReceivedRibbon {
+            get {
+                return this.receivedRibbonField;
+            }
+            set {
+                this.receivedRibbonField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int ReceivedOfficialReceipt {
+            get {
+                return this.receivedOfficialReceiptField;
+            }
+            set {
+                this.receivedOfficialReceiptField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int ReceivedCongratulatoryLetter {
+            get {
+                return this.receivedCongratulatoryLetterField;
+            }
+            set {
+                this.receivedCongratulatoryLetterField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int UsedRibbon {
+            get {
+                return this.usedRibbonField;
+            }
+            set {
+                this.usedRibbonField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int UsedORPad {
+            get {
+                return this.usedORPadField;
+            }
+            set {
+                this.usedORPadField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int UsedCongratulatoryLetter {
+            get {
+                return this.usedCongratulatoryLetterField;
+            }
+            set {
+                this.usedCongratulatoryLetterField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int ReceivedCard {
+            get {
+                return this.receivedCardField;
+            }
+            set {
+                this.receivedCardField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string InternetDataLoad {
+            get {
+                return this.internetDataLoadField;
+            }
+            set {
+                this.internetDataLoadField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int WorkPlace {
+            get {
+                return this.workPlaceField;
+            }
+            set {
+                this.workPlaceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string BranchCode {
+            get {
+                return this.branchCodeField;
+            }
+            set {
+                this.branchCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ErrorMessage {
+            get {
+                return this.errorMessageField;
+            }
+            set {
+                this.errorMessageField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://allcardtech.com.ph/")]
+    public partial class Auth_Service {
+        
+        private string wsUserField;
+        
+        private string wsPassField;
+        
+        private string iP_AddressField;
+        
+        private string mAC_AddressField;
+        
+        private string kiosk_IDField;
+        
+        private string branch_IDField;
+        
+        private string terminalField;
+        
+        /// <remarks/>
+        public string WsUser {
+            get {
+                return this.wsUserField;
+            }
+            set {
+                this.wsUserField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string WsPass {
+            get {
+                return this.wsPassField;
+            }
+            set {
+                this.wsPassField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string IP_Address {
+            get {
+                return this.iP_AddressField;
+            }
+            set {
+                this.iP_AddressField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string MAC_Address {
+            get {
+                return this.mAC_AddressField;
+            }
+            set {
+                this.mAC_AddressField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Kiosk_ID {
+            get {
+                return this.kiosk_IDField;
+            }
+            set {
+                this.kiosk_IDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Branch_ID {
+            get {
+                return this.branch_IDField;
+            }
+            set {
+                this.branch_IDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Terminal {
+            get {
+                return this.terminalField;
+            }
+            set {
+                this.terminalField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://allcardtech.com.ph/")]
+    public partial class Issuance {
+        
+        private Auth_Service wsAuthField;
+        
+        private int eOD_IDField;
+        
+        private string refNumField;
+        
+        private int workPlaceIDField;
+        
+        private string branchCodeField;
+        
+        private string userNameField;
+        
+        private string applicationDateField;
+        
+        private string kiosk_IDField;
+        
+        private string loanDeductionNumberField;
+        
+        private int isReIssuedField;
+        
+        private string warrantyField;
+        
+        private string mIDField;
+        
+        private int bankIDField;
+        
+        private string bank_CodeField;
+        
+        private int quantityField;
+        
+        private string trans_TypeField;
+        
+        private int trans_Type_IDField;
+        
+        private string gUIField;
+        
+        private string versionField;
+        
+        private bool isLoanField;
+        
+        private string loan_Ref_IDField;
+        
+        /// <remarks/>
+        public Auth_Service WsAuth {
+            get {
+                return this.wsAuthField;
+            }
+            set {
+                this.wsAuthField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int EOD_ID {
+            get {
+                return this.eOD_IDField;
+            }
+            set {
+                this.eOD_IDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string RefNum {
+            get {
+                return this.refNumField;
+            }
+            set {
+                this.refNumField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int WorkPlaceID {
+            get {
+                return this.workPlaceIDField;
+            }
+            set {
+                this.workPlaceIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string BranchCode {
+            get {
+                return this.branchCodeField;
+            }
+            set {
+                this.branchCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string UserName {
+            get {
+                return this.userNameField;
+            }
+            set {
+                this.userNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ApplicationDate {
+            get {
+                return this.applicationDateField;
+            }
+            set {
+                this.applicationDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Kiosk_ID {
+            get {
+                return this.kiosk_IDField;
+            }
+            set {
+                this.kiosk_IDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string LoanDeductionNumber {
+            get {
+                return this.loanDeductionNumberField;
+            }
+            set {
+                this.loanDeductionNumberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int IsReIssued {
+            get {
+                return this.isReIssuedField;
+            }
+            set {
+                this.isReIssuedField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Warranty {
+            get {
+                return this.warrantyField;
+            }
+            set {
+                this.warrantyField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string MID {
+            get {
+                return this.mIDField;
+            }
+            set {
+                this.mIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int BankID {
+            get {
+                return this.bankIDField;
+            }
+            set {
+                this.bankIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Bank_Code {
+            get {
+                return this.bank_CodeField;
+            }
+            set {
+                this.bank_CodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Quantity {
+            get {
+                return this.quantityField;
+            }
+            set {
+                this.quantityField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Trans_Type {
+            get {
+                return this.trans_TypeField;
+            }
+            set {
+                this.trans_TypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Trans_Type_ID {
+            get {
+                return this.trans_Type_IDField;
+            }
+            set {
+                this.trans_Type_IDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string GUI {
+            get {
+                return this.gUIField;
+            }
+            set {
+                this.gUIField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Version {
+            get {
+                return this.versionField;
+            }
+            set {
+                this.versionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public bool IsLoan {
+            get {
+                return this.isLoanField;
+            }
+            set {
+                this.isLoanField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Loan_Ref_ID {
+            get {
+                return this.loan_Ref_IDField;
+            }
+            set {
+                this.loan_Ref_IDField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13158,7 +13604,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13180,7 +13626,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13202,7 +13648,7 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -13343,200 +13789,63 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetServerDateTimeCompletedEventHandler(object sender, GetServerDateTimeCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetServerDateTimeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://allcardtech.com.ph/")]
+    public partial class LogTrace {
         
-        private object[] results;
+        private int indexField;
         
-        internal GetServerDateTimeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
+        private string timestampField;
+        
+        private string logField;
+        
+        /// <remarks/>
+        public int Index {
+            get {
+                return this.indexField;
+            }
+            set {
+                this.indexField = value;
+            }
         }
         
         /// <remarks/>
-        public System.DateTime Result {
+        public string Timestamp {
             get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.DateTime)(this.results[0]));
+                return this.timestampField;
+            }
+            set {
+                this.timestampField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Log {
+            get {
+                return this.logField;
+            }
+            set {
+                this.logField = value;
             }
         }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void SaveMemberCompletedEventHandler(object sender, SaveMemberCompletedEventArgs e);
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetListOfUserTimeInCompletedEventHandler(object sender, GetListOfUserTimeInCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class SaveMemberCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class GetListOfUserTimeInCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal SaveMemberCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RequestResponse Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RequestResponse)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void SaveMemberRefNumPerWorkPlaceV2CompletedEventHandler(object sender, SaveMemberRefNumPerWorkPlaceV2CompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class SaveMemberRefNumPerWorkPlaceV2CompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal SaveMemberRefNumPerWorkPlaceV2CompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RequestResponse Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RequestResponse)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void SaveLogTimeCompletedEventHandler(object sender, SaveLogTimeCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class SaveLogTimeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal SaveLogTimeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RequestResponse Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RequestResponse)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void SaveDCSLogTimeCompletedEventHandler(object sender, SaveDCSLogTimeCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class SaveDCSLogTimeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal SaveDCSLogTimeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RequestResponse Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RequestResponse)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetMemberMaxApplicationDateCompletedEventHandler(object sender, GetMemberMaxApplicationDateCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetMemberMaxApplicationDateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetMemberMaxApplicationDateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.DateTime Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.DateTime)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetMemberMinApplicationDateCompletedEventHandler(object sender, GetMemberMinApplicationDateCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetMemberMinApplicationDateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetMemberMinApplicationDateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.DateTime Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.DateTime)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetClassificationCompletedEventHandler(object sender, GetClassificationCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetClassificationCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetClassificationCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal GetListOfUserTimeInCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -13551,18 +13860,18 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetMembershipCategoryCompletedEventHandler(object sender, GetMembershipCategoryCompletedEventArgs e);
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetTypeOfSpoiledCompletedEventHandler(object sender, GetTypeOfSpoiledCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetMembershipCategoryCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class GetTypeOfSpoiledCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal GetMembershipCategoryCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal GetTypeOfSpoiledCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -13577,278 +13886,18 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetOccupationCompletedEventHandler(object sender, GetOccupationCompletedEventArgs e);
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetRefeedSecretCodeCompletedEventHandler(object sender, GetRefeedSecretCodeCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetOccupationCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class GetRefeedSecretCodeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal GetOccupationCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.Data.DataTable Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataTable)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetGroupOfIslandCompletedEventHandler(object sender, GetGroupOfIslandCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetGroupOfIslandCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetGroupOfIslandCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.Data.DataTable Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataTable)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetBarangay_ZipcodeCompletedEventHandler(object sender, GetBarangay_ZipcodeCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetBarangay_ZipcodeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetBarangay_ZipcodeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.Data.DataTable Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataTable)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetCitizenshipCompletedEventHandler(object sender, GetCitizenshipCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetCitizenshipCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetCitizenshipCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.Data.DataTable Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataTable)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void SaveMemberRefNumPerWorkPlaceCompletedEventHandler(object sender, SaveMemberRefNumPerWorkPlaceCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class SaveMemberRefNumPerWorkPlaceCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal SaveMemberRefNumPerWorkPlaceCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RequestResponse Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RequestResponse)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void is_MID_RTN_ExistCompletedEventHandler(object sender, is_MID_RTN_ExistCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class is_MID_RTN_ExistCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal is_MID_RTN_ExistCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public SubmitResult Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((SubmitResult)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void Is_Member_ActiveCompletedEventHandler(object sender, Is_Member_ActiveCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Is_Member_ActiveCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Is_Member_ActiveCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public ACCMCRecordClassResult Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((ACCMCRecordClassResult)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void PushCardInfoCompletedEventHandler(object sender, PushCardInfoCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class PushCardInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal PushCardInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public PushCardInfoResult Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((PushCardInfoResult)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetKioskCompletedEventHandler(object sender, GetKioskCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetKioskCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetKioskCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.Data.DataTable Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataTable)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetORByMIDCompletedEventHandler(object sender, GetORByMIDCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetORByMIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetORByMIDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public string Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void IsReceiptExistCompletedEventHandler(object sender, IsReceiptExistCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class IsReceiptExistCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal IsReceiptExistCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal GetRefeedSecretCodeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -13863,921 +13912,11 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetCity_MunicipalityCompletedEventHandler(object sender, GetCity_MunicipalityCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetCity_MunicipalityCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetCity_MunicipalityCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.Data.DataTable Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataTable)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetMonthlyIncomeCompletedEventHandler(object sender, GetMonthlyIncomeCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetMonthlyIncomeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetMonthlyIncomeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.Data.DataTable Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataTable)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetCountryCompletedEventHandler(object sender, GetCountryCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetCountryCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetCountryCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.Data.DataTable Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataTable)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetProvinceCompletedEventHandler(object sender, GetProvinceCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetProvinceCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetProvinceCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.Data.DataTable Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataTable)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetRegionCompletedEventHandler(object sender, GetRegionCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetRegionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetRegionCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.Data.DataTable Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataTable)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetMemContributionCompletedEventHandler(object sender, GetMemContributionCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetMemContributionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetMemContributionCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.Data.DataTable Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataTable)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetEmploymentStatusCompletedEventHandler(object sender, GetEmploymentStatusCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetEmploymentStatusCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetEmploymentStatusCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.Data.DataTable Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataTable)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetAUB_CountryCompletedEventHandler(object sender, GetAUB_CountryCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetAUB_CountryCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetAUB_CountryCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.Data.DataTable Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataTable)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetAUB_NationalityCompletedEventHandler(object sender, GetAUB_NationalityCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetAUB_NationalityCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetAUB_NationalityCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.Data.DataTable Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataTable)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetAUB_NatureOfBusinessCompletedEventHandler(object sender, GetAUB_NatureOfBusinessCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetAUB_NatureOfBusinessCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetAUB_NatureOfBusinessCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.Data.DataTable Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataTable)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetAUB_AddressCodeCompletedEventHandler(object sender, GetAUB_AddressCodeCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetAUB_AddressCodeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetAUB_AddressCodeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.Data.DataTable Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataTable)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetAUB_IDTypeCompletedEventHandler(object sender, GetAUB_IDTypeCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetAUB_IDTypeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetAUB_IDTypeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.Data.DataTable Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataTable)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void Get_IDTypeCompletedEventHandler(object sender, Get_IDTypeCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class Get_IDTypeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal Get_IDTypeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.Data.DataTable Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataTable)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetDCSBankCompletedEventHandler(object sender, GetDCSBankCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetDCSBankCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetDCSBankCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.Data.DataTable Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataTable)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetBioByMIDCompletedEventHandler(object sender, GetBioByMIDCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetBioByMIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetBioByMIDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public Bio Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((Bio)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void SaveReceiptCompletedEventHandler(object sender, SaveReceiptCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class SaveReceiptCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal SaveReceiptCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public bool Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetMemberDetailsByMIDCompletedEventHandler(object sender, GetMemberDetailsByMIDCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetMemberDetailsByMIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetMemberDetailsByMIDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public MemberDetails Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((MemberDetails)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetMemberByMIDCompletedEventHandler(object sender, GetMemberByMIDCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetMemberByMIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetMemberByMIDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public Member Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((Member)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetMemberByMIDAndApplicationDateCompletedEventHandler(object sender, GetMemberByMIDAndApplicationDateCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetMemberByMIDAndApplicationDateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetMemberByMIDAndApplicationDateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public Member Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((Member)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void IsMemberExistByMIDAndApplicationDateCompletedEventHandler(object sender, IsMemberExistByMIDAndApplicationDateCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class IsMemberExistByMIDAndApplicationDateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal IsMemberExistByMIDAndApplicationDateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public bool Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void IsMemberHasAccountCompletedEventHandler(object sender, IsMemberHasAccountCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class IsMemberHasAccountCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal IsMemberHasAccountCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public bool Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetCardCounterCompletedEventHandler(object sender, GetCardCounterCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetCardCounterCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetCardCounterCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetTotalCapturedByUserCompletedEventHandler(object sender, GetTotalCapturedByUserCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetTotalCapturedByUserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetTotalCapturedByUserCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetTotalCapturedByUser_RecaptureCompletedEventHandler(object sender, GetTotalCapturedByUser_RecaptureCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetTotalCapturedByUser_RecaptureCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetTotalCapturedByUser_RecaptureCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetTotalCapturedByUserAndDateCompletedEventHandler(object sender, GetTotalCapturedByUserAndDateCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetTotalCapturedByUserAndDateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetTotalCapturedByUserAndDateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetTotalCapturedByUserAndDate_RecaptureCompletedEventHandler(object sender, GetTotalCapturedByUserAndDate_RecaptureCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetTotalCapturedByUserAndDate_RecaptureCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetTotalCapturedByUserAndDate_RecaptureCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetTotalCapturedByKioskAndDateCompletedEventHandler(object sender, GetTotalCapturedByKioskAndDateCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetTotalCapturedByKioskAndDateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetTotalCapturedByKioskAndDateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetTotalCapturedByKioskAndDate_RecaptureCompletedEventHandler(object sender, GetTotalCapturedByKioskAndDate_RecaptureCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetTotalCapturedByKioskAndDate_RecaptureCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetTotalCapturedByKioskAndDate_RecaptureCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void InsertAuditTrailCompletedEventHandler(object sender, InsertAuditTrailCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class InsertAuditTrailCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal InsertAuditTrailCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public bool Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void InsertAuditTrail2CompletedEventHandler(object sender, InsertAuditTrail2CompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class InsertAuditTrail2CompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal InsertAuditTrail2CompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public bool Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void ValidateUserAndAccessCompletedEventHandler(object sender, ValidateUserAndAccessCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ValidateUserAndAccessCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ValidateUserAndAccessCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public LogInResponse Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((LogInResponse)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void CreateAccount_AUB_ProdCompletedEventHandler(object sender, CreateAccount_AUB_ProdCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class CreateAccount_AUB_ProdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal CreateAccount_AUB_ProdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public AUBResponse Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((AUBResponse)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void CreateAccount_AUBCompletedEventHandler(object sender, CreateAccount_AUBCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class CreateAccount_AUBCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal CreateAccount_AUBCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public AUBResponse Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((AUBResponse)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void ReplaceCard_AUBCompletedEventHandler(object sender, ReplaceCard_AUBCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ReplaceCard_AUBCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ReplaceCard_AUBCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public AUBResponse Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((AUBResponse)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetCardNo_AUBCompletedEventHandler(object sender, GetCardNo_AUBCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetCardNo_AUBCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetCardNo_AUBCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public AUBResponse Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((AUBResponse)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void SPX100CompletedEventHandler(object sender, SPX100CompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SPX100CompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -14799,11 +13938,11 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void SPX101CompletedEventHandler(object sender, SPX101CompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SPX101CompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -14825,37 +13964,37 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void WSErrorLogsCompletedEventHandler(object sender, WSErrorLogsCompletedEventArgs e);
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetServerDateTimeCompletedEventHandler(object sender, GetServerDateTimeCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class WSErrorLogsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class GetServerDateTimeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal WSErrorLogsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal GetServerDateTimeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
         
         /// <remarks/>
-        public LogTrace[] Result {
+        public System.DateTime Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((LogTrace[])(this.results[0]));
+                return ((System.DateTime)(this.results[0]));
             }
         }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void GetConfigCompletedEventHandler(object sender, GetConfigCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetConfigCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -14877,18 +14016,44 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void SaveCardTransactionCompletedEventHandler(object sender, SaveCardTransactionCompletedEventArgs e);
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void WSErrorLogsCompletedEventHandler(object sender, WSErrorLogsCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class SaveCardTransactionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class WSErrorLogsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal SaveCardTransactionCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal WSErrorLogsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public LogTrace[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((LogTrace[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void SaveMemberCompletedEventHandler(object sender, SaveMemberCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SaveMemberCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal SaveMemberCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -14903,271 +14068,11 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetTotalSpoiledCardByBranchAndDateCompletedEventHandler(object sender, GetTotalSpoiledCardByBranchAndDateCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetTotalSpoiledCardByBranchAndDateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetTotalSpoiledCardByBranchAndDateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetTotalBranchCardsCompletedEventHandler(object sender, GetTotalBranchCardsCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetTotalBranchCardsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetTotalBranchCardsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void IsBranchHasSpoiledCardsTransactionCompletedEventHandler(object sender, IsBranchHasSpoiledCardsTransactionCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class IsBranchHasSpoiledCardsTransactionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal IsBranchHasSpoiledCardsTransactionCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public bool Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetActiveCardInfoCompletedEventHandler(object sender, GetActiveCardInfoCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetActiveCardInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetActiveCardInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public ActiveCardInfoResult Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((ActiveCardInfoResult)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void IsRefNumExistCompletedEventHandler(object sender, IsRefNumExistCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class IsRefNumExistCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal IsRefNumExistCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public bool Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void IsReceiptSavedCompletedEventHandler(object sender, IsReceiptSavedCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class IsReceiptSavedCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal IsReceiptSavedCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public bool Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void ManualPushCardInfoCompletedEventHandler(object sender, ManualPushCardInfoCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ManualPushCardInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ManualPushCardInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RequestResponse Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RequestResponse)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void ManualPackUpDataCompletedEventHandler(object sender, ManualPackUpDataCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ManualPackUpDataCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ManualPackUpDataCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RequestResponse Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RequestResponse)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void SaveCardSpoiledCompletedEventHandler(object sender, SaveCardSpoiledCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class SaveCardSpoiledCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal SaveCardSpoiledCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RequestResponse Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RequestResponse)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void SaveCardSpoiledV2CompletedEventHandler(object sender, SaveCardSpoiledV2CompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class SaveCardSpoiledV2CompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal SaveCardSpoiledV2CompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RequestResponse Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RequestResponse)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void SaveMemberWithOptionsCompletedEventHandler(object sender, SaveMemberWithOptionsCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SaveMemberWithOptionsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -15189,11 +14094,1831 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Daily_StartCompletedEventHandler(object sender, Daily_StartCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Daily_StartCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Daily_StartCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RequestResponse Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RequestResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Daily_CaptureCompletedEventHandler(object sender, Daily_CaptureCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Daily_CaptureCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Daily_CaptureCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RequestResponse Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RequestResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Daily_EndingCompletedEventHandler(object sender, Daily_EndingCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Daily_EndingCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Daily_EndingCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RequestResponse Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RequestResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void SaveConsumablesCompletedEventHandler(object sender, SaveConsumablesCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SaveConsumablesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal SaveConsumablesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RequestResponse Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RequestResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetPreviousDayDetailsCompletedEventHandler(object sender, GetPreviousDayDetailsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetPreviousDayDetailsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetPreviousDayDetailsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void EndOfDayTabStatusCompletedEventHandler(object sender, EndOfDayTabStatusCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class EndOfDayTabStatusCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal EndOfDayTabStatusCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void SaveLogTimeCompletedEventHandler(object sender, SaveLogTimeCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SaveLogTimeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal SaveLogTimeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RequestResponse Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RequestResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void SaveDCSLogTimeCompletedEventHandler(object sender, SaveDCSLogTimeCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SaveDCSLogTimeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal SaveDCSLogTimeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RequestResponse Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RequestResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetMemberMaxApplicationDateCompletedEventHandler(object sender, GetMemberMaxApplicationDateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetMemberMaxApplicationDateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetMemberMaxApplicationDateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.DateTime Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.DateTime)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetMemberMinApplicationDateCompletedEventHandler(object sender, GetMemberMinApplicationDateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetMemberMinApplicationDateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetMemberMinApplicationDateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.DateTime Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.DateTime)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetClassificationCompletedEventHandler(object sender, GetClassificationCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetClassificationCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetClassificationCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetMembershipCategoryCompletedEventHandler(object sender, GetMembershipCategoryCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetMembershipCategoryCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetMembershipCategoryCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetOccupationCompletedEventHandler(object sender, GetOccupationCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetOccupationCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetOccupationCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetGroupOfIslandCompletedEventHandler(object sender, GetGroupOfIslandCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetGroupOfIslandCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetGroupOfIslandCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetBarangay_ZipcodeCompletedEventHandler(object sender, GetBarangay_ZipcodeCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetBarangay_ZipcodeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetBarangay_ZipcodeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetCitizenshipCompletedEventHandler(object sender, GetCitizenshipCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetCitizenshipCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetCitizenshipCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetAUB_CountryCompletedEventHandler(object sender, GetAUB_CountryCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetAUB_CountryCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetAUB_CountryCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetAUB_NationalityCompletedEventHandler(object sender, GetAUB_NationalityCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetAUB_NationalityCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetAUB_NationalityCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetAUB_NatureOfBusinessCompletedEventHandler(object sender, GetAUB_NatureOfBusinessCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetAUB_NatureOfBusinessCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetAUB_NatureOfBusinessCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetAUB_AddressCodeCompletedEventHandler(object sender, GetAUB_AddressCodeCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetAUB_AddressCodeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetAUB_AddressCodeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetAUB_IDTypeCompletedEventHandler(object sender, GetAUB_IDTypeCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetAUB_IDTypeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetAUB_IDTypeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void IsMemberHasExistingNewCaptureCompletedEventHandler(object sender, IsMemberHasExistingNewCaptureCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class IsMemberHasExistingNewCaptureCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal IsMemberHasExistingNewCaptureCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public WS_Result Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((WS_Result)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetCardCounterCompletedEventHandler(object sender, GetCardCounterCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetCardCounterCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetCardCounterCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void IsMemberExistByMIDAndApplicationDateCompletedEventHandler(object sender, IsMemberExistByMIDAndApplicationDateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class IsMemberExistByMIDAndApplicationDateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal IsMemberExistByMIDAndApplicationDateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void is_MID_RTN_ExistCompletedEventHandler(object sender, is_MID_RTN_ExistCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class is_MID_RTN_ExistCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal is_MID_RTN_ExistCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public SubmitResult Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((SubmitResult)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Is_Member_ActiveCompletedEventHandler(object sender, Is_Member_ActiveCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Is_Member_ActiveCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Is_Member_ActiveCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public ACCMCRecordClassResult Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((ACCMCRecordClassResult)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetActiveCardInfoCompletedEventHandler(object sender, GetActiveCardInfoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetActiveCardInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetActiveCardInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public ActiveCardInfoResult Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((ActiveCardInfoResult)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void PushCardInfoCompletedEventHandler(object sender, PushCardInfoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class PushCardInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal PushCardInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public PushCardInfoResult Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((PushCardInfoResult)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void SaveMemberRefNumPerWorkPlaceCompletedEventHandler(object sender, SaveMemberRefNumPerWorkPlaceCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SaveMemberRefNumPerWorkPlaceCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal SaveMemberRefNumPerWorkPlaceCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RequestResponse Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RequestResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetCity_MunicipalityCompletedEventHandler(object sender, GetCity_MunicipalityCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetCity_MunicipalityCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetCity_MunicipalityCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetMonthlyIncomeCompletedEventHandler(object sender, GetMonthlyIncomeCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetMonthlyIncomeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetMonthlyIncomeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetCountryCompletedEventHandler(object sender, GetCountryCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetCountryCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetCountryCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetProvinceCompletedEventHandler(object sender, GetProvinceCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetProvinceCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetProvinceCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetRegionCompletedEventHandler(object sender, GetRegionCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetRegionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetRegionCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetEmploymentStatusCompletedEventHandler(object sender, GetEmploymentStatusCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetEmploymentStatusCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetEmploymentStatusCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetKioskCompletedEventHandler(object sender, GetKioskCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetKioskCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetKioskCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetORByMIDCompletedEventHandler(object sender, GetORByMIDCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetORByMIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetORByMIDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void IsReceiptExistCompletedEventHandler(object sender, IsReceiptExistCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class IsReceiptExistCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal IsReceiptExistCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetMemContributionCompletedEventHandler(object sender, GetMemContributionCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetMemContributionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetMemContributionCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void Get_IDTypeCompletedEventHandler(object sender, Get_IDTypeCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Get_IDTypeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Get_IDTypeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetDCSBankCompletedEventHandler(object sender, GetDCSBankCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetDCSBankCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetDCSBankCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetBioByMIDCompletedEventHandler(object sender, GetBioByMIDCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetBioByMIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetBioByMIDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Bio Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Bio)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void SaveReceiptCompletedEventHandler(object sender, SaveReceiptCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SaveReceiptCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal SaveReceiptCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetMemberDetailsByMIDCompletedEventHandler(object sender, GetMemberDetailsByMIDCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetMemberDetailsByMIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetMemberDetailsByMIDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public MemberDetails Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((MemberDetails)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetMemberByMIDCompletedEventHandler(object sender, GetMemberByMIDCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetMemberByMIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetMemberByMIDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Member Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Member)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetMemberByMIDAndApplicationDateCompletedEventHandler(object sender, GetMemberByMIDAndApplicationDateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetMemberByMIDAndApplicationDateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetMemberByMIDAndApplicationDateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Member Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Member)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void IsMemberHasAccountCompletedEventHandler(object sender, IsMemberHasAccountCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class IsMemberHasAccountCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal IsMemberHasAccountCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetTotalCapturedByUserCompletedEventHandler(object sender, GetTotalCapturedByUserCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetTotalCapturedByUserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetTotalCapturedByUserCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetTotalCapturedByUser_RecaptureCompletedEventHandler(object sender, GetTotalCapturedByUser_RecaptureCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetTotalCapturedByUser_RecaptureCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetTotalCapturedByUser_RecaptureCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetTotalCapturedByUserAndDateCompletedEventHandler(object sender, GetTotalCapturedByUserAndDateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetTotalCapturedByUserAndDateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetTotalCapturedByUserAndDateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetTotalCapturedByUserAndDate_RecaptureCompletedEventHandler(object sender, GetTotalCapturedByUserAndDate_RecaptureCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetTotalCapturedByUserAndDate_RecaptureCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetTotalCapturedByUserAndDate_RecaptureCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetTotalCapturedByKioskAndDateCompletedEventHandler(object sender, GetTotalCapturedByKioskAndDateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetTotalCapturedByKioskAndDateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetTotalCapturedByKioskAndDateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetTotalCapturedByKioskAndDate_RecaptureCompletedEventHandler(object sender, GetTotalCapturedByKioskAndDate_RecaptureCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetTotalCapturedByKioskAndDate_RecaptureCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetTotalCapturedByKioskAndDate_RecaptureCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void InsertAuditTrailCompletedEventHandler(object sender, InsertAuditTrailCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class InsertAuditTrailCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal InsertAuditTrailCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void InsertAuditTrail2CompletedEventHandler(object sender, InsertAuditTrail2CompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class InsertAuditTrail2CompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal InsertAuditTrail2CompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void ValidateUserAndAccessCompletedEventHandler(object sender, ValidateUserAndAccessCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ValidateUserAndAccessCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ValidateUserAndAccessCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public LogInResponse Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((LogInResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void CreateAccount_AUB_ProdCompletedEventHandler(object sender, CreateAccount_AUB_ProdCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CreateAccount_AUB_ProdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CreateAccount_AUB_ProdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public AUBResponse Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((AUBResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void CreateAccount_AUBCompletedEventHandler(object sender, CreateAccount_AUBCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CreateAccount_AUBCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CreateAccount_AUBCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public AUBResponse Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((AUBResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void ReplaceCard_AUBCompletedEventHandler(object sender, ReplaceCard_AUBCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ReplaceCard_AUBCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ReplaceCard_AUBCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public AUBResponse Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((AUBResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetCardNo_AUBCompletedEventHandler(object sender, GetCardNo_AUBCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetCardNo_AUBCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetCardNo_AUBCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public AUBResponse Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((AUBResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void SaveCardTransactionCompletedEventHandler(object sender, SaveCardTransactionCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SaveCardTransactionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal SaveCardTransactionCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RequestResponse Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RequestResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetTotalSpoiledCardByBranchAndDateCompletedEventHandler(object sender, GetTotalSpoiledCardByBranchAndDateCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetTotalSpoiledCardByBranchAndDateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetTotalSpoiledCardByBranchAndDateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void GetTotalBranchCardsCompletedEventHandler(object sender, GetTotalBranchCardsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetTotalBranchCardsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetTotalBranchCardsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void IsBranchHasSpoiledCardsTransactionCompletedEventHandler(object sender, IsBranchHasSpoiledCardsTransactionCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class IsBranchHasSpoiledCardsTransactionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal IsBranchHasSpoiledCardsTransactionCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void IsRefNumExistCompletedEventHandler(object sender, IsRefNumExistCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class IsRefNumExistCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal IsRefNumExistCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void IsReceiptSavedCompletedEventHandler(object sender, IsReceiptSavedCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class IsReceiptSavedCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal IsReceiptSavedCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void ManualPushCardInfoCompletedEventHandler(object sender, ManualPushCardInfoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ManualPushCardInfoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ManualPushCardInfoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RequestResponse Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RequestResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void ManualPackUpDataCompletedEventHandler(object sender, ManualPackUpDataCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ManualPackUpDataCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ManualPackUpDataCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RequestResponse Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RequestResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void SaveCardSpoiledCompletedEventHandler(object sender, SaveCardSpoiledCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SaveCardSpoiledCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal SaveCardSpoiledCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RequestResponse Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RequestResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void SaveCardSpoiledV2CompletedEventHandler(object sender, SaveCardSpoiledV2CompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SaveCardSpoiledV2CompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal SaveCardSpoiledV2CompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public RequestResponse Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((RequestResponse)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void GetUserIDNumberCompletedEventHandler(object sender, GetUserIDNumberCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetUserIDNumberCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -15215,11 +15940,11 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void GetMemberForUploadListCompletedEventHandler(object sender, GetMemberForUploadListCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetMemberForUploadListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -15241,11 +15966,11 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void SaveDCSUploadCompletedEventHandler(object sender, SaveDCSUploadCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SaveDCSUploadCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -15267,11 +15992,11 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void LogEmployeeCompletedEventHandler(object sender, LogEmployeeCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class LogEmployeeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -15301,11 +16026,11 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void IsHolidayCompletedEventHandler(object sender, IsHolidayCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class IsHolidayCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -15327,11 +16052,11 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void HasScheduled_ATLASCompletedEventHandler(object sender, HasScheduled_ATLASCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class HasScheduled_ATLASCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -15353,11 +16078,11 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void SaveDepositTransactionCompletedEventHandler(object sender, SaveDepositTransactionCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SaveDepositTransactionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -15379,11 +16104,11 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void GetDepositByBranchAndDateCompletedEventHandler(object sender, GetDepositByBranchAndDateCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetDepositByBranchAndDateCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -15405,11 +16130,11 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void GetTop10DepositHistoryCompletedEventHandler(object sender, GetTop10DepositHistoryCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetTop10DepositHistoryCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -15431,11 +16156,11 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void GetDepositBankAccountCompletedEventHandler(object sender, GetDepositBankAccountCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetDepositBankAccountCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -15457,11 +16182,11 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void SaveVersionCompletedEventHandler(object sender, SaveVersionCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SaveVersionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -15483,11 +16208,11 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void SaveCashOnHandCompletedEventHandler(object sender, SaveCashOnHandCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SaveCashOnHandCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -15509,11 +16234,11 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void GetTop10CashOnHandHistoryCompletedEventHandler(object sender, GetTop10CashOnHandHistoryCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetTop10CashOnHandHistoryCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -15535,11 +16260,11 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void GetUserRoleByUsernamePassowrdCompletedEventHandler(object sender, GetUserRoleByUsernamePassowrdCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetUserRoleByUsernamePassowrdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -15561,11 +16286,11 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void GetWorkPlaceCompletedEventHandler(object sender, GetWorkPlaceCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetWorkPlaceCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -15587,37 +16312,11 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetPreviousDayDetailsCompletedEventHandler(object sender, GetPreviousDayDetailsCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetPreviousDayDetailsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetPreviousDayDetailsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.Data.DataTable Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataTable)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void SaveDepositTransactionV2CompletedEventHandler(object sender, SaveDepositTransactionV2CompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SaveDepositTransactionV2CompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -15639,11 +16338,11 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void SaveMagErrorCompletedEventHandler(object sender, SaveMagErrorCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SaveMagErrorCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -15665,63 +16364,11 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void SaveConsumablesCompletedEventHandler(object sender, SaveConsumablesCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class SaveConsumablesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal SaveConsumablesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public RequestResponse Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((RequestResponse)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void EndOfDayTabStatusCompletedEventHandler(object sender, EndOfDayTabStatusCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class EndOfDayTabStatusCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal EndOfDayTabStatusCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.Data.DataTable Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataTable)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void GetListOfDepositCancelledRemarksCompletedEventHandler(object sender, GetListOfDepositCancelledRemarksCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetListOfDepositCancelledRemarksCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -15743,11 +16390,11 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void GetEndOfDayClearingReportCompletedEventHandler(object sender, GetEndOfDayClearingReportCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetEndOfDayClearingReportCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -15769,11 +16416,11 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void SaveEODReconCompletedEventHandler(object sender, SaveEODReconCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SaveEODReconCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -15795,11 +16442,11 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void TestEmailCompletedEventHandler(object sender, TestEmailCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class TestEmailCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -15821,11 +16468,11 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void GetEndOfDayReportPDFCompletedEventHandler(object sender, GetEndOfDayReportPDFCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetEndOfDayReportPDFCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -15847,11 +16494,11 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void GetEndOfDayReconReportCompletedEventHandler(object sender, GetEndOfDayReconReportCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetEndOfDayReconReportCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -15873,11 +16520,11 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void GetBranchNameCompletedEventHandler(object sender, GetBranchNameCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetBranchNameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -15899,11 +16546,11 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void IsUserHasTimeInCompletedEventHandler(object sender, IsUserHasTimeInCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class IsUserHasTimeInCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -15925,11 +16572,11 @@ namespace EdelUtilities.ubpWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void GetWorkplaceCapturedMemberCompletedEventHandler(object sender, GetWorkplaceCapturedMemberCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class GetWorkplaceCapturedMemberCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -15946,84 +16593,6 @@ namespace EdelUtilities.ubpWS {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((System.Data.DataTable)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetListOfUserTimeInCompletedEventHandler(object sender, GetListOfUserTimeInCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetListOfUserTimeInCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetListOfUserTimeInCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.Data.DataTable Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataTable)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetTypeOfSpoiledCompletedEventHandler(object sender, GetTypeOfSpoiledCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetTypeOfSpoiledCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetTypeOfSpoiledCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.Data.DataTable Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataTable)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    public delegate void GetRefeedSecretCodeCompletedEventHandler(object sender, GetRefeedSecretCodeCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4161.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetRefeedSecretCodeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal GetRefeedSecretCodeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public bool Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
             }
         }
     }

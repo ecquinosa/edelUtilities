@@ -97,6 +97,12 @@
     <Compile Include="GetFolderFilesInDirectory.Designer.cs">
       <DependentUpon>GetFolderFilesInDirectory.cs</DependentUpon>
     </Compile>
+    <Compile Include="InsertContactInfoAddress_DCS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsertContactInfoAddress_DCS.Designer.cs">
+      <DependentUpon>InsertContactInfoAddress_DCS.cs</DependentUpon>
+    </Compile>
     <Compile Include="Lab.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -190,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GetFolderFilesInDirectory.resx">
       <DependentUpon>GetFolderFilesInDirectory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsertContactInfoAddress_DCS.resx">
+      <DependentUpon>InsertContactInfoAddress_DCS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -537,6 +546,9 @@
     <None Include="Web References\ubpWS\SubmitResult.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
+    <None Include="Web References\ubpWS\WS_Result.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
     <None Include="Web References\ubpWS_SIT\ACCMCRecordClassResult.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
@@ -656,10 +668,10 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>EdelUtilities_aubWS_ACC_MS_WEBSERVICE</CachedSettingsPropName>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="http://ubp.allcard.com.ph:82/">
+    <WebReferenceUrl Include="http://ubp.allcard.com.ph:8501/">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\ubpWS\</RelPath>
-      <UpdateFromURL>http://ubp.allcard.com.ph:82/</UpdateFromURL>
+      <UpdateFromURL>http://ubp.allcard.com.ph:8501/</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>

@@ -36,7 +36,7 @@ namespace EdelUtilities.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://ubp.allcard.com.ph:82/ACC_MS_WEBSERVICE.asmx")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://ubp.allcard.com.ph:8501/ACC_MS_WEBSERVICE.asmx")]
         public string EdelUtilities_ubpWS_ACC_MS_WEBSERVICE {
             get {
                 return ((string)(this["EdelUtilities_ubpWS_ACC_MS_WEBSERVICE"]));
