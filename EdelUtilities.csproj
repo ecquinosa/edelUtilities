@@ -150,6 +150,11 @@
       <DependentUpon>UBP_DAO_API_Logs.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilities.cs" />
+    <Compile Include="Web References\aubProd_VPN\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Compile Include="Web References\aubWS\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -176,6 +181,11 @@
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
     <Compile Include="Web References\ubpWS_SIT\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ubp_PreProd\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
@@ -243,6 +253,62 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Web References\aubProd_VPN\ACCMCRecordClassResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\aubProd_VPN\ACC_MS_WEBSERVICE.wsdl" />
+    <None Include="Web References\aubProd_VPN\ActiveCardInfoResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\aubProd_VPN\AUBResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\aubProd_VPN\Bio.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\aubProd_VPN\CashOnHand.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\aubProd_VPN\DCS_Upload.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\aubProd_VPN\DepositBankAccount.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\aubProd_VPN\DepositTransaction.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\aubProd_VPN\LogEmployeeResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\aubProd_VPN\LogInResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\aubProd_VPN\LogTrace.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\aubProd_VPN\Member.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\aubProd_VPN\MemberDetails.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\aubProd_VPN\PushCardInfoResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\aubProd_VPN\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\aubProd_VPN\RequestResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\aubProd_VPN\SubmitResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\aubProd_VPN\WS_Result.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
     <None Include="Web References\aubWS\ACCMCRecordClassResult.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
@@ -606,6 +672,68 @@
     <None Include="Web References\ubpWS_SIT\WS_Result.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
+    <None Include="Web References\ubp_PreProd\ACCMCRecordClassResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ubp_PreProd\ACC_MS_WEBSERVICE.wsdl" />
+    <None Include="Web References\ubp_PreProd\ActiveCardInfoResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ubp_PreProd\AUBResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ubp_PreProd\Bio.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ubp_PreProd\CashOnHand.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ubp_PreProd\DCS_Upload.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ubp_PreProd\DepositBankAccount.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ubp_PreProd\DepositTransaction.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ubp_PreProd\isAccountNumberExistResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ubp_PreProd\isCardNumberExistResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ubp_PreProd\LogEmployeeResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ubp_PreProd\LogInResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ubp_PreProd\LogTrace.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ubp_PreProd\Member.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ubp_PreProd\MemberDetails.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ubp_PreProd\PushCardInfoResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ubp_PreProd\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ubp_PreProd\RequestResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ubp_PreProd\SubmitResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ubp_PreProd\WS_Result.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
@@ -624,6 +752,28 @@
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>EdelUtilities_aubWS_PreProd_ACC_MS_WEBSERVICE</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://10.88.77.179:8501/">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ubp_PreProd\</RelPath>
+      <UpdateFromURL>http://10.88.77.179:8501/</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EdelUtilities_ubp_PreProd_ACC_MS_WEBSERVICE</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://10.88.77.70:171/">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\aubProd_VPN\</RelPath>
+      <UpdateFromURL>http://10.88.77.70:171/</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EdelUtilities_aubProd_VPN_ACC_MS_WEBSERVICE</CachedSettingsPropName>
     </WebReferenceUrl>
     <WebReferenceUrl Include="http://10.88.87.67:8444/">
       <UrlBehavior>Dynamic</UrlBehavior>
@@ -698,6 +848,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Web References\aubWS_PreProd\ACC_MS_WEBSERVICE.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\aubProd_VPN\ACC_MS_WEBSERVICE.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\ubp_PreProd\ACC_MS_WEBSERVICE.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -222,7 +222,31 @@ namespace DAL
                 strErrorMessage = ex.Message;
                 return false;
             }
-        }       
+        }
+
+        public bool ExecuteScalar(string strQuery, System.Data.CommandType cmdType, string[] sqlParams, object[] sqlValues)
+        {
+            try
+            {
+                OpenConnection();
+                cmd = new SqlCommand(strQuery, con);
+
+                for (int i = 0; i < sqlParams.Length - 1; i++)
+                {
+                    cmd.Parameters.AddWithValue(sqlParams[i], sqlValues[i]);
+                }
+
+                _ExecuteScalar(cmdType);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                strErrorMessage = ex.Message;
+                return false;
+            }
+        }
+
 
         private bool disposed = false;
 

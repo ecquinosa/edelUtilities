@@ -82,6 +82,139 @@ namespace EdelUtilities
             dal.Dispose();            
         }
 
+        private void SelectTableGetFieldsWithNullValue()
+        {
+            dal = null;
+            string conStr = "";
+            if (cboBank.Text == "UBP") conStr = ubpConStr;
+            else if (cboBank.Text == "AUB") conStr = aubConStr;
+            dal = new DAL.MsSql(conStr);
+
+            StringBuilder sb = new StringBuilder();
+            foreach (var v in txtData.Text.Split('\r'))
+            {
+                if (sb.ToString() == "") sb.Append(String.Format("'{0}'", v.Trim().Replace(" ", "").Replace("-", "")));
+                else sb.Append(String.Format(",'{0}'", v.Trim().Replace(" ", "").Replace("-", "")));
+            }
+
+            string tableFields = "*";
+            if (chkMember.Visible)
+            {
+                if (!chkMember.Checked) tableFields = "RefNum, PagIBIGID, Member_FirstName, Member_MiddleName, Member_LastName, Application_Remarks, ApplicationDate, EntryDate, UserName, KioskID, requesting_branchcode";
+            }
+
+            if (dal.SelectQuery(String.Format("SELECT {3} FROM {0} WHERE {1} IN ({2})", cboTable.Text.Trim(), cboField.Text.Trim(), sb.ToString(), tableFields)))
+            {
+                grid.DataSource = dal.TableResult;
+                if (dal.TableResult.DefaultView.Count > 0) lblResult.Text = "TOTAL : " + dal.TableResult.DefaultView.Count.ToString();
+                else lblResult.Text = "";
+
+                StringBuilder sbNull = new StringBuilder();
+                foreach (DataRow rw in dal.TableResult.Rows)
+                {
+                    foreach (DataColumn col in dal.TableResult.Columns)
+                    {
+                        if (rw[col] == null) {
+                            if (sbNull.ToString() != "") sbNull.Append(Environment.NewLine);
+                            sbNull.Append(col.ColumnName);
+                        }
+
+                        if (rw[col] == DBNull.Value)
+                        {
+                            if (sbNull.ToString() != "") sbNull.Append(Environment.NewLine);
+                            sbNull.Append(col.ColumnName);
+                        }
+                    }
+                }
+
+                Utilities.ShowInfoMessageBox(sbNull.ToString());
+            }
+            dal.Dispose();
+        }
+
+        
+        string ReplaceNullValueWithEmptyString_Id = "";
+        string ReplaceNullValueWithEmptyString_MID = "";
+
+        private void SelectTableGetFieldsWithNullValue2(DataGridViewRow gridRow)
+        {
+            StringBuilder sbNull = new StringBuilder();
+            StringBuilder sbReplaceNullValueWithEmptyString = new StringBuilder();
+
+            if (cboTable.Text.Trim() == "tbl_Member")            {
+              
+                ReplaceNullValueWithEmptyString_Id = gridRow.Cells["RefNum"].Value.ToString();
+                ReplaceNullValueWithEmptyString_MID = gridRow.Cells["PagIBIGID"].Value.ToString();
+            }
+
+            foreach (DataGridViewColumn col in grid.Columns)
+            {
+                if (gridRow.Cells[col.Name].Value == null)
+                {
+                    if (sbNull.ToString() != "") sbNull.Append(", ");
+                    sbNull.Append(string.Format("{0} = ''", col.Name));
+                }
+
+                if (gridRow.Cells[col.Name].Value == DBNull.Value)
+                {
+                    if (sbNull.ToString() != "") sbNull.Append(", ");
+                    sbNull.Append(string.Format("{0} = ''", col.Name));
+                }
+
+            }
+
+            string outputPath = @"K:\My Drive\PAGIBIG\Sql Scripts";
+            string outputFile = string.Format(@"{0}\ReplaceNullValueWithEmptyString_{1}.sql", outputPath, ReplaceNullValueWithEmptyString_MID);
+
+            sbReplaceNullValueWithEmptyString.AppendLine(ReplaceNullValueWithEmptyString(cboTable.Text.Trim(), ReplaceNullValueWithEmptyString_Id, sbNull.ToString()));
+
+            if (cboTable.Text.Trim() == "tbl_Member")
+            {               
+                System.IO.File.WriteAllText(outputFile, "declare @refNum varchar(22)");
+                System.IO.File.AppendAllText(outputFile, Environment.NewLine + Environment.NewLine + string.Format("set @refNum = '{0}'", ReplaceNullValueWithEmptyString_Id));
+                System.IO.File.AppendAllText(outputFile, Environment.NewLine + Environment.NewLine + sbReplaceNullValueWithEmptyString.ToString());
+            }
+            else System.IO.File.AppendAllText(outputFile, Environment.NewLine + sbReplaceNullValueWithEmptyString.ToString());
+
+          
+        }
+
+        private string ReplaceNullValueWithEmptyString(string tableName, string id, string query)
+        {
+            //            tbl_Member
+            //tbl_MembershipCategoryInfo
+            //tbl_MemberContactinfo
+            //tbl_MemContribution
+            //tbl_Survey
+            //tbl_DCS_Card_Account
+            //tbl_EmploymentHistory
+            //tbl_DCS_Card_Reprint
+            //tbl_instant_issuance
+            //tbl_Photo
+
+            switch (tableName)
+            {
+                case "tbl_Member":
+                    return string.Format("update tbl_member set {0} where refnum = @refNum", query, id);
+                    break;
+                case "tbl_MembershipCategoryInfo":
+                    return string.Format("update tbl_membershipcategoryinfo set {0} where refnum = @refNum", query, id);
+                    break;
+                case "tbl_MemberContactinfo":
+                    return string.Format("update tbl_membercontactinfo set {0} where refnum = @refNum", query, id);
+                    break;
+                case "tbl_MemContribution":
+                    return string.Format("update tbl_memcontribution set {0} where refnum = @refNum", query, id);
+                    break;
+                case "tbl_Survey":
+                    return string.Format("update tbl_survey set {0} where refnum = @refNum", query, id);
+                    break;
+                default:
+                    return "";
+                    break;
+            }          
+        }
+
         private void Test()
         {
             dal = null;
@@ -146,7 +279,33 @@ namespace EdelUtilities
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Test();
+            Cursor = Cursors.WaitCursor;
+            this.Enabled = false;
+
+            if (cboTable.Text.Trim() == "tbl_Member")           
+            {
+                SelectTableGetFieldsWithNullValue2(grid.CurrentRow);
+
+                cboTable.Text = "tbl_MembershipCategoryInfo";
+                SelectTable();
+                SelectTableGetFieldsWithNullValue2(grid.Rows[0]);
+
+                cboTable.Text = "tbl_MemberContactinfo";
+                SelectTable();
+                SelectTableGetFieldsWithNullValue2(grid.Rows[0]);
+
+                cboTable.Text = "tbl_MemContribution";
+                SelectTable();
+                SelectTableGetFieldsWithNullValue2(grid.Rows[0]);
+
+                cboTable.Text = "tbl_Survey";
+                SelectTable();
+                SelectTableGetFieldsWithNullValue2(grid.Rows[0]);
+            }
+
+            Cursor = Cursors.Default;
+            this.Enabled = true;
+            MessageBox.Show("Done!", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

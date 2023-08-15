@@ -91,7 +91,7 @@ namespace EdelUtilities
 
         private void Main_Load(object sender, EventArgs e)
         {
-            
+            //textBox1.Text = DateTime.Now.ToString().Substring(0,4);
         }
 
         public static string GetMACAddress()
@@ -125,6 +125,28 @@ namespace EdelUtilities
         private void pagIbigMemberContactInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new InsertContactInfoAddress_DCS().ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var isNumeric = double.TryParse(textBox1.Text, out _);
+
+            if(isNumeric)textBox2.Text = "True"; else textBox2.Text = "False";
+            //timer1.Start();
+            //timer2.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            textBox3.Text = Lab.GetRamUsage();
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            Application.DoEvents();
+            textBox1.Text = string.Format("Today is :{0}", DateTime.Now.ToString("D"));
+            textBox2.Text = string.Format("Time is :{0}", DateTime.Now.ToString("hh:mm:ss"));
+            GC.Collect();
         }
     }
 }

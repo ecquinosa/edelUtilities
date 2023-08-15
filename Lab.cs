@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -509,6 +510,15 @@ namespace EdelUtilities
 
             return "Success";
         }
+
+        public static string GetRamUsage()
+        {
+            Process c = Process.GetCurrentProcess();
+            long memory = (c.VirtualMemorySize64 / 1024) / 1024;
+            return string.Format("Memory used: {0}", memory);
+        }
+
+     
 
     }
 }

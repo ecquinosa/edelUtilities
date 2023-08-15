@@ -80,3 +80,4 @@ D:\Projects\edelUtilities_laptop\bin\Debug\DAL.pdb
 D:\Projects\edelUtilities_laptop\bin\Debug\Newtonsoft.Json.xml
 D:\Projects\edelUtilities_laptop\obj\Debug\EdelUtilities.csproj.CopyComplete
 D:\Projects\edelUtilities_laptop\obj\Debug\EdelUtilities.InsertContactInfoAddress_DCS.resources
+D:\WORK\Projects\edelUtilities\obj\Debug\EdelUtilities.InsertContactInfoAddress_DCS.resources

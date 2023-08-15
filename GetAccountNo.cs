@@ -40,12 +40,18 @@ namespace EdelUtilities
 
         private ubpWS.ACC_MS_WEBSERVICE ubpWS = new ubpWS.ACC_MS_WEBSERVICE();
         private aubWS_PreProd.ACC_MS_WEBSERVICE aubWS_PreProd = new aubWS_PreProd.ACC_MS_WEBSERVICE();
-        private aubWS.ACC_MS_WEBSERVICE aubWS = new aubWS.ACC_MS_WEBSERVICE();
+
+        //private aubWS.ACC_MS_WEBSERVICE aubWS = new aubWS.ACC_MS_WEBSERVICE();
+        //private aubWS.RequestAuth raAUB = new aubWS.RequestAuth();
+
+        private aubProd_VPN.ACC_MS_WEBSERVICE aubWS = new aubProd_VPN.ACC_MS_WEBSERVICE();
+        private aubProd_VPN.RequestAuth raAUB = new aubProd_VPN.RequestAuth();
+
         private aubWS_SIT_OLD.ACC_MS_WEBSERVICE aubWS_SIT_OLD = new aubWS_SIT_OLD.ACC_MS_WEBSERVICE();
         private ubpWS_SIT.ACC_MS_WEBSERVICE ubpWS_SIT_OLD = new ubpWS_SIT.ACC_MS_WEBSERVICE();
         private rbankSIT_WS.ACC_MS_WEBSERVICE rbankSIT_WS = new rbankSIT_WS.ACC_MS_WEBSERVICE();
         private ubpWS.RequestAuth raUBP = new ubpWS.RequestAuth();
-        private aubWS.RequestAuth raAUB = new aubWS.RequestAuth();
+       
         private aubWS_PreProd.RequestAuth raAUB_PreProd = new aubWS_PreProd.RequestAuth();
         private aubWS_SIT_OLD.RequestAuth raAUB_SIT_OLD = new aubWS_SIT_OLD.RequestAuth();
         private ubpWS_SIT.RequestAuth raUBP_SIT_OLD = new ubpWS_SIT.RequestAuth();
@@ -164,9 +170,10 @@ namespace EdelUtilities
                     rtb.Text = Newtonsoft.Json.JsonConvert.SerializeObject(response1, Newtonsoft.Json.Formatting.Indented);
                     break;
                 case 1:
-                    var response2 = aubWS.Is_MID_RTN_Exist(raAUB, GetMID());
-                    SaveDataToTxt(response2);
-                    rtb.Text = Newtonsoft.Json.JsonConvert.SerializeObject(response2, Newtonsoft.Json.Formatting.Indented);
+                    ////var response2 = aubWS.Is_MID_RTN_Exist(raAUB, GetMID());
+                    //var response2 = aubProd_VPN.(raAUB, GetMID());
+                    //SaveDataToTxt(response2);
+                    //rtb.Text = Newtonsoft.Json.JsonConvert.SerializeObject(response2, Newtonsoft.Json.Formatting.Indented);
                     break;
                 case 2:
                     var response3 = rbankSIT_WS.is_MID_RTN_Exist(raSIT_RBANK, GetMID());
@@ -243,15 +250,18 @@ namespace EdelUtilities
         public void GetCardNo_AUB_prod(string mid, string firstName, string middleName, string lastName, string dob)
         {
             txtMID.Text = mid;
-            var name = new aubWS.name();
+            //var name = new aubWS.name();
+            var name = new aubProd_VPN.name();
             name.firstName = firstName;
             name.middleName = middleName;
             name.lastName = lastName;
-            var inq = new aubWS.inquiry();
+            //var inq = new aubWS.inquiry();
+            var inq = new aubProd_VPN.inquiry();
             inq.idNo = mid;
             inq.name = name;
             inq.birthdate = dob;
-            var getCard = new aubWS.AUBGetCardNoRequest();
+            //var getCard = new aubWS.AUBGetCardNoRequest();
+            var getCard = new aubProd_VPN.AUBGetCardNoRequest();
             getCard.inquiry = inq;
             getCard.aud = "cashcard";
             getCard.jti = Guid.NewGuid().ToString();
